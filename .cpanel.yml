@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/masiva/nuevo.masiva.ec/
+    - export DEPLOYPATH=/home/mamascloud/nuevo.masiva.ec/
     - /bin/cp -R index.html $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
