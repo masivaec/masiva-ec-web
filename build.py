@@ -53,6 +53,7 @@ PLANTILLA = """<!DOCTYPE html>
 
 {pie}
 <script src="/assets/js/main.js" defer></script>
+{extra_js}
 </body>
 </html>
 """
@@ -120,7 +121,8 @@ for ruta in sorted(glob.glob(os.path.join(SRC, "pages", "*.html"))):
         title=html.escape(meta["title"]), description=html.escape(meta["description"]),
         og_title=html.escape(meta.get("og_title", meta["title"])), canonical=canonical, dominio=DOMINIO,
         robots=robots, jsonld=jsonld_para(meta), body_class=meta.get("body_class", ""),
-        cabecera=marcar_activo(cabecera, path), contenido=contenido.strip("\n"), pie=pie.strip("\n"))
+        cabecera=marcar_activo(cabecera, path), contenido=contenido.strip("\n"), pie=pie.strip("\n"),
+        extra_js='<script src="/assets/js/red.js" defer></script>' if path == "/" else "")
     pagina = pagina.replace("{{anio}}", str(datetime.date.today().year))
     destino = os.path.join(RAIZ, "index.html") if path == "/" else os.path.join(RAIZ, path.strip("/"), "index.html")
     os.makedirs(os.path.dirname(destino), exist_ok=True)
@@ -134,7 +136,7 @@ if os.path.exists(os.path.join(SRC, "pages_extra", "404.html")):
         title="Página no encontrada | MASIVA", description="La página que buscas no existe o cambió de lugar.",
         og_title="Página no encontrada", canonical=DOMINIO + "/", dominio=DOMINIO,
         robots='<meta name="robots" content="noindex">\n', jsonld="", body_class="",
-        cabecera=cabecera, contenido=contenido, pie=pie)
+        cabecera=cabecera, contenido=contenido, pie=pie, extra_js="")
     open(os.path.join(RAIZ, "404.html"), "w", encoding="utf-8").write(pagina)
 
 # .cpanel.yml con todo lo publicable

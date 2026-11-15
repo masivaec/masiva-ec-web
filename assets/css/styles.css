@@ -531,3 +531,8 @@ table.tabla.compacta td,table.tabla.compacta th{white-space:nowrap}
 .solo-movil{display:none}
 @media (max-width:600px){.solo-movil{display:block;font-size:.8rem;color:var(--gris-2);margin:0 0 .5rem}}
 .submenu a[aria-current="page"]{background:var(--tinte);color:var(--naranja-prof)}
+
+/* red animada del hero */
+.hero{position:relative;overflow:hidden}
+.red-hero{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.9}
+.hero>.contenedor{position:relative;z-index:1}
