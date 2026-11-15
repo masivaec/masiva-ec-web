@@ -10,8 +10,8 @@
 @font-face{font-family:"Inter";src:url("../fonts/inter-latin-600-normal.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
 
 :root{
-  --naranja:#E7610C;
-  --naranja-prof:#C2500A;
+  --naranja:#E57C1D;        /* naranja web (más vivo); el logo conserva #E7610C */
+  --naranja-prof:#D9751C;   /* hover y degradados */
   --ambar:#F59A23;
   --tinte:#FDEEE3;
   --carbon:#262626;
@@ -253,7 +253,7 @@ p:last-child{margin-bottom:0}
 .nosotros-tarjeta li svg{width:20px;height:20px;flex:none;color:var(--ambar);margin-top:.15rem}
 
 /* CTA */
-.cta{background:linear-gradient(135deg,var(--naranja),var(--naranja-prof) 70%);color:#fff;position:relative;overflow:hidden}
+.cta{background:linear-gradient(135deg,var(--naranja),#CF6A14 75%);color:#fff;position:relative;overflow:hidden}
 .cta::before{content:"";position:absolute;right:-8%;top:-30%;width:520px;height:520px;background:url("../img/logo/masiva-icono-blanco.svg") center/contain no-repeat;opacity:.12;transform:rotate(-12deg)}
 .cta-int{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,72px);align-items:center}
 .cta h2{color:#fff}
