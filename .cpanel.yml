@@ -3,4 +3,24 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/mamascloud/nuevo.masiva.ec/
     - /bin/cp -R index.html $DEPLOYPATH
+    - /bin/cp -R 404.html $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R area-de-clientes $DEPLOYPATH
+    - /bin/cp -R chatbots-agentes-ia $DEPLOYPATH
+    - /bin/cp -R clientes $DEPLOYPATH
+    - /bin/cp -R contacto $DEPLOYPATH
+    - /bin/cp -R dominios $DEPLOYPATH
+    - /bin/cp -R email $DEPLOYPATH
+    - /bin/cp -R formas-de-pago $DEPLOYPATH
+    - /bin/cp -R gestion-de-fraudes $DEPLOYPATH
+    - /bin/cp -R hosting $DEPLOYPATH
+    - /bin/cp -R politica-de-privacidad $DEPLOYPATH
+    - /bin/cp -R sms $DEPLOYPATH
+    - /bin/cp -R sms-internacional $DEPLOYPATH
+    - /bin/cp -R sms-publicitarios $DEPLOYPATH
+    - /bin/cp -R terminos-y-condiciones $DEPLOYPATH
+    - /bin/cp -R web $DEPLOYPATH
+    - /bin/cp -R whatsapp $DEPLOYPATH
+    - /bin/cp -R whois $DEPLOYPATH
+    - /bin/cp -R robots.txt $DEPLOYPATH
+    - /bin/cp -R LEEME-ESTRUCTURA.txt $DEPLOYPATH

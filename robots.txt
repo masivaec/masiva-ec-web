@@ -1,0 +1,7 @@
+# Sitio en construcción (subdominio de prueba): no indexar.
+# Al pasar a producción reemplazar por:
+#   User-agent: *
+#   Disallow: /wclientes/
+#   Sitemap: https://masiva.ec/sitemap.xml
+User-agent: *
+Disallow: /

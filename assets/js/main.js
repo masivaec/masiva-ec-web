@@ -74,3 +74,33 @@
   var anio = document.querySelector("[data-anio]");
   if (anio) anio.textContent = new Date().getFullYear();
 })();
+
+/* Selector de período (hosting) */
+document.querySelectorAll('[data-periodo-btn]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var sec = btn.closest('[data-periodo]');
+    if (!sec) return;
+    sec.setAttribute('data-periodo', btn.getAttribute('data-periodo-btn'));
+    sec.querySelectorAll('[data-periodo-btn]').forEach(function (b) {
+      b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+    });
+  });
+});
+
+/* Filtro de tablas (SMS internacional) */
+document.querySelectorAll('input[data-filtra]').forEach(function (input) {
+  var tabla = document.querySelector(input.getAttribute('data-filtra'));
+  if (!tabla) return;
+  var filas = Array.prototype.slice.call(tabla.tBodies[0].rows);
+  var vacio = document.getElementById('sin-resultados');
+  var norm = function (s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); };
+  input.addEventListener('input', function () {
+    var q = norm(input.value.trim());
+    var visibles = 0;
+    filas.forEach(function (f) {
+      var ok = !q || norm(f.textContent).indexOf(q) !== -1;
+      f.hidden = !ok; if (ok) visibles++;
+    });
+    if (vacio) vacio.hidden = visibles > 0;
+  });
+});

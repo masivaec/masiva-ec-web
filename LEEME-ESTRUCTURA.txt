@@ -1,0 +1,19 @@
+ESTRUCTURA DE public_html DE masiva.ec
+======================================
+
+1. SITIO WEB (estático, HTML/CSS/JS, sin WordPress)
+   - index.html, 404.html, robots.txt, sitemap.xml, .htaccess
+   - /assets/              CSS, JS, fuentes e imágenes del sitio
+   - /<pagina>/index.html  cada página del sitio (whatsapp, sms, email, chatbots-agentes-ia, web, hosting, dominios, clientes, contacto, blog, legales...)
+   - Se publica desde el repositorio GitHub masivaec/masiva-ec-web mediante cPanel > Git Version Control.
+     NO editar estos archivos a mano en el servidor: el siguiente despliegue los sobrescribe.
+
+2. WHMCS (portal de clientes y facturación)
+   - /wclientes/   instalación de WHMCS. Sistema independiente del sitio web.
+   - El .htaccess de la raíz EXCLUYE esta carpeta de las reglas del sitio (no reescribe sus URLs).
+   - Cualquier actualización de WHMCS se hace solo dentro de /wclientes/.
+
+3. LO QUE NO DEBE EXISTIR
+   - Carpetas wp-admin, wp-content, wp-includes ni archivos wp-*.php: el WordPress antiguo fue retirado (respaldo guardado aparte).
+
+Contacto técnico: el administrador del sitio (MASIVA).
