@@ -6,7 +6,7 @@
   /* Cabecera compacta al hacer scroll */
   var cab = document.querySelector(".cabecera");
   if (cab) {
-    var onScroll = function () { cab.classList.toggle("compacta", window.scrollY > 24); };
+    var onScroll = function () { cab.classList.toggle("compacta", window.scrollY > 80); };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
   }
