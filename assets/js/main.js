@@ -34,7 +34,9 @@
     d.addEventListener("mouseenter", function () {
       if (window.matchMedia("(hover:hover)").matches && window.innerWidth > 960) { d.classList.add("abierto"); btn.setAttribute("aria-expanded", "true"); }
     });
-    d.addEventListener("mouseleave", function () { if (window.innerWidth > 960) cerrar(); });
+    var temporizador;
+    d.addEventListener("mouseenter", function () { clearTimeout(temporizador); });
+    d.addEventListener("mouseleave", function () { if (window.innerWidth > 960) temporizador = setTimeout(cerrar, 180); });
     document.addEventListener("click", function (e) { if (!d.contains(e.target)) cerrar(); });
     d.addEventListener("keydown", function (e) { if (e.key === "Escape") { cerrar(); btn.focus(); } });
   });
