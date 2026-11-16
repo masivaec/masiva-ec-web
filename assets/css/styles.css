@@ -154,7 +154,7 @@ p:last-child{margin-bottom:0}
 .corte-oscuro::after{background:var(--carbon)}
 
 /* Logos ------------------------------------------------------------------- */
-.logos{background:var(--negro);padding:clamp(36px,4vw,56px) 0 clamp(36px,4vw,56px)}
+.logos{background:var(--negro);padding:clamp(36px,4vw,56px) 0 calc(clamp(36px,4vw,56px) + clamp(40px,6vw,88px))}
 .logos p{text-align:center;color:rgba(255,255,255,.55);font-size:.95rem;margin-bottom:1.5rem}
 .marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
 .marquee-pista{display:flex;gap:3.5rem;width:max-content;animation:marquee 48s linear infinite}
