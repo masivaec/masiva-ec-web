@@ -286,6 +286,8 @@ REDIRECCIONES = {  # URLs del sitio anterior -> nuevas
     "contactenos": "/contacto/", "home": "/", "chat-bot": "/chatbots-agentes-ia/", "omnicanalidad": "/chatbots-agentes-ia/",
     "whatsapp-marketing-whatsapp-masivo-bulk": "/whatsapp/", "sms-mensajes-de-texto-masivos": "/sms/",
     "informacion-sms": "/sms/", "sms-internacional": "/sms/#internacional", "pagina-calculadora": "/sms/", "correos-electronicos-emails-masivos-mailing": "/email/",
+    "whatsaap-comercial-o-whatsaap-marketing": "/whatsapp-comercial-o-whatsapp-marketing/",
+    "inteligencia-artificial-y-su-sorprendete-importancia": "/inteligencia-artificial-y-su-sorprendente-importancia/",
 }
 if blog_cfg:
     for slug, destino in blog_cfg["descartados"]:

@@ -54,7 +54,7 @@ cd "$(dirname "$0")" || exit 1
 /bin/cp -R inteligencia-artificial-como-catalizador-para-la-reactivacion-economica-y-el-crecimiento-productivo $DEPLOYPATH
 /bin/cp -R inteligencia-artificial-en-la-educacion $DEPLOYPATH
 /bin/cp -R inteligencia-artificial-y-robotica $DEPLOYPATH
-/bin/cp -R inteligencia-artificial-y-su-sorprendete-importancia $DEPLOYPATH
+/bin/cp -R inteligencia-artificial-y-su-sorprendente-importancia $DEPLOYPATH
 /bin/cp -R la-brecha-digital-en-el-mundo $DEPLOYPATH
 /bin/cp -R la-estrategia-customer-centric $DEPLOYPATH
 /bin/cp -R la-importancia-de-la-comunicacion-asertiva $DEPLOYPATH
@@ -107,9 +107,9 @@ cd "$(dirname "$0")" || exit 1
 /bin/cp -R top-10-plataformas-2020-para-crear-una-pagina-web-por-tu-propia-cuenta $DEPLOYPATH
 /bin/cp -R twitch-una-red-social-cada-vez-mas-atractiva $DEPLOYPATH
 /bin/cp -R web $DEPLOYPATH
-/bin/cp -R whatsaap-comercial-o-whatsaap-marketing $DEPLOYPATH
 /bin/cp -R whatsapp $DEPLOYPATH
 /bin/cp -R whatsapp-business-como-canal-de-comunicacion-en-los-negocios $DEPLOYPATH
+/bin/cp -R whatsapp-comercial-o-whatsapp-marketing $DEPLOYPATH
 /bin/cp -R whois $DEPLOYPATH
 /bin/cp -R robots.txt $DEPLOYPATH
 /bin/cp -R sitemap.xml $DEPLOYPATH
