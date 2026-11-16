@@ -5,22 +5,112 @@ deployment:
     - /bin/cp -R index.html $DEPLOYPATH
     - /bin/cp -R 404.html $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R 10-espantosos-cliches-publicitarios-que-habria-que-exterminar-cuanto-antes $DEPLOYPATH
+    - /bin/cp -R 5-nuevas-tecnologias-que-cambian-la-experiencia-de-usuario $DEPLOYPATH
+    - /bin/cp -R 6-consejos-para-vender-por-instagram-eficazmente $DEPLOYPATH
+    - /bin/cp -R 6-razones-para-crear-una-app-para-tu-empresa $DEPLOYPATH
+    - /bin/cp -R aida-que-es-y-como-aplicar-esta-tecnica-de-ventas $DEPLOYPATH
     - /bin/cp -R area-de-clientes $DEPLOYPATH
+    - /bin/cp -R blockchain-que-es-y-como-funciona-esta-tecnologia $DEPLOYPATH
+    - /bin/cp -R blog $DEPLOYPATH
+    - /bin/cp -R branding-personal-marca $DEPLOYPATH
+    - /bin/cp -R chatbot-la-inteligencia-artificial-en-las-aplicaciones-de-mensajeria $DEPLOYPATH
     - /bin/cp -R chatbots-agentes-ia $DEPLOYPATH
     - /bin/cp -R clientes $DEPLOYPATH
+    - /bin/cp -R como-disenar-una-landing-page $DEPLOYPATH
+    - /bin/cp -R como-elegir-un-buen-nombre-de-dominio $DEPLOYPATH
+    - /bin/cp -R como-hacer-la-firma-de-email-perfecta $DEPLOYPATH
+    - /bin/cp -R consejos-para-prevenir-el-spam-en-tu-correo-electronico $DEPLOYPATH
     - /bin/cp -R contacto $DEPLOYPATH
+    - /bin/cp -R cosas-que-deberias-evitar-publicar-en-redes-sociales $DEPLOYPATH
+    - /bin/cp -R crea-tu-plan-de-medios-en-7-pasos $DEPLOYPATH
+    - /bin/cp -R cruelty-free-valor-en-las-marcas $DEPLOYPATH
+    - /bin/cp -R diccionario-publicitario-comercial-y-propaganda $DEPLOYPATH
+    - /bin/cp -R disenar-un-sitio-web-para-tu-marca-personal $DEPLOYPATH
+    - /bin/cp -R doble-factor-de-autenticacion-que-es-y-por-que-lo-necesito $DEPLOYPATH
     - /bin/cp -R dominios $DEPLOYPATH
+    - /bin/cp -R el-ambush-marketing $DEPLOYPATH
+    - /bin/cp -R el-brand-equity $DEPLOYPATH
+    - /bin/cp -R el-cliente-como-foco-principal $DEPLOYPATH
+    - /bin/cp -R el-customer-centric-y-como-ayuda-a-las-empresas-a-fidelizar-a-los-clientes $DEPLOYPATH
+    - /bin/cp -R el-embalaje-para-ecommerce-una-gran-clave-del-marketing-mix $DEPLOYPATH
+    - /bin/cp -R el-famoso-branding $DEPLOYPATH
+    - /bin/cp -R el-marketing-mix $DEPLOYPATH
+    - /bin/cp -R el-papel-de-las-redes-sociales $DEPLOYPATH
+    - /bin/cp -R elementos-clave-y-beneficios-del-blockchain $DEPLOYPATH
     - /bin/cp -R email $DEPLOYPATH
+    - /bin/cp -R errores-basicos-en-el-ecommerce $DEPLOYPATH
+    - /bin/cp -R explora-los-distintos-tipos-de-blockchain $DEPLOYPATH
     - /bin/cp -R formas-de-pago $DEPLOYPATH
     - /bin/cp -R gestion-de-fraudes $DEPLOYPATH
+    - /bin/cp -R herramientas-digitales-para-emprendedores $DEPLOYPATH
     - /bin/cp -R hosting $DEPLOYPATH
+    - /bin/cp -R humaning-marketing-buscando-la-conexion-humana $DEPLOYPATH
+    - /bin/cp -R humanizacion-de-la-tecnologia $DEPLOYPATH
+    - /bin/cp -R humanizacion-de-las-marcas $DEPLOYPATH
+    - /bin/cp -R importancia-de-la-ciberseguridad $DEPLOYPATH
+    - /bin/cp -R importancia-del-emailing-con-nuestros-clientes $DEPLOYPATH
+    - /bin/cp -R importancia-del-uso-de-tu-correo-privado $DEPLOYPATH
+    - /bin/cp -R inteligencia-artificial-como-catalizador-para-la-reactivacion-economica-y-el-crecimiento-productivo $DEPLOYPATH
+    - /bin/cp -R inteligencia-artificial-en-la-educacion $DEPLOYPATH
+    - /bin/cp -R inteligencia-artificial-y-robotica $DEPLOYPATH
+    - /bin/cp -R inteligencia-artificial-y-su-sorprendete-importancia $DEPLOYPATH
+    - /bin/cp -R la-brecha-digital-en-el-mundo $DEPLOYPATH
+    - /bin/cp -R la-estrategia-customer-centric $DEPLOYPATH
+    - /bin/cp -R la-importancia-de-la-comunicacion-asertiva $DEPLOYPATH
+    - /bin/cp -R la-importancia-del-foda $DEPLOYPATH
+    - /bin/cp -R la-importancia-del-teletrabajo-en-epoca-de-coronavirus $DEPLOYPATH
+    - /bin/cp -R la-influencia-de-la-tecnologia-en-nuestra-vida $DEPLOYPATH
+    - /bin/cp -R la-tecnologia-aplica-sus-conocimientos-en-la-necesidad-humana $DEPLOYPATH
+    - /bin/cp -R la-tecnologia-sociedad-pospandemia $DEPLOYPATH
+    - /bin/cp -R la-tendencia-de-la-inteligencia-artificial $DEPLOYPATH
+    - /bin/cp -R las-perchas-y-sus-estrategias $DEPLOYPATH
+    - /bin/cp -R los-mejores-ejemplos-de-tecnologia-moderna $DEPLOYPATH
+    - /bin/cp -R machine-learning $DEPLOYPATH
+    - /bin/cp -R manual-de-ventas-como-vender-mas-y-mejor $DEPLOYPATH
+    - /bin/cp -R marketing-automatizado $DEPLOYPATH
+    - /bin/cp -R marketing-de-colores $DEPLOYPATH
+    - /bin/cp -R marketing-de-contenidos $DEPLOYPATH
+    - /bin/cp -R marketing-de-sabores $DEPLOYPATH
+    - /bin/cp -R marketing-sensorial $DEPLOYPATH
+    - /bin/cp -R marketing-sms-un-recurso-muy-valioso $DEPLOYPATH
+    - /bin/cp -R marketplace-que-es-y-como-impulsar-tus-vendas-por-una-plataforma-online $DEPLOYPATH
+    - /bin/cp -R marketplace-variedad-de-posibilidad-de-ventas $DEPLOYPATH
+    - /bin/cp -R martech-al-humarketing $DEPLOYPATH
+    - /bin/cp -R omnicanalidad-vs-multicanalidad $DEPLOYPATH
+    - /bin/cp -R pagina-web-vs-landing-page $DEPLOYPATH
+    - /bin/cp -R peligro-de-nuestras-contrasenas $DEPLOYPATH
+    - /bin/cp -R plan-de-marketing-en-5-pasos-faciles $DEPLOYPATH
     - /bin/cp -R politica-de-privacidad $DEPLOYPATH
+    - /bin/cp -R psicologia-del-consumidor-en-el-marketing-digital $DEPLOYPATH
+    - /bin/cp -R publicidad-creativa $DEPLOYPATH
+    - /bin/cp -R publicidad-indirecta-la-estrategia-de-publicidad-perfecta $DEPLOYPATH
+    - /bin/cp -R publicidad-programatica $DEPLOYPATH
+    - /bin/cp -R que-es-el-c-commerce $DEPLOYPATH
+    - /bin/cp -R que-es-una-estrategia-multicanal-online $DEPLOYPATH
+    - /bin/cp -R que-herramientas-utilizar-para-un-webinar $DEPLOYPATH
+    - /bin/cp -R que-son-los-numeros-shortcode $DEPLOYPATH
+    - /bin/cp -R que-tan-importante-es-un-blog-para-tu-empresa $DEPLOYPATH
+    - /bin/cp -R recomendaciones-para-reducir-el-riesgo-del-hacking-corporativo $DEPLOYPATH
+    - /bin/cp -R recomendaciones-para-una-campana-de-email-exitosa $DEPLOYPATH
+    - /bin/cp -R reuniones-on-line-2020-google-meet-vs-zoom-diferencias-cual-es-mejor $DEPLOYPATH
+    - /bin/cp -R revolucion-industrial-4-0-lo-que-necesitas-conocer $DEPLOYPATH
     - /bin/cp -R sms $DEPLOYPATH
+    - /bin/cp -R sms-como-herramienta-de-comunicacion $DEPLOYPATH
     - /bin/cp -R sms-internacional $DEPLOYPATH
     - /bin/cp -R sms-publicitarios $DEPLOYPATH
+    - /bin/cp -R tecnicas-de-venta-aplicadas-en-whatsapp $DEPLOYPATH
+    - /bin/cp -R tecnicas-mas-comunes-de-la-publicidad $DEPLOYPATH
+    - /bin/cp -R tendencias-de-la-inteligencia-artificial-en-negocios-para-2021 $DEPLOYPATH
+    - /bin/cp -R tendencias-del-marketing-digital $DEPLOYPATH
     - /bin/cp -R terminos-y-condiciones $DEPLOYPATH
+    - /bin/cp -R tiktok-para-empresas-pasos-para-integrarlo-a-tu-estrategia-de-marketing $DEPLOYPATH
+    - /bin/cp -R top-10-plataformas-2020-para-crear-una-pagina-web-por-tu-propia-cuenta $DEPLOYPATH
+    - /bin/cp -R twitch-una-red-social-cada-vez-mas-atractiva $DEPLOYPATH
     - /bin/cp -R web $DEPLOYPATH
+    - /bin/cp -R whatsaap-comercial-o-whatsaap-marketing $DEPLOYPATH
     - /bin/cp -R whatsapp $DEPLOYPATH
+    - /bin/cp -R whatsapp-business-como-canal-de-comunicacion-en-los-negocios $DEPLOYPATH
     - /bin/cp -R whois $DEPLOYPATH
     - /bin/cp -R robots.txt $DEPLOYPATH
     - /bin/cp -R LEEME-ESTRUCTURA.txt $DEPLOYPATH

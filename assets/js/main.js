@@ -106,3 +106,23 @@ document.querySelectorAll('input[data-filtra]').forEach(function (input) {
     if (vacio) vacio.hidden = visibles > 0;
   });
 });
+
+/* Filtro de categorías del blog (con #categoria en la URL) */
+(function () {
+  var botones = document.querySelectorAll('.filtro[data-filtro]');
+  if (!botones.length) return;
+  var tarjetas = document.querySelectorAll('#lista-blog .post-tarjeta');
+  function aplicar(cat) {
+    if (!document.querySelector('.filtro[data-filtro="' + cat + '"]')) cat = 'todos';
+    botones.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-filtro') === cat ? 'true' : 'false'); });
+    tarjetas.forEach(function (t) { t.hidden = cat !== 'todos' && t.getAttribute('data-cat') !== cat; });
+  }
+  botones.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var cat = b.getAttribute('data-filtro');
+      history.replaceState(null, '', cat === 'todos' ? location.pathname : '#' + cat);
+      aplicar(cat);
+    });
+  });
+  aplicar(location.hash.replace('#', '') || 'todos');
+})();

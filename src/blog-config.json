@@ -1,0 +1,115 @@
+{
+ "descartados": [
+  [
+   "distanciamiento-fisico-acercamiento-virtual",
+   "/blog/"
+  ],
+  [
+   "hiru-el-primer-dispositivo-multiplataforma-que-activa-maquinas-con-la-mirada",
+   "/blog/"
+  ],
+  [
+   "beneficios-de-comprar-likes-en-instagram",
+   "/blog/"
+  ],
+  [
+   "apple-supera-a-amazon-y-google-y-se-convierte-en-la-marca-mas-valiosa-del-mundo",
+   "/blog/"
+  ],
+  [
+   "omegle-una-de-las-redes-sociales-mas-peligrosas",
+   "/blog/"
+  ],
+  [
+   "stalkerware-aplicaciones-poco-eticas",
+   "/blog/"
+  ],
+  [
+   "el-increible-marketing-infantil",
+   "/blog/"
+  ],
+  [
+   "inteligencia-artificial-ayuda-a-predecir-la-evolucion-de-los-pacientes-con-covid-19",
+   "/chatbots-agentes-ia/"
+  ],
+  [
+   "beneficios-de-la-robotica-aplicada-a-la-medicina",
+   "/chatbots-agentes-ia/"
+  ],
+  [
+   "un-amigo-para-frank-la-humanidad-del-robot",
+   "/blog/"
+  ],
+  [
+   "los-mejores-auriculares-auricular-bluetooth-del-futuro",
+   "/blog/"
+  ],
+  [
+   "consejos-para-un-buen-uso-de-la-tecnologia-en-ninos",
+   "/blog/"
+  ],
+  [
+   "tecnoestres-salud-digital",
+   "/blog/"
+  ],
+  [
+   "tecnologia-para-disfrutar-el-arte",
+   "/blog/"
+  ],
+  [
+   "covid-mascarilla-nasal",
+   "/blog/"
+  ],
+  [
+   "tecnologia-innovadora-telemedicina",
+   "/blog/"
+  ],
+  [
+   "que-son-las-criptomonedas",
+   "/blog/"
+  ],
+  [
+   "tecnologia-led-en-los-juegos-olimpicos-2022",
+   "/blog/"
+  ]
+ ],
+ "cta": {
+  "mensajeria": [
+   "¿Quieres llevar esto a tu empresa?",
+   "Activamos WhatsApp Business API oficial, chatbots con IA y SMS corporativo, con soporte humano en Ecuador.",
+   "/whatsapp/",
+   "Conocer WhatsApp API"
+  ],
+  "ia": [
+   "Pon la IA a atender a tus clientes",
+   "Configuramos agentes de IA entrenados con la información de tu empresa, en WhatsApp, Instagram, Messenger y tu web.",
+   "/chatbots-agentes-ia/",
+   "Conocer agentes de IA"
+  ],
+  "email": [
+   "Correos que sí llegan a la bandeja",
+   "Plataforma, API REST o servidor SMTP para tus campañas y correos transaccionales, con dominio de envío autenticado.",
+   "/email/",
+   "Conocer soluciones de email"
+  ],
+  "marketing": [
+   "Lleva tu estrategia a cada canal",
+   "WhatsApp, SMS, email y agentes de IA desde un solo proveedor, para comunicarte con miles de clientes a la vez.",
+   "/contacto/",
+   "Hablar con un asesor"
+  ],
+  "web": [
+   "Tu sitio, rápido y seguro",
+   "Diseñamos sitios web a código o en WordPress, con hosting, dominio y SSL en un solo lugar.",
+   "/web/",
+   "Conocer diseño web"
+  ]
+ },
+ "categorias": {
+  "mensajeria": "WhatsApp y mensajería",
+  "ia": "IA y tecnología",
+  "email": "Email",
+  "marketing": "Marketing y ventas",
+  "web": "Web y seguridad"
+ }
+}
