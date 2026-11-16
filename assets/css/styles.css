@@ -717,3 +717,21 @@ section[id]{scroll-margin-top:90px}
 .fila-precios .tabla-precios{display:flex;flex-direction:column}
 .tabla-pie{margin-top:auto;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:.9rem 1rem;background:var(--tinte);color:var(--carbon);font-size:.85rem;font-weight:500}
 .fila-precios .tabla-precios table{flex:1 1 auto}
+.visual-pila .visual-cierre{flex:1;display:flex;flex-direction:column}
+.oscuro .visual-pie{border-color:var(--linea-oscura)}
+.oscuro .visual-pie strong{color:#fff}
+.oscuro .visual-pie span{color:var(--texto-claro-2)}
+.oscuro .tabla-pie{background:rgba(229,124,29,.14);color:var(--texto-claro)}
+.fila-precios .visual-pila{display:flex;flex-direction:column;gap:1rem}
+.oscuro .tabla-precios{box-shadow:0 30px 60px -30px rgba(0,0,0,.7),0 0 0 1px var(--linea-oscura)}
+.oscuro .tabla-precios table.tabla th{background:var(--negro)}
+.oscuro .tabla-precios table.tabla tbody tr:nth-child(even){background:rgba(255,255,255,.035)}
+.oscuro .tabla-precios table.tabla tbody tr:hover{background:rgba(229,124,29,.14)}
+.oscuro .tabla-precios table.tabla td.precio{color:var(--ambar)}
+.oscuro #precios table.tabla tbody tr{cursor:default}
+@media (max-width:640px){.tabla-precios table.tabla td,.tabla-precios table.tabla th{padding:.8rem .7rem}.tabla-precios table.tabla.compacta td.precio{font-size:.98rem}.tabla-precios table.tabla.compacta{font-size:.9rem}}
+@media (max-width:480px){.tabla-precios table.tabla.compacta td,.tabla-precios table.tabla.compacta th{padding:.75rem .55rem}.tabla-precios table.tabla.compacta{font-size:.84rem}.tabla-precios table.tabla.compacta td.precio{font-size:.92rem}}
+@media (max-width:480px){.tabla-precios table.tabla.compacta th{white-space:normal}}
+.grid-4 .plan .para{min-height:2.7em}
+.etiqueta-sup+h2{margin-top:0}
+.plan>.btn:last-child{margin-top:auto}
