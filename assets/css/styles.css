@@ -379,7 +379,7 @@ p:last-child{margin-bottom:0}
 
 /* escena estática (teléfono fuera del hero principal) */
 .escena.estatica{min-height:0;height:auto;padding:0}
-.escena.estatica .telefono{position:relative;transform:none;margin:0 auto;max-width:320px}
+.escena.estatica .telefono{position:relative;transform:none;margin:0 auto;width:min(380px,100%);max-width:380px}
 .escena.estatica .estela,.escena.estatica .canal{display:none}
 
 /* filas alternadas texto + visual */
@@ -498,6 +498,9 @@ table.tabla td.num{white-space:nowrap}
 
 @media (max-width:960px){
   .hero-pagina-int,.fila,.contacto-grid{grid-template-columns:1fr}
+  .hero-pagina .escena.estatica{order:2;margin-top:1.5rem}
+  .escena.estatica .pantalla{height:auto;max-height:none}
+  .escena.estatica .chat{overflow:visible}
   .fila.invertida>:first-child{order:0}
   .grid-4{grid-template-columns:repeat(2,1fr)}
   .grid-3{grid-template-columns:repeat(2,1fr)}
@@ -522,7 +525,8 @@ table.tabla td.num{white-space:nowrap}
 .hero-pagina .btn-contorno{color:#fff;border-color:rgba(255,255,255,.3)}
 .hero-pagina .btn-contorno:hover{border-color:#fff;background:rgba(255,255,255,.06)}
 .hero-pagina .hero-confianza span{color:var(--texto-claro-2)}
-.escena.estatica .pantalla{min-height:0}
+.escena.estatica .pantalla{min-height:0;height:auto}
+.escena.estatica .msg{font-size:.9rem}
 table.tabla.compacta td,table.tabla.compacta th{white-space:nowrap}
 @media (max-width:600px){
   table.tabla{font-size:.85rem}
