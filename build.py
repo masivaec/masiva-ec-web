@@ -150,6 +150,14 @@ for it in items:
     yml += "    - /bin/cp -R %s $DEPLOYPATH\n" % it
 open(os.path.join(RAIZ, ".cpanel.yml"), "w").write(yml)
 
+# deploy.sh: lo ejecuta el cron de cPanel después de git pull (mismo contenido que .cpanel.yml)
+sh = "#!/bin/bash\n# Generado por build.py. Copia el sitio al subdominio. No editar a mano.\n"
+sh += "DEPLOYPATH=/home/mamascloud/nuevo.masiva.ec/\n"
+sh += 'cd "$(dirname "$0")" || exit 1\n'
+for it in items:
+    sh += "/bin/cp -R %s $DEPLOYPATH\n" % it
+open(os.path.join(RAIZ, "deploy.sh"), "w").write(sh)
+
 print("Páginas generadas:", len(salidas))
 for p in salidas:
     print("  ", p)
