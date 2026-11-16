@@ -14,7 +14,8 @@ import os, re, json, html, glob, datetime
 RAIZ = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(RAIZ, "src")
 DOMINIO = "https://masiva.ec"
-STAGING = True  # True = noindex en todas las páginas (quitar al pasar a producción)
+STAGING = True  # True = sitio de prueba (noindex). False = producción.
+DEPLOYPATH = "/home/mamascloud/nuevo.masiva.ec/" if STAGING else "/home/mamascloud/public_html/"
 
 cabecera = open(os.path.join(SRC, "partials", "cabecera.html"), encoding="utf-8").read()
 pie = open(os.path.join(SRC, "partials", "pie.html"), encoding="utf-8").read()
@@ -259,20 +260,106 @@ if os.path.exists(os.path.join(SRC, "pages_extra", "404.html")):
         cabecera=cabecera, contenido=contenido, pie=pie, extra_js="", og_image=DOMINIO + "/assets/img/og-masiva.png")
     open(os.path.join(RAIZ, "404.html"), "w", encoding="utf-8").write(pagina)
 
+
+# ============================================================== robots, sitemap, .htaccess
+hoy = datetime.date.today().isoformat()
+if STAGING:
+    robots_txt = "# Sitio de prueba: no indexar\nUser-agent: *\nDisallow: /\n"
+else:
+    robots_txt = "User-agent: *\nDisallow: /wclientes/\nDisallow: /area-de-clientes/\nDisallow: /whois/\n\nSitemap: %s/sitemap.xml\n" % DOMINIO
+open(os.path.join(RAIZ, "robots.txt"), "w").write(robots_txt)
+
+NO_SITEMAP = {"/area-de-clientes/", "/whois/"}
+fechas = {a["path"]: a.get("modificado", a["fecha"]) for a in articulos}
+sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+for pth in sorted(set(salidas)):
+    if pth in NO_SITEMAP: continue
+    sm += "  <url><loc>%s%s</loc><lastmod>%s</lastmod></url>\n" % (DOMINIO, pth, fechas.get(pth, hoy))
+sm += "</urlset>\n"
+open(os.path.join(RAIZ, "sitemap.xml"), "w").write(sm)
+
+REDIRECCIONES = {  # URLs del sitio anterior -> nuevas
+    "contactenos": "/contacto/", "home": "/", "chat-bot": "/chatbots-agentes-ia/", "omnicanalidad": "/chatbots-agentes-ia/",
+    "whatsapp-marketing-whatsapp-masivo-bulk": "/whatsapp/", "sms-mensajes-de-texto-masivos": "/sms/",
+    "informacion-sms": "/sms/", "pagina-calculadora": "/sms/", "correos-electronicos-emails-masivos-mailing": "/email/",
+}
+if blog_cfg:
+    for slug, destino in blog_cfg["descartados"]:
+        REDIRECCIONES[slug] = destino
+ht = """# masiva.ec - generado por build.py (no editar a mano en el servidor)
+# El bloque de PHP de cPanel (handler) se conserva aparte: ver htaccess-cpanel.txt
+
+DirectoryIndex index.html index.php
+Options -Indexes
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# 1) WHMCS y validaciones SSL: no se tocan
+RewriteRule ^wclientes(/|$) - [L]
+RewriteRule ^\\.well-known/ - [L]
+
+# 2) HTTPS siempre y sin www
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\\.masiva\\.ec$ [NC]
+RewriteRule ^ https://masiva.ec%{REQUEST_URI} [R=301,L]
+
+# 3) URLs del sitio anterior
+"""
+for viejo, nuevo in sorted(REDIRECCIONES.items()):
+    ht += "RewriteRule ^%s/?$ %s [R=301,L]\n" % (re.escape(viejo).replace("\\-", "-"), nuevo)
+ht += """RewriteRule ^(category|tag|author)/ /blog/ [R=301,L]
+RewriteRule ^(feed|comments/feed)/?$ /blog/ [R=301,L]
+RewriteRule ^wp-(login|signup|activate|cron|trackback|comments-post)\\.php$ - [G,L]
+RewriteRule ^xmlrpc\\.php$ - [G,L]
+RewriteRule ^wp-(admin|includes|content|json)(/|$) - [G,L]
+</IfModule>
+
+# Caché del navegador
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType text/css "access plus 7 days"
+ExpiresByType application/javascript "access plus 7 days"
+ExpiresByType text/javascript "access plus 7 days"
+</IfModule>
+
+# Compresión
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript image/svg+xml application/json text/xml application/xml
+</IfModule>
+
+# Seguridad básica
+<IfModule mod_headers.c>
+Header set X-Content-Type-Options "nosniff"
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+"""
+extra_ht = os.path.join(RAIZ, "src", "htaccess-cpanel.txt")
+if os.path.exists(extra_ht):
+    ht += "\n" + open(extra_ht).read()
+open(os.path.join(RAIZ, ".htaccess"), "w").write(ht)
+
 # .cpanel.yml con todo lo publicable
 dirs = sorted({p.strip("/").split("/")[0] for p in salidas if p != "/"})
 items = ["index.html", "404.html", "assets"] + dirs
 for extra in ("robots.txt", "sitemap.xml", ".htaccess", "LEEME-ESTRUCTURA.txt"):
     if os.path.exists(os.path.join(RAIZ, extra)):
         items.append(extra)
-yml = "---\ndeployment:\n  tasks:\n    - export DEPLOYPATH=/home/mamascloud/nuevo.masiva.ec/\n"
+yml = "---\ndeployment:\n  tasks:\n    - export DEPLOYPATH=%s\n" % DEPLOYPATH
 for it in items:
     yml += "    - /bin/cp -R %s $DEPLOYPATH\n" % it
 open(os.path.join(RAIZ, ".cpanel.yml"), "w").write(yml)
 
 # deploy.sh: lo ejecuta el cron de cPanel después de git pull (mismo contenido que .cpanel.yml)
 sh = "#!/bin/bash\n# Generado por build.py. Copia el sitio al subdominio. No editar a mano.\n"
-sh += "DEPLOYPATH=/home/mamascloud/nuevo.masiva.ec/\n"
+sh += "DEPLOYPATH=%s\n" % DEPLOYPATH
 sh += 'cd "$(dirname "$0")" || exit 1\n'
 for it in items:
     sh += "/bin/cp -R %s $DEPLOYPATH\n" % it

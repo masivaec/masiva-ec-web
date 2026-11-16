@@ -1,0 +1,78 @@
+# masiva.ec - generado por build.py (no editar a mano en el servidor)
+# El bloque de PHP de cPanel (handler) se conserva aparte: ver htaccess-cpanel.txt
+
+DirectoryIndex index.html index.php
+Options -Indexes
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# 1) WHMCS y validaciones SSL: no se tocan
+RewriteRule ^wclientes(/|$) - [L]
+RewriteRule ^\.well-known/ - [L]
+
+# 2) HTTPS siempre y sin www
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.masiva\.ec$ [NC]
+RewriteRule ^ https://masiva.ec%{REQUEST_URI} [R=301,L]
+
+# 3) URLs del sitio anterior
+RewriteRule ^apple-supera-a-amazon-y-google-y-se-convierte-en-la-marca-mas-valiosa-del-mundo/?$ /blog/ [R=301,L]
+RewriteRule ^beneficios-de-comprar-likes-en-instagram/?$ /blog/ [R=301,L]
+RewriteRule ^beneficios-de-la-robotica-aplicada-a-la-medicina/?$ /chatbots-agentes-ia/ [R=301,L]
+RewriteRule ^chat-bot/?$ /chatbots-agentes-ia/ [R=301,L]
+RewriteRule ^consejos-para-un-buen-uso-de-la-tecnologia-en-ninos/?$ /blog/ [R=301,L]
+RewriteRule ^contactenos/?$ /contacto/ [R=301,L]
+RewriteRule ^correos-electronicos-emails-masivos-mailing/?$ /email/ [R=301,L]
+RewriteRule ^covid-mascarilla-nasal/?$ /blog/ [R=301,L]
+RewriteRule ^distanciamiento-fisico-acercamiento-virtual/?$ /blog/ [R=301,L]
+RewriteRule ^el-increible-marketing-infantil/?$ /blog/ [R=301,L]
+RewriteRule ^hiru-el-primer-dispositivo-multiplataforma-que-activa-maquinas-con-la-mirada/?$ /blog/ [R=301,L]
+RewriteRule ^home/?$ / [R=301,L]
+RewriteRule ^informacion-sms/?$ /sms/ [R=301,L]
+RewriteRule ^inteligencia-artificial-ayuda-a-predecir-la-evolucion-de-los-pacientes-con-covid-19/?$ /chatbots-agentes-ia/ [R=301,L]
+RewriteRule ^los-mejores-auriculares-auricular-bluetooth-del-futuro/?$ /blog/ [R=301,L]
+RewriteRule ^omegle-una-de-las-redes-sociales-mas-peligrosas/?$ /blog/ [R=301,L]
+RewriteRule ^omnicanalidad/?$ /chatbots-agentes-ia/ [R=301,L]
+RewriteRule ^pagina-calculadora/?$ /sms/ [R=301,L]
+RewriteRule ^que-son-las-criptomonedas/?$ /blog/ [R=301,L]
+RewriteRule ^sms-mensajes-de-texto-masivos/?$ /sms/ [R=301,L]
+RewriteRule ^stalkerware-aplicaciones-poco-eticas/?$ /blog/ [R=301,L]
+RewriteRule ^tecnoestres-salud-digital/?$ /blog/ [R=301,L]
+RewriteRule ^tecnologia-innovadora-telemedicina/?$ /blog/ [R=301,L]
+RewriteRule ^tecnologia-led-en-los-juegos-olimpicos-2022/?$ /blog/ [R=301,L]
+RewriteRule ^tecnologia-para-disfrutar-el-arte/?$ /blog/ [R=301,L]
+RewriteRule ^un-amigo-para-frank-la-humanidad-del-robot/?$ /blog/ [R=301,L]
+RewriteRule ^whatsapp-marketing-whatsapp-masivo-bulk/?$ /whatsapp/ [R=301,L]
+RewriteRule ^(category|tag|author)/ /blog/ [R=301,L]
+RewriteRule ^(feed|comments/feed)/?$ /blog/ [R=301,L]
+RewriteRule ^wp-(login|signup|activate|cron|trackback|comments-post)\.php$ - [G,L]
+RewriteRule ^xmlrpc\.php$ - [G,L]
+RewriteRule ^wp-(admin|includes|content|json)(/|$) - [G,L]
+</IfModule>
+
+# Caché del navegador
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType text/css "access plus 7 days"
+ExpiresByType application/javascript "access plus 7 days"
+ExpiresByType text/javascript "access plus 7 days"
+</IfModule>
+
+# Compresión
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript image/svg+xml application/json text/xml application/xml
+</IfModule>
+
+# Seguridad básica
+<IfModule mod_headers.c>
+Header set X-Content-Type-Options "nosniff"
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

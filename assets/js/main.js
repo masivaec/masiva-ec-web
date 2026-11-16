@@ -126,3 +126,18 @@ document.querySelectorAll('input[data-filtra]').forEach(function (input) {
   });
   aplicar(location.hash.replace('#', '') || 'todos');
 })();
+
+/* Formularios de contacto: arman el mensaje y lo abren en WhatsApp (temporal, hasta conectar el CRM) */
+document.querySelectorAll('form[data-whatsapp]').forEach(function (f) {
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!f.reportValidity()) return;
+    var lineas = ['Hola MASIVA, quiero información.'];
+    f.querySelectorAll('input[name], select[name], textarea[name]').forEach(function (c) {
+      var v = (c.value || '').trim(); if (!v) return;
+      var et = f.querySelector('label[for="' + c.id + '"]');
+      lineas.push((et ? et.textContent.trim() : c.name) + ': ' + v);
+    });
+    window.open('https://wa.me/593994488880?text=' + encodeURIComponent(lineas.join('\n')), '_blank', 'noopener');
+  });
+});

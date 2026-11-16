@@ -113,4 +113,6 @@ deployment:
     - /bin/cp -R whatsapp-business-como-canal-de-comunicacion-en-los-negocios $DEPLOYPATH
     - /bin/cp -R whois $DEPLOYPATH
     - /bin/cp -R robots.txt $DEPLOYPATH
+    - /bin/cp -R sitemap.xml $DEPLOYPATH
+    - /bin/cp -R .htaccess $DEPLOYPATH
     - /bin/cp -R LEEME-ESTRUCTURA.txt $DEPLOYPATH
