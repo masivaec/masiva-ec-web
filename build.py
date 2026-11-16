@@ -230,7 +230,7 @@ if blog_cfg:
   <div class="contenedor hero-pagina-int"><div>
     <nav class="migas" aria-label="Ruta"><a href="/">Inicio</a><span>Blog</span></nav>
     <h1>Blog de comunicación, tecnología y marketing</h1>
-    <p class="lead">Noticias, guías y ideas sobre WhatsApp, SMS, email, inteligencia artificial y marketing para empresas que se comunican con miles de personas.</p>
+    <p class="lead">Noticias, guías e ideas sobre WhatsApp, SMS, email, inteligencia artificial y marketing para empresas que se comunican con miles de personas.</p>
   </div></div>
 </section>
 <section class="seccion">
