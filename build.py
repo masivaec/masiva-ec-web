@@ -227,7 +227,7 @@ if blog_cfg:
   <div class="contenedor hero-pagina-int"><div>
     <nav class="migas" aria-label="Ruta"><a href="/">Inicio</a><span>Blog</span></nav>
     <h1>Blog de comunicación, tecnología y marketing</h1>
-    <p class="lead">Guías y ideas sobre WhatsApp, SMS, email, inteligencia artificial y marketing para empresas que se comunican con miles de personas.</p>
+    <p class="lead">Noticias, guías y ideas sobre WhatsApp, SMS, email, inteligencia artificial y marketing para empresas que se comunican con miles de personas.</p>
   </div></div>
 </section>
 <section class="seccion">
@@ -240,7 +240,7 @@ if blog_cfg:
     lista_ld = {"@context": "https://schema.org", "@type": "Blog", "name": "Blog de MASIVA", "url": DOMINIO + "/blog/",
                 "blogPost": [{"@type": "BlogPosting", "headline": a["titulo"], "url": DOMINIO + a["path"]} for a in articulos[:20]]}
     pagina = PLANTILLA.format(title="Blog de comunicación, tecnología y marketing | MASIVA",
-                              description="Guías sobre WhatsApp Business API, SMS, email, chatbots, inteligencia artificial y marketing para empresas en Ecuador.",
+                              description="Noticias y guías sobre WhatsApp Business API, SMS, email, chatbots, inteligencia artificial y marketing para empresas en Ecuador.",
                               og_title="Blog de MASIVA", canonical=DOMINIO + "/blog/", dominio=DOMINIO, robots=robots,
                               jsonld='<script type="application/ld+json">\n' + json.dumps(lista_ld, ensure_ascii=False) + "\n</script>\n",
                               body_class="", cabecera=marcar_activo(cabecera, "/blog/"), contenido=contenido, pie=pie.strip("\n"),
