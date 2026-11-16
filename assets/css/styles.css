@@ -706,3 +706,14 @@ section[id]{scroll-margin-top:90px}
 #tabla-paises td:first-child{position:relative;padding-left:calc(1rem + 24px + .6rem)}
 #tabla-paises td:first-child .bandera{position:absolute;left:1rem;top:50%;transform:translateY(-50%);margin:0}
 @media (max-width:640px){#tabla-paises td:first-child{padding-left:calc(.6rem + 24px + .5rem)}#tabla-paises td:first-child .bandera{left:.6rem}}
+
+.fila-precios{align-items:stretch;padding-top:0}
+.fila-precios .visual{display:flex;flex-direction:column}
+.visual-pie{margin-top:auto;padding-top:1.1rem;border-top:1px solid var(--linea);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.visual-pie>div{flex:1 1 200px}
+.visual-pie strong{display:block;font-family:var(--sora);font-size:1rem;color:var(--carbon)}
+.visual-pie span{font-size:.9rem;color:var(--gris-2)}
+.visual-pie .btn{flex:none;padding:.7rem 1.2rem;font-size:.92rem}
+.fila-precios .tabla-precios{display:flex;flex-direction:column}
+.tabla-pie{margin-top:auto;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:.9rem 1rem;background:var(--tinte);color:var(--carbon);font-size:.85rem;font-weight:500}
+.fila-precios .tabla-precios table{flex:1 1 auto}
