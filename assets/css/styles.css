@@ -607,25 +607,36 @@ table.tabla.compacta td,table.tabla.compacta th{white-space:nowrap}
 .post-info .chip{align-self:flex-start}
 
 /* ==========================================================================
-   Tarjetas: volteo a naranja al pasar el cursor
+   Tarjetas descriptivas: mancha naranja que nace donde entra el cursor
    ========================================================================== */
-.grid-2>.tarjeta,.grid-3>.tarjeta,.grid-4>.tarjeta,.porque,.sector{position:relative;overflow:hidden;isolation:isolate;transform-style:preserve-3d;transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .3s,color .3s}
-.grid-2,.grid-3,.grid-4,.porque-grid,.sectores{perspective:1200px}
-.grid-2>.tarjeta::after,.grid-3>.tarjeta::after,.grid-4>.tarjeta::after,.porque::after,.sector::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(135deg,var(--naranja),#CF6A14);transform:translateX(-115%) skewX(-8deg);transform-origin:left;transition:transform .5s var(--ease);pointer-events:none}
+.grid-2>.tarjeta:not(.plan),.grid-3>.tarjeta:not(.plan),.grid-4>.tarjeta:not(.plan),.porque,.sector{position:relative;overflow:hidden;isolation:isolate;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s,color .3s}
+.grid-2>.tarjeta:not(.plan)::after,.grid-3>.tarjeta:not(.plan)::after,.grid-4>.tarjeta:not(.plan)::after,.porque::after,.sector::after{content:"";position:absolute;z-index:-1;left:var(--mx,50%);top:var(--my,50%);width:0;height:0;border-radius:50%;transform:translate(-50%,-50%);background:linear-gradient(135deg,var(--naranja),#CF6A14);transition:width .6s var(--ease),height .6s var(--ease);pointer-events:none}
 @media (hover:hover) and (prefers-reduced-motion:no-preference){
-  .grid-2>.tarjeta:hover,.grid-3>.tarjeta:hover,.grid-4>.tarjeta:hover,.porque:hover,.sector:hover{transform:rotateY(-7deg) rotateX(4deg) translateY(-6px);box-shadow:0 34px 60px -30px rgba(229,124,29,.55);border-color:transparent}
-  .grid-2>.tarjeta:hover::after,.grid-3>.tarjeta:hover::after,.grid-4>.tarjeta:hover::after,.porque:hover::after,.sector:hover::after{transform:translateX(0) skewX(0)}
-  .grid-2>.tarjeta:hover,.grid-3>.tarjeta:hover,.grid-4>.tarjeta:hover,.porque:hover,.sector:hover,
-  .grid-2>.tarjeta:hover *,.grid-3>.tarjeta:hover *,.grid-4>.tarjeta:hover *,.porque:hover *,.sector:hover *{color:#fff}
-  .grid-2>.tarjeta:hover .icono,.grid-3>.tarjeta:hover .icono,.grid-4>.tarjeta:hover .icono{background:rgba(255,255,255,.18);color:#fff;transform:rotate(-6deg)}
+  .grid-2>.tarjeta:not(.plan):hover,.grid-3>.tarjeta:not(.plan):hover,.grid-4>.tarjeta:not(.plan):hover,.porque:hover,.sector:hover{transform:translateY(-4px);box-shadow:0 30px 50px -28px rgba(229,124,29,.55);border-color:transparent}
+  .grid-2>.tarjeta:not(.plan):hover::after,.grid-3>.tarjeta:not(.plan):hover::after,.grid-4>.tarjeta:not(.plan):hover::after,.porque:hover::after,.sector:hover::after{width:1400px;height:1400px}
+  .grid-2>.tarjeta:not(.plan):hover,.grid-3>.tarjeta:not(.plan):hover,.grid-4>.tarjeta:not(.plan):hover,.porque:hover,.sector:hover,
+  .grid-2>.tarjeta:not(.plan):hover *,.grid-3>.tarjeta:not(.plan):hover *,.grid-4>.tarjeta:not(.plan):hover *,.porque:hover *,.sector:hover *{color:#fff}
+  .grid-2>.tarjeta:not(.plan):hover .icono,.grid-3>.tarjeta:not(.plan):hover .icono,.grid-4>.tarjeta:not(.plan):hover .icono{background:rgba(255,255,255,.18);color:#fff;transform:rotate(-6deg)}
   .porque:hover svg{color:#fff}
   .porque:hover::before{background:#fff}
   .sector:hover .caso{color:#fff;border-color:rgba(255,255,255,.35)}
-  .tarjeta:hover .enlace{color:#fff;text-decoration:underline}
-  .tarjeta.plan:hover .precio,.tarjeta.plan:hover .regalo,.tarjeta.plan:hover .para{color:#fff}
-  .tarjeta.plan:hover .btn-primario{background:#fff;color:var(--naranja-prof)}
-  .tarjeta.plan:hover li{border-color:rgba(255,255,255,.25)}
-  .tarjeta:hover .chip{background:rgba(255,255,255,.2);color:#fff}
+  .tarjeta:not(.plan):hover .enlace{color:#fff;text-decoration:underline}
+  .tarjeta:not(.plan):hover .chip{background:rgba(255,255,255,.2);color:#fff}
+}
+
+/* ==========================================================================
+   Tarjetas de precios (planes y dominios): brillo que barre + línea inferior
+   ========================================================================== */
+.tarjeta.plan{position:relative;overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s var(--ease),border-color .3s}
+.tarjeta.plan::before{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.8),transparent);transform:skewX(-20deg);pointer-events:none;z-index:1}
+.tarjeta.plan::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--naranja);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);z-index:1}
+.tarjeta.plan .precio{transform-origin:left center;transition:transform .35s var(--ease)}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  .tarjeta.plan:hover{transform:translateY(-4px);background:linear-gradient(160deg,#fff 40%,var(--tinte));box-shadow:0 30px 50px -28px rgba(229,124,29,.4)}
+  .tarjeta.plan:hover::before{left:120%;transition:left .7s var(--ease)}
+  .tarjeta.plan:hover::after{transform:scaleX(1)}
+  .tarjeta.plan:hover .precio{transform:scale(1.06)}
+  .tarjeta.plan:hover h3{color:var(--naranja-prof)}
 }
 .tarjeta .icono,.porque>svg,.sector .caso,.tarjeta .enlace,.tarjeta p,.tarjeta h3,.porque h3,.porque p,.sector h3,.sector p{transition:color .3s,background .3s,transform .3s var(--ease)}
 

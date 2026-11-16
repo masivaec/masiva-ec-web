@@ -213,3 +213,12 @@ document.querySelectorAll('[data-scroll]').forEach(function (el) {
   var f = function () { el.classList.toggle('al-final', el.scrollTop + el.clientHeight >= el.scrollHeight - 4); };
   el.addEventListener('scroll', f); f();
 });
+
+/* Tarjetas: guardar el punto donde entra el cursor para la mancha naranja */
+document.querySelectorAll('.grid-2>.tarjeta,.grid-3>.tarjeta,.grid-4>.tarjeta,.porque,.sector').forEach(function (c) {
+  if (c.classList.contains('plan')) return;
+  c.addEventListener('pointerenter', function (e) {
+    var r = c.getBoundingClientRect();
+    c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+});
