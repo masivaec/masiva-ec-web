@@ -112,7 +112,7 @@ p:last-child{margin-bottom:0}
   radial-gradient(900px 500px at 85% 20%,rgba(231,97,12,.22),transparent 60%),
   radial-gradient(600px 400px at 10% 100%,rgba(245,154,35,.10),transparent 60%)}
 .hero-int{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,6vw,80px);align-items:center}
-.hero h1{color:#fff;max-width:14ch}
+.hero h1{color:#fff;max-width:15ch;font-size:clamp(2rem,4.6vw,3.6rem)}
 .hero .lead{max-width:48ch;margin:1.5rem 0 2.25rem}
 .hero-botones{display:flex;flex-wrap:wrap;gap:.9rem}
 .hero-confianza{display:flex;flex-wrap:wrap;gap:1.25rem 2rem;margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--linea-oscura);color:var(--texto-claro-2);font-size:.95rem}
