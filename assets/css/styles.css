@@ -605,3 +605,26 @@ table.tabla.compacta td,table.tabla.compacta th{white-space:nowrap}
   .filtro{flex:none}
 }
 .post-info .chip{align-self:flex-start}
+
+/* ==========================================================================
+   Tarjetas: volteo a naranja al pasar el cursor
+   ========================================================================== */
+.grid-2>.tarjeta,.grid-3>.tarjeta,.grid-4>.tarjeta,.porque,.sector{position:relative;overflow:hidden;isolation:isolate;transform-style:preserve-3d;transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .3s,color .3s}
+.grid-2,.grid-3,.grid-4,.porque-grid,.sectores{perspective:1200px}
+.grid-2>.tarjeta::after,.grid-3>.tarjeta::after,.grid-4>.tarjeta::after,.porque::after,.sector::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(135deg,var(--naranja),#CF6A14);transform:translateX(-115%) skewX(-8deg);transform-origin:left;transition:transform .5s var(--ease);pointer-events:none}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  .grid-2>.tarjeta:hover,.grid-3>.tarjeta:hover,.grid-4>.tarjeta:hover,.porque:hover,.sector:hover{transform:rotateY(-7deg) rotateX(4deg) translateY(-6px);box-shadow:0 34px 60px -30px rgba(229,124,29,.55);border-color:transparent}
+  .grid-2>.tarjeta:hover::after,.grid-3>.tarjeta:hover::after,.grid-4>.tarjeta:hover::after,.porque:hover::after,.sector:hover::after{transform:translateX(0) skewX(0)}
+  .grid-2>.tarjeta:hover,.grid-3>.tarjeta:hover,.grid-4>.tarjeta:hover,.porque:hover,.sector:hover,
+  .grid-2>.tarjeta:hover *,.grid-3>.tarjeta:hover *,.grid-4>.tarjeta:hover *,.porque:hover *,.sector:hover *{color:#fff}
+  .grid-2>.tarjeta:hover .icono,.grid-3>.tarjeta:hover .icono,.grid-4>.tarjeta:hover .icono{background:rgba(255,255,255,.18);color:#fff;transform:rotate(-6deg)}
+  .porque:hover svg{color:#fff}
+  .porque:hover::before{background:#fff}
+  .sector:hover .caso{color:#fff;border-color:rgba(255,255,255,.35)}
+  .tarjeta:hover .enlace{color:#fff;text-decoration:underline}
+  .tarjeta.plan:hover .precio,.tarjeta.plan:hover .regalo,.tarjeta.plan:hover .para{color:#fff}
+  .tarjeta.plan:hover .btn-primario{background:#fff;color:var(--naranja-prof)}
+  .tarjeta.plan:hover li{border-color:rgba(255,255,255,.25)}
+  .tarjeta:hover .chip{background:rgba(255,255,255,.2);color:#fff}
+}
+.tarjeta .icono,.porque>svg,.sector .caso,.tarjeta .enlace,.tarjeta p,.tarjeta h3,.porque h3,.porque p,.sector h3,.sector p{transition:color .3s,background .3s,transform .3s var(--ease)}
