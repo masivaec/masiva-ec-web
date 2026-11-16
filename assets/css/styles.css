@@ -97,8 +97,9 @@ p:last-child{margin-bottom:0}
 .submenu a:hover{background:var(--tinte);color:var(--naranja-prof)}
 .submenu li.separado{border-top:1px solid var(--linea);margin-top:.35rem;padding-top:.35rem}
 .cab-cta{display:flex;align-items:center;gap:.75rem}
-.cab-cta .btn{min-height:44px;padding:0 1.15rem;font-size:.92rem;background:var(--carbon);box-shadow:none}
-.cab-cta .btn:hover{background:var(--negro)}
+.cab-cta .btn{min-height:44px;padding:0 1.15rem;font-size:.92rem;background:#fff;color:var(--carbon);box-shadow:0 6px 18px -10px rgba(0,0,0,.45)}
+.cab-cta .btn:hover{background:var(--tinte);color:var(--carbon)}
+.cab-cta .btn:active{background:#F3E3D6}
 .nav-cta-movil{display:none}
 .hamburguesa{display:none;width:44px;height:44px;background:none;border:0;padding:10px;color:#fff;border-radius:8px}
 .hamburguesa span{display:block;height:2px;background:currentColor;margin:5px 0;transition:transform var(--t-fast) var(--ease),opacity var(--t-fast)}
@@ -325,7 +326,7 @@ p:last-child{margin-bottom:0}
   .submenu li.separado{border-color:rgba(255,255,255,.18)}
   .cabecera.menu-abierto .nav-cta-movil{display:block;margin-top:1rem}
   .nav-cta-movil{display:none}
-  .cabecera.menu-abierto .nav-cta-movil .btn{width:100%;justify-content:center;background:var(--carbon);color:#fff;padding:.9rem 1.2rem;border-radius:999px;font-size:1rem}
+  .cabecera.menu-abierto .nav-cta-movil .btn{width:100%;justify-content:center;background:#fff;color:var(--carbon);padding:.9rem 1.2rem;border-radius:999px;font-size:1rem}
   .hero-int,.plataforma-int,.nosotros-int,.cta-int{grid-template-columns:1fr}
   .hero{padding-top:40px}
   .hero h1{max-width:none}
