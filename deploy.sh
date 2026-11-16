@@ -1,6 +1,6 @@
 #!/bin/bash
 # Generado por build.py. Copia el sitio al subdominio. No editar a mano.
-DEPLOYPATH=/home/mamascloud/nuevo.masiva.ec/
+DEPLOYPATH=/home/mamascloud/public_html/
 cd "$(dirname "$0")" || exit 1
 /bin/cp -R index.html $DEPLOYPATH
 /bin/cp -R 404.html $DEPLOYPATH

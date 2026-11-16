@@ -14,7 +14,7 @@ import os, re, json, html, glob, datetime
 RAIZ = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(RAIZ, "src")
 DOMINIO = "https://masiva.ec"
-STAGING = True  # True = sitio de prueba (noindex). False = producción.
+STAGING = False  # True = sitio de prueba (noindex). False = producción.
 DEPLOYPATH = "/home/mamascloud/nuevo.masiva.ec/" if STAGING else "/home/mamascloud/public_html/"
 
 cabecera = open(os.path.join(SRC, "partials", "cabecera.html"), encoding="utf-8").read()

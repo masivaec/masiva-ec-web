@@ -1,3 +1,6 @@
-# Sitio de prueba: no indexar
 User-agent: *
-Disallow: /
+Disallow: /wclientes/
+Disallow: /area-de-clientes/
+Disallow: /whois/
+
+Sitemap: https://masiva.ec/sitemap.xml
