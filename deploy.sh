@@ -97,7 +97,6 @@ cd "$(dirname "$0")" || exit 1
 /bin/cp -R revolucion-industrial-4-0-lo-que-necesitas-conocer $DEPLOYPATH
 /bin/cp -R sms $DEPLOYPATH
 /bin/cp -R sms-como-herramienta-de-comunicacion $DEPLOYPATH
-/bin/cp -R sms-internacional $DEPLOYPATH
 /bin/cp -R sms-publicitarios $DEPLOYPATH
 /bin/cp -R tecnicas-de-venta-aplicadas-en-whatsapp $DEPLOYPATH
 /bin/cp -R tecnicas-mas-comunes-de-la-publicidad $DEPLOYPATH

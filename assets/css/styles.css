@@ -628,3 +628,67 @@ table.tabla.compacta td,table.tabla.compacta th{white-space:nowrap}
   .tarjeta:hover .chip{background:rgba(255,255,255,.2);color:#fff}
 }
 .tarjeta .icono,.porque>svg,.sector .caso,.tarjeta .enlace,.tarjeta p,.tarjeta h3,.porque h3,.porque p,.sector h3,.sector p{transition:color .3s,background .3s,transform .3s var(--ease)}
+
+/* ==========================================================================
+   SMS: tabla de precios con vida y selector de países
+   ========================================================================== */
+.bandera-titulo{display:inline-block;width:44px;height:33px;border-radius:6px;vertical-align:-.12em;margin-right:.6rem;box-shadow:0 4px 12px -4px rgba(0,0,0,.4)}
+.bandera{display:inline-block;width:24px;height:18px;border-radius:3px;vertical-align:-.2em;margin-right:.6rem;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.tabla-precios{border:0;box-shadow:0 30px 60px -34px rgba(38,38,38,.45),0 0 0 1px var(--linea);overflow:hidden}
+.tabla-titulo{background:linear-gradient(135deg,var(--naranja),#CF6A14);color:#fff;font-family:var(--sora);font-weight:700;font-size:1.05rem;padding:1rem 1.25rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .8rem}
+.tabla-titulo small{font-family:var(--inter);font-weight:500;font-size:.82rem;opacity:.9}
+.tabla-precios table.tabla th{background:var(--carbon);color:#fff;border-bottom:0}
+.tabla-precios table.tabla tbody tr:nth-child(even){background:var(--crema)}
+.tabla-precios table.tabla tbody tr{transition:background var(--t-fast)}
+.tabla-precios table.tabla tbody tr:hover{background:var(--tinte)}
+.tabla-precios table.tabla td.precio{color:var(--naranja-prof);font-size:1.05rem}
+.tabla-precios table.tabla td,.tabla-precios table.tabla th{padding:.9rem 1.25rem}
+
+.pais-panel{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);background:var(--carbon-2);border:1px solid var(--linea-oscura);border-radius:var(--r-lg);padding:clamp(20px,3vw,40px);margin-bottom:clamp(40px,5vw,64px);box-shadow:0 40px 80px -50px rgba(0,0,0,.8)}
+.pais-panel>*{min-width:0}
+.pais-selector label{display:block;font-family:var(--sora);font-weight:600;color:#fff;margin-bottom:.6rem}
+.pais-combo{position:relative}
+.pais-boton{width:100%;display:flex;align-items:center;justify-content:space-between;gap:.8rem;background:#fff;color:var(--carbon);border:2px solid transparent;border-radius:14px;padding:.95rem 1.1rem;font-weight:600;font-size:1.05rem;text-align:left;transition:border-color var(--t-fast),box-shadow var(--t-fast)}
+.pais-boton:hover,.pais-boton[aria-expanded="true"]{border-color:var(--naranja);box-shadow:0 0 0 4px rgba(229,124,29,.25)}
+.pais-boton svg{width:18px;height:18px;flex:none;transition:transform var(--t-fast)}
+.pais-boton[aria-expanded="true"] svg{transform:rotate(180deg)}
+.pais-actual{display:flex;align-items:center;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pais-lista{position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:20;background:#fff;border-radius:14px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);padding:.6rem;animation:pais-in .18s var(--ease)}
+@keyframes pais-in{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.pais-lista input{width:100%;padding:.7rem .9rem;border:1px solid var(--linea);border-radius:10px;font:inherit;margin-bottom:.4rem;color:var(--carbon)}
+.pais-lista input:focus{outline:2px solid var(--ambar);border-color:transparent}
+.pais-lista ul{list-style:none;margin:0;padding:0;max-height:280px;overflow-y:auto}
+.pais-lista li{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:.6rem .7rem;border-radius:8px;color:var(--carbon);cursor:pointer;font-size:.97rem}
+.pais-lista li span{display:flex;align-items:center;min-width:0}
+.pais-lista li small{color:var(--gris-2);flex:none}
+.pais-lista li:hover,.pais-lista li.activo{background:var(--tinte)}
+.pais-lista li[hidden]{display:none}
+.pais-lista .sin{padding:.8rem;color:var(--gris-2);font-size:.9rem;cursor:default}
+.pais-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.pais-chip{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.06);border:1px solid var(--linea-oscura);color:var(--texto-claro);border-radius:999px;padding:.4rem .8rem;font-size:.88rem;font-weight:500;transition:background var(--t-fast),border-color var(--t-fast)}
+.pais-chip img{width:20px;height:15px;border-radius:2px}
+.pais-chip:hover,.pais-chip[aria-pressed="true"]{background:var(--naranja);border-color:var(--naranja);color:#fff}
+.pais-resultado{background:var(--negro);border-radius:var(--r);padding:clamp(20px,2.5vw,32px);display:flex;flex-direction:column;justify-content:center;min-height:300px;position:relative;overflow:hidden}
+.pais-resultado::before{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(229,124,29,.35),transparent 70%);pointer-events:none}
+.pais-vacio strong{display:block;font-family:var(--sora);color:#fff;font-size:1.2rem;margin-bottom:.4rem}
+.pais-vacio p{color:var(--texto-claro-2)}
+.pais-dato{position:relative;animation:pais-in .3s var(--ease)}
+.pais-cab{display:flex;align-items:center;gap:1rem;margin-bottom:1.1rem}
+.pais-bandera{width:64px;height:48px;border-radius:8px;box-shadow:0 8px 20px -8px rgba(0,0,0,.7);flex:none}
+.pais-nombre{color:#fff;font-size:clamp(1.3rem,2.2vw,1.7rem);margin:0}
+.pais-prefijo{color:var(--texto-claro-2);font-size:.9rem}
+.pais-precio{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.6rem}
+.pais-precio b{font-family:var(--sora);font-weight:700;font-size:clamp(2.4rem,5vw,3.4rem);line-height:1;color:var(--ambar)}
+.pais-precio small{color:var(--texto-claro-2);font-size:.95rem}
+.pais-dato .lista-check{color:var(--texto-claro-2);font-size:.95rem;margin-bottom:1.3rem}
+.tarifas-titulo{color:#fff;font-size:clamp(1.3rem,2.2vw,1.6rem);margin-bottom:1rem}
+.tabla-scroll{max-height:460px;overflow-y:auto}
+.tabla-scroll thead th{position:sticky;top:0;z-index:1}
+.oscuro .buscador input{background:var(--carbon-2);border-color:var(--linea-oscura);color:#fff}
+.oscuro table.tabla tbody tr{cursor:pointer;transition:background var(--t-fast)}
+.oscuro table.tabla tbody tr:hover{background:rgba(229,124,29,.14)}
+.oscuro table.tabla td.precio{color:var(--ambar)}
+@media (max-width:960px){.pais-panel{grid-template-columns:1fr}.pais-resultado{min-height:0}}
+.pais-precio{flex-wrap:wrap}
+.pais-precio b{white-space:nowrap}
+section[id]{scroll-margin-top:90px}

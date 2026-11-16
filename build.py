@@ -281,7 +281,7 @@ open(os.path.join(RAIZ, "sitemap.xml"), "w").write(sm)
 REDIRECCIONES = {  # URLs del sitio anterior -> nuevas
     "contactenos": "/contacto/", "home": "/", "chat-bot": "/chatbots-agentes-ia/", "omnicanalidad": "/chatbots-agentes-ia/",
     "whatsapp-marketing-whatsapp-masivo-bulk": "/whatsapp/", "sms-mensajes-de-texto-masivos": "/sms/",
-    "informacion-sms": "/sms/", "pagina-calculadora": "/sms/", "correos-electronicos-emails-masivos-mailing": "/email/",
+    "informacion-sms": "/sms/", "sms-internacional": "/sms/#internacional", "pagina-calculadora": "/sms/", "correos-electronicos-emails-masivos-mailing": "/email/",
 }
 if blog_cfg:
     for slug, destino in blog_cfg["descartados"]:
@@ -309,7 +309,7 @@ RewriteRule ^ https://masiva.ec%{REQUEST_URI} [R=301,L]
 # 3) URLs del sitio anterior
 """
 for viejo, nuevo in sorted(REDIRECCIONES.items()):
-    ht += "RewriteRule ^%s/?$ %s [R=301,L]\n" % (re.escape(viejo).replace("\\-", "-"), nuevo)
+    ht += "RewriteRule ^%s/?$ %s [R=301,NE,L]\n" % (re.escape(viejo).replace("\\-", "-"), nuevo)
 ht += """RewriteRule ^(category|tag|author)/ /blog/ [R=301,L]
 RewriteRule ^(feed|comments/feed)/?$ /blog/ [R=301,L]
 RewriteRule ^wp-(login|signup|activate|cron|trackback|comments-post)\\.php$ - [G,L]
