@@ -693,3 +693,16 @@ table.tabla.compacta td,table.tabla.compacta th{white-space:nowrap}
 .pais-precio{flex-wrap:wrap}
 .pais-precio b{white-space:nowrap}
 section[id]{scroll-margin-top:90px}
+
+/* SMS: ajustes de revisión */
+.pais-combo-bandera[hidden]{display:none}
+.visual-pila{display:grid;gap:1rem}
+.operadoras{list-style:none;margin:1rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.operadoras li{padding:.45rem .9rem;border-radius:999px;background:var(--tinte);color:var(--naranja-logo);font-family:var(--sora);font-weight:600;font-size:.85rem}
+.oscuro .operadoras li{background:rgba(229,124,29,.14);color:var(--ambar)}
+.tabla-scroll::after{content:"";display:block;position:sticky;bottom:0;height:56px;margin-top:-56px;background:linear-gradient(to bottom,rgba(38,38,38,0),var(--carbon-2));pointer-events:none;border-radius:0 0 var(--r-lg) var(--r-lg);opacity:1;transition:opacity .2s}
+.tabla-scroll.al-final::after{opacity:0}
+.tabla-nota{display:flex;justify-content:space-between;gap:1rem;font-size:.85rem;color:var(--gris-2);margin:.6rem 0 0}
+#tabla-paises td:first-child{position:relative;padding-left:calc(1rem + 24px + .6rem)}
+#tabla-paises td:first-child .bandera{position:absolute;left:1rem;top:50%;transform:translateY(-50%);margin:0}
+@media (max-width:640px){#tabla-paises td:first-child{padding-left:calc(.6rem + 24px + .5rem)}#tabla-paises td:first-child .bandera{left:.6rem}}

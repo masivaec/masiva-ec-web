@@ -207,3 +207,9 @@ document.querySelectorAll('form[data-whatsapp]').forEach(function (f) {
   chips.forEach(function (c) { c.addEventListener('click', function () { var p = paises.filter(function (x) { return x.iso === c.getAttribute('data-pais'); })[0]; if (p) elegir(p); }); });
   paises.forEach(function (p) { p.tr.addEventListener('click', function () { elegir(p); document.querySelector('.pais-panel').scrollIntoView({ behavior: 'smooth', block: 'center' }); }); });
 })();
+
+/* Tabla con scroll: oculta el degradado al llegar al final */
+document.querySelectorAll('[data-scroll]').forEach(function (el) {
+  var f = function () { el.classList.toggle('al-final', el.scrollTop + el.clientHeight >= el.scrollHeight - 4); };
+  el.addEventListener('scroll', f); f();
+});

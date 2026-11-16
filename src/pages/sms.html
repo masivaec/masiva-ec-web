@@ -45,6 +45,7 @@ servicio: SMS masivos y transaccionales
 <section class="seccion">
   <div class="contenedor">
     <div class="seccion-cab reveal">
+      <span class="etiqueta-sup">Casos de uso</span>
       <h2>Para qué usan SMS las empresas que atienden a miles de personas</h2>
       <p class="lead">Es el canal de respaldo que no falla: llega a cualquier celular, se lee en minutos y no depende de datos móviles.</p>
     </div>
@@ -60,6 +61,7 @@ servicio: SMS masivos y transaccionales
 <section class="seccion" id="formas-de-uso">
   <div class="contenedor">
     <div class="seccion-cab reveal">
+      <span class="etiqueta-sup">Modalidades</span>
       <h2>Tres formas de enviar SMS, según cómo trabaje tu empresa</h2>
       <p class="lead">Desde nuestra plataforma, desde tu propio sistema por API, o las dos a la vez. Tú eliges; la cuenta y los paquetes son los mismos.</p>
     </div>
@@ -87,10 +89,19 @@ servicio: SMS masivos y transaccionales
           <li>Soporte en Ecuador, en tu idioma y horario</li>
         </ul>
       </div>
-      <div class="visual">
-        <h3>SMS internacional</h3>
-        <p>¿Tienes clientes fuera de Ecuador? Entregamos SMS en más de 200 países con precio fijo por destino, sin importar la operadora.</p>
-        <a class="enlace" href="#internacional">Ver cobertura y tarifas por país <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="visual-pila">
+        <div class="visual">
+          <h3>Cobertura en Ecuador</h3>
+          <p>Conexión directa con las tres operadoras del país por código corto local. Tu empresa aparece como remitente y cada mensaje devuelve su reporte de entrega.</p>
+          <ul class="operadoras" aria-label="Operadoras">
+            <li>Claro</li><li>Movistar</li><li>CNT</li>
+          </ul>
+        </div>
+        <div class="visual">
+          <h3>Fuera de Ecuador</h3>
+          <p>Más de 200 destinos con precio fijo por país y sin aprobación previa de textos.</p>
+          <a class="enlace" href="#internacional">Ver cobertura y tarifas por país <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
     </div>
   </div>
@@ -99,6 +110,7 @@ servicio: SMS masivos y transaccionales
 <section class="seccion" id="precios">
   <div class="contenedor">
     <div class="seccion-cab reveal">
+      <span class="etiqueta-sup">Tarifas en Ecuador</span>
       <h2><img class="bandera-titulo" src="/assets/img/banderas/ec.svg" alt="Bandera de Ecuador" width="44" height="33">SMS a toda operadora en Ecuador</h2>
       <p class="lead">Elige el paquete a la medida de tu volumen; mientras más envías, menos pagas por mensaje. Los SMS no caducan durante un año.</p>
     </div>
@@ -142,6 +154,7 @@ servicio: SMS masivos y transaccionales
 <section class="seccion oscuro" id="internacional">
   <div class="contenedor">
     <div class="seccion-cab reveal">
+      <span class="etiqueta-sup">Cobertura internacional</span>
       <h2>SMS internacional a más de 200 países</h2>
       <p class="lead">¿Tienes clientes fuera de Ecuador? Envía desde la misma plataforma, con precio fijo por país para todas las operadoras y sin aprobación previa de textos.</p>
     </div>
@@ -179,7 +192,7 @@ servicio: SMS masivos y transaccionales
       <label class="visualmente-oculto" for="buscar-pais">Filtrar la tabla</label>
       <input id="buscar-pais" type="search" placeholder="Filtrar por país o prefijo..." data-filtra="#tabla-paises" autocomplete="off">
     </div>
-    <div class="tabla-env tabla-scroll reveal">
+    <div class="tabla-env tabla-scroll reveal" data-scroll>
       <table class="tabla" id="tabla-paises">
         <thead><tr><th>Destino</th><th>Prefijo</th><th>Precio por SMS (USD)</th></tr></thead>
         <tbody>
@@ -405,7 +418,7 @@ servicio: SMS masivos y transaccionales
       </table>
     </div>
     <p class="nota" id="sin-resultados" hidden>No encontramos ese destino. Escríbenos y lo confirmamos contigo.</p>
-    <p class="nota">Precios en dólares más IVA, sujetos a cambios según los acuerdos con cada operadora. Para volúmenes altos a un mismo país, pídenos una cotización.</p>
+    <p class="nota">218 destinos; desplázate dentro de la tabla o filtra por nombre. Precios en dólares más IVA, sujetos a cambios según los acuerdos con cada operadora. Para volúmenes altos a un mismo país, pídenos una cotización.</p>
   </div>
 </section>
 
