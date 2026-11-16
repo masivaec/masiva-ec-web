@@ -149,11 +149,10 @@ servicio: SMS masivos y transaccionales
       <div class="pais-selector">
         <label for="pais-buscar">Enviar SMS a</label>
         <div class="pais-combo" data-combo>
-          <button type="button" class="pais-boton" aria-haspopup="listbox" aria-expanded="false"><span class="pais-actual">Elige un país</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-          <div class="pais-lista" hidden>
-            <input id="pais-buscar" type="search" placeholder="Buscar país o prefijo..." autocomplete="off">
-            <ul role="listbox" aria-label="Países"></ul>
-          </div>
+          <img class="pais-combo-bandera" alt="" width="28" height="21" hidden>
+          <input id="pais-buscar" class="pais-input" type="text" placeholder="Escribe o elige un país..." autocomplete="off" role="combobox" aria-expanded="false" aria-controls="pais-opciones" aria-autocomplete="list">
+          <button type="button" class="pais-flecha" aria-label="Ver lista de países" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul id="pais-opciones" class="pais-lista" role="listbox" aria-label="Países" hidden></ul>
         </div>
         <div class="pais-chips" aria-label="Destinos frecuentes"><button type="button" class="pais-chip" data-pais="co"><img src="/assets/img/banderas/co.svg" alt="" width="20" height="15" loading="lazy">Colombia</button><button type="button" class="pais-chip" data-pais="pe"><img src="/assets/img/banderas/pe.svg" alt="" width="20" height="15" loading="lazy">Perú</button><button type="button" class="pais-chip" data-pais="us"><img src="/assets/img/banderas/us.svg" alt="" width="20" height="15" loading="lazy">Estados Unidos</button><button type="button" class="pais-chip" data-pais="es"><img src="/assets/img/banderas/es.svg" alt="" width="20" height="15" loading="lazy">España</button><button type="button" class="pais-chip" data-pais="mx"><img src="/assets/img/banderas/mx.svg" alt="" width="20" height="15" loading="lazy">México</button><button type="button" class="pais-chip" data-pais="ve"><img src="/assets/img/banderas/ve.svg" alt="" width="20" height="15" loading="lazy">Venezuela</button></div>
       </div>

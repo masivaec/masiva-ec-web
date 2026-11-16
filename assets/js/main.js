@@ -142,39 +142,44 @@ document.querySelectorAll('form[data-whatsapp]').forEach(function (f) {
   });
 });
 
-/* Selector de países (SMS internacional): toma los datos de la tabla #tabla-paises */
+/* Selector de países (SMS internacional): una sola caja que busca y despliega */
 (function () {
   var combo = document.querySelector('[data-combo]');
   var tabla = document.getElementById('tabla-paises');
   if (!combo || !tabla) return;
-  var boton = combo.querySelector('.pais-boton'), panel = combo.querySelector('.pais-lista');
-  var buscar = panel.querySelector('input'), ul = panel.querySelector('ul'), actual = combo.querySelector('.pais-actual');
+  var input = combo.querySelector('.pais-input'), flecha = combo.querySelector('.pais-flecha');
+  var ul = combo.querySelector('.pais-lista'), bandComb = combo.querySelector('.pais-combo-bandera');
   var vacio = document.querySelector('.pais-vacio'), dato = document.querySelector('.pais-dato');
   var chips = document.querySelectorAll('.pais-chip');
   var norm = function (s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); };
-  var paises = [], creado = false;
+  var paises = [], creado = false, elegido = null, idx = -1;
   Array.prototype.forEach.call(tabla.tBodies[0].rows, function (tr) {
     paises.push({ iso: tr.getAttribute('data-iso'), nombre: tr.cells[0].textContent.replace(/^\s*SMS a\s*/, '').trim(),
       prefijo: tr.cells[1].textContent.trim(), precio: tr.cells[2].textContent.trim(), tr: tr });
   });
-  function bandera(iso, w, h) { return '<img class="bandera" src="/assets/img/banderas/' + iso + '.svg" alt="" width="' + w + '" height="' + h + '" loading="lazy">'; }
+  function bandera(iso) { return '<img class="bandera" src="/assets/img/banderas/' + iso + '.svg" alt="" width="24" height="18" loading="lazy">'; }
   function crearLista() {
     if (creado) return; creado = true;
     var html = '';
     paises.forEach(function (p, i) {
-      html += '<li role="option" data-i="' + i + '" data-b="' + norm(p.nombre + ' ' + p.prefijo + ' ' + p.iso) + '"><span>' + bandera(p.iso, 24, 18) + p.nombre + '</span><small>' + p.prefijo + '</small></li>';
+      html += '<li role="option" data-i="' + i + '" data-b="' + norm(p.nombre + ' ' + p.prefijo + ' ' + p.iso) + '"><span>' + bandera(p.iso) + p.nombre + '</span><small>' + p.prefijo + '</small></li>';
     });
     ul.innerHTML = html + '<li class="sin" hidden>No encontramos ese país. Escríbenos y lo confirmamos.</li>';
   }
-  function abrir() { crearLista(); panel.hidden = false; boton.setAttribute('aria-expanded', 'true'); buscar.value = ''; filtrar(); setTimeout(function () { buscar.focus(); }, 30); }
-  function cerrar() { panel.hidden = true; boton.setAttribute('aria-expanded', 'false'); }
+  function visibles() { return Array.prototype.filter.call(ul.querySelectorAll('li[data-i]'), function (li) { return !li.hidden; }); }
+  function marcar(n) {
+    var v = visibles(); idx = Math.max(-1, Math.min(n, v.length - 1));
+    v.forEach(function (li, i) { li.classList.toggle('activo', i === idx); if (i === idx) li.scrollIntoView({ block: 'nearest' }); });
+  }
+  function abrir() { crearLista(); filtrar(); ul.hidden = false; combo.classList.add('abierto'); input.setAttribute('aria-expanded', 'true'); }
+  function cerrar() { ul.hidden = true; combo.classList.remove('abierto'); input.setAttribute('aria-expanded', 'false'); idx = -1; }
   function filtrar() {
-    var q = norm(buscar.value.trim()), n = 0;
+    var q = norm(input.value.trim()), n = 0;
     ul.querySelectorAll('li[data-i]').forEach(function (li) { var ok = !q || li.getAttribute('data-b').indexOf(q) !== -1; li.hidden = !ok; if (ok) n++; });
-    ul.querySelector('.sin').hidden = n > 0;
+    ul.querySelector('.sin').hidden = n > 0; marcar(q ? 0 : -1);
   }
   function elegir(p) {
-    actual.innerHTML = bandera(p.iso, 24, 18) + 'SMS a ' + p.nombre;
+    elegido = p; input.value = p.nombre; bandComb.src = '/assets/img/banderas/' + p.iso + '.svg'; bandComb.hidden = false;
     vacio.hidden = true; dato.hidden = false;
     dato.style.animation = 'none'; dato.offsetHeight; dato.style.animation = '';
     var img = dato.querySelector('.pais-bandera'); img.src = '/assets/img/banderas/' + p.iso + '.svg'; img.alt = 'Bandera de ' + p.nombre;
@@ -187,14 +192,18 @@ document.querySelectorAll('form[data-whatsapp]').forEach(function (f) {
     chips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-pais') === p.iso ? 'true' : 'false'); });
     cerrar();
   }
-  boton.addEventListener('click', function () { panel.hidden ? abrir() : cerrar(); });
-  buscar.addEventListener('input', filtrar);
-  buscar.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') { var li = ul.querySelector('li[data-i]:not([hidden])'); if (li) elegir(paises[+li.getAttribute('data-i')]); e.preventDefault(); }
-    if (e.key === 'Escape') { cerrar(); boton.focus(); }
+  input.addEventListener('focus', function () { if (elegido) { input.select(); } abrir(); });
+  input.addEventListener('input', function () { bandComb.hidden = true; bandComb.removeAttribute('src'); elegido = null; if (ul.hidden) abrir(); filtrar(); });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowDown') { if (ul.hidden) abrir(); marcar(idx + 1); e.preventDefault(); }
+    else if (e.key === 'ArrowUp') { marcar(idx - 1); e.preventDefault(); }
+    else if (e.key === 'Enter') { var v = visibles(); var li = v[idx] || v[0]; if (li) elegir(paises[+li.getAttribute('data-i')]); e.preventDefault(); }
+    else if (e.key === 'Escape') { cerrar(); if (elegido) input.value = elegido.nombre; }
   });
+  flecha.addEventListener('click', function () { if (ul.hidden) { input.focus(); } else { cerrar(); } });
+  ul.addEventListener('mousedown', function (e) { e.preventDefault(); });
   ul.addEventListener('click', function (e) { var li = e.target.closest('li[data-i]'); if (li) elegir(paises[+li.getAttribute('data-i')]); });
-  document.addEventListener('click', function (e) { if (!combo.contains(e.target)) cerrar(); });
+  document.addEventListener('click', function (e) { if (!combo.contains(e.target)) { cerrar(); if (elegido) { input.value = elegido.nombre; bandComb.hidden = false; } } });
   chips.forEach(function (c) { c.addEventListener('click', function () { var p = paises.filter(function (x) { return x.iso === c.getAttribute('data-pais'); })[0]; if (p) elegir(p); }); });
   paises.forEach(function (p) { p.tr.addEventListener('click', function () { elegir(p); document.querySelector('.pais-panel').scrollIntoView({ behavior: 'smooth', block: 'center' }); }); });
 })();

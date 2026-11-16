@@ -9,7 +9,7 @@ Construye el sitio estático de masiva.ec.
 Salida: /index.html y /<slug>/index.html en la raíz del repo, listos para desplegar.
 Uso: python3 build.py
 """
-import os, re, json, html, glob, datetime
+import os, re, json, html, glob, datetime, hashlib
 
 RAIZ = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(RAIZ, "src")
@@ -17,6 +17,9 @@ DOMINIO = "https://masiva.ec"
 STAGING = False  # True = sitio de prueba (noindex). False = producción.
 DEPLOYPATH = "/home/mamascloud/nuevo.masiva.ec/" if STAGING else "/home/mamascloud/public_html/"
 
+def _v(p):
+    return hashlib.md5(open(os.path.join(RAIZ, p), "rb").read()).hexdigest()[:8]
+V_CSS, V_JS, V_RED = _v("assets/css/styles.css"), _v("assets/js/main.js"), _v("assets/js/red.js")
 cabecera = open(os.path.join(SRC, "partials", "cabecera.html"), encoding="utf-8").read()
 pie = open(os.path.join(SRC, "partials", "pie.html"), encoding="utf-8").read()
 
@@ -40,7 +43,7 @@ PLANTILLA = """<!DOCTYPE html>
 <link rel="icon" href="/assets/img/logo/masiva-icono-naranja.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/sora-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/styles.css?v={{v_css}}">
 <!-- Google Tag Manager: pegar aquí el contenedor cuando esté listo (carga diferida) -->
 {jsonld}</head>
 <body class="{body_class}">
@@ -53,7 +56,7 @@ PLANTILLA = """<!DOCTYPE html>
 </main>
 
 {pie}
-<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/main.js?v={{v_js}}" defer></script>
 {extra_js}
 </body>
 </html>
@@ -123,9 +126,9 @@ for ruta in sorted(glob.glob(os.path.join(SRC, "pages", "*.html"))):
         og_title=html.escape(meta.get("og_title", meta["title"])), canonical=canonical, dominio=DOMINIO,
         robots=robots, jsonld=jsonld_para(meta), body_class=meta.get("body_class", ""),
         cabecera=marcar_activo(cabecera, path), contenido=contenido.strip("\n"), pie=pie.strip("\n"),
-        extra_js='<script src="/assets/js/red.js" defer></script>' if path == "/" else "",
+        extra_js='<script src="/assets/js/red.js?v=%s" defer></script>' % V_RED if path == "/" else "",
         og_image=DOMINIO + "/assets/img/og-masiva.png")
-    pagina = pagina.replace("{{anio}}", str(datetime.date.today().year))
+    pagina = pagina.replace("{{anio}}", str(datetime.date.today().year)).replace("{v_css}", V_CSS).replace("{v_js}", V_JS)
     destino = os.path.join(RAIZ, "index.html") if path == "/" else os.path.join(RAIZ, path.strip("/"), "index.html")
     os.makedirs(os.path.dirname(destino), exist_ok=True)
     open(destino, "w", encoding="utf-8").write(pagina)
@@ -212,7 +215,7 @@ if blog_cfg:
                                   og_title=html.escape(m["titulo"]), canonical=DOMINIO + path, dominio=DOMINIO, robots=robots,
                                   jsonld=jsonld, body_class="pagina-post", cabecera=marcar_activo(cabecera, "/blog/"),
                                   contenido=contenido, pie=pie.strip("\n"), extra_js="", og_image=DOMINIO + m["portada"])
-        pagina = pagina.replace("{{anio}}", str(datetime.date.today().year)).replace('og:type" content="website"', 'og:type" content="article"')
+        pagina = pagina.replace("{{anio}}", str(datetime.date.today().year)).replace("{v_css}", V_CSS).replace("{v_js}", V_JS).replace('og:type" content="website"', 'og:type" content="article"')
         destino = os.path.join(RAIZ, path.strip("/"), "index.html")
         os.makedirs(os.path.dirname(destino), exist_ok=True)
         open(destino, "w", encoding="utf-8").write(pagina)
@@ -245,7 +248,7 @@ if blog_cfg:
                               jsonld='<script type="application/ld+json">\n' + json.dumps(lista_ld, ensure_ascii=False) + "\n</script>\n",
                               body_class="", cabecera=marcar_activo(cabecera, "/blog/"), contenido=contenido, pie=pie.strip("\n"),
                               extra_js="", og_image=DOMINIO + "/assets/img/og-masiva.png")
-    pagina = pagina.replace("{{anio}}", str(datetime.date.today().year))
+    pagina = pagina.replace("{{anio}}", str(datetime.date.today().year)).replace("{v_css}", V_CSS).replace("{v_js}", V_JS)
     os.makedirs(os.path.join(RAIZ, "blog"), exist_ok=True)
     open(os.path.join(RAIZ, "blog", "index.html"), "w", encoding="utf-8").write(pagina)
     salidas.append("/blog/")
@@ -258,6 +261,7 @@ if os.path.exists(os.path.join(SRC, "pages_extra", "404.html")):
         og_title="Página no encontrada", canonical=DOMINIO + "/", dominio=DOMINIO,
         robots='<meta name="robots" content="noindex">\n', jsonld="", body_class="",
         cabecera=cabecera, contenido=contenido, pie=pie, extra_js="", og_image=DOMINIO + "/assets/img/og-masiva.png")
+    pagina = pagina.replace("{v_css}", V_CSS).replace("{v_js}", V_JS)
     open(os.path.join(RAIZ, "404.html"), "w", encoding="utf-8").write(pagina)
 
 
