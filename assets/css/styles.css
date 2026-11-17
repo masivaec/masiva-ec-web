@@ -854,3 +854,15 @@ section[id]{scroll-margin-top:90px}
   .hero .escena::before{content:"";position:absolute;inset:-8% -10%;background:radial-gradient(60% 50% at 50% 55%,rgba(229,124,29,.22),transparent 70%);pointer-events:none;z-index:0}
   .hero .telefono{z-index:1}
 }
+
+/* Hosting: soluciones a medida */
+.amedida{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center;background:#fff;border:1px solid var(--linea);border-radius:24px;padding:clamp(26px,4vw,52px);box-shadow:0 30px 60px -40px rgba(38,38,38,.35)}
+.amedida h2{margin-top:.2rem}
+.amedida .hero-botones{margin-top:1.4rem}
+.amedida-lista{margin:0}
+@media (max-width:860px){.amedida{grid-template-columns:1fr;gap:24px;padding:22px}}
+/* Hero escritorio: resplandor naranja del celular */
+@media (min-width:601px){
+  .hero .escena::before{content:"";position:absolute;inset:-6% -4%;background:radial-gradient(42% 46% at 55% 52%,rgba(229,124,29,.22),transparent 70%);pointer-events:none;z-index:0}
+  .hero .telefono{box-shadow:0 40px 90px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.1),0 0 0 6px rgba(229,124,29,.10),0 0 70px -8px rgba(229,124,29,.45)}
+}
