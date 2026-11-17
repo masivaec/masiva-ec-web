@@ -342,7 +342,8 @@ p:last-child{margin-bottom:0}
   .servicio.chico h3,.servicio.chico p,.servicio.chico .enlace{grid-column:1}
   .pie-grid{grid-template-columns:1fr}
   .hero-confianza{gap:.75rem 1.25rem;font-size:.88rem}
-  .telefono{width:min(300px,100%)}
+  .telefono{width:100%;max-width:none}
+  .escena{padding:0}
   .canal{display:none}
   .maqueta-cuerpo{grid-template-columns:1fr;min-height:0}
   .maqueta-lado{display:none}
@@ -350,7 +351,6 @@ p:last-child{margin-bottom:0}
   .maqueta-stats div{padding:8px}
   .maqueta-stats b{font-size:.9rem}
   .canal-1{top:6%;left:-4px}.canal-2{top:36%;right:-4px}.canal-3{bottom:26%;left:-4px}.canal-4{bottom:4%;right:-4px}
-  .escena{padding:0 .5rem}
   .cab-cta .btn{display:none}
   .btn{width:100%;justify-content:center}
   .hero-botones{flex-direction:column}
@@ -847,3 +847,10 @@ section[id]{scroll-margin-top:90px}
   .paso-chips .pos-b{display:none}
 }
 @media (prefers-reduced-motion:reduce){.paso-chips li{animation:none}}
+
+/* Hero móvil: celular más ancho y con resplandor */
+@media (max-width:600px){
+  .hero .telefono{box-shadow:0 30px 70px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.1),0 0 0 6px rgba(229,124,29,.10),0 0 60px -6px rgba(229,124,29,.45)}
+  .hero .escena::before{content:"";position:absolute;inset:-8% -10%;background:radial-gradient(60% 50% at 50% 55%,rgba(229,124,29,.22),transparent 70%);pointer-events:none;z-index:0}
+  .hero .telefono{z-index:1}
+}
