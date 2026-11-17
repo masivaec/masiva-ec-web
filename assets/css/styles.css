@@ -820,3 +820,30 @@ section[id]{scroll-margin-top:90px}
   .eco-etq li.centro small{display:block;margin:.1rem 0 0}
   .eco-pie{padding:14px 16px 16px}
 }
+
+/* Cómo empezar: tarjetas que se apilan al bajar */
+.pasos-pila{display:grid;gap:22px}
+.paso-card{position:sticky;top:calc(96px + var(--i) * 22px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:clamp(28px,4vw,56px);align-items:center;background:#fff;border:1px solid var(--linea);border-radius:24px;padding:clamp(26px,3.5vw,44px);box-shadow:0 -10px 40px -30px rgba(0,0,0,.35),0 30px 60px -40px rgba(38,38,38,.35)}
+.paso-card .num{font-family:var(--sora);font-weight:700;font-size:2.6rem;line-height:1;color:var(--naranja);margin-bottom:.6rem}
+.paso-card h3{font-size:clamp(1.5rem,2.4vw,2rem);margin:0 0 .7rem;line-height:1.15}
+.paso-card p{color:var(--gris-2);font-size:1.05rem;line-height:1.6;margin:0 0 1.4rem;max-width:46ch}
+.paso-fig{position:relative;margin:0}
+.paso-fig picture,.paso-fig img{display:block;width:100%;height:auto;border-radius:18px}
+.paso-chips{list-style:none;margin:0;padding:0}
+.paso-chips li{position:absolute;display:inline-flex;align-items:center;gap:.45rem;background:rgba(23,23,23,.86);backdrop-filter:blur(6px);color:#fff;font-family:var(--sora);font-weight:600;font-size:.82rem;padding:.5rem .8rem .5rem .55rem;border-radius:999px;box-shadow:0 12px 28px -14px rgba(0,0,0,.7);white-space:nowrap}
+.paso-chips i{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#2BB673;color:#fff}
+.paso-chips i svg{width:12px;height:12px}
+.paso-chips .pos-a{left:16px;top:16px}
+.paso-chips .pos-b{right:16px;top:50%;transform:translateY(-50%)}
+.paso-chips .pos-c{left:16px;bottom:16px}
+@media (hover:hover){.paso-chips li{animation:chip-flota 4s ease-in-out infinite}.paso-chips .pos-b{animation-delay:1.3s}.paso-chips .pos-c{animation-delay:2.6s}}
+@keyframes chip-flota{50%{translate:0 -4px}}
+@media (max-width:860px){
+  .pasos-pila{gap:16px}
+  .paso-card{grid-template-columns:1fr;gap:18px;padding:20px;border-radius:18px;top:calc(84px + var(--i) * 14px)}
+  .paso-card .num{font-size:2rem}
+  .paso-card p{font-size:.98rem;margin-bottom:1rem}
+  .paso-chips li{font-size:.74rem;padding:.4rem .65rem .4rem .45rem}
+  .paso-chips .pos-b{display:none}
+}
+@media (prefers-reduced-motion:reduce){.paso-chips li{animation:none}}
