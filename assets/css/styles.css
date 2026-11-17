@@ -769,3 +769,8 @@ section[id]{scroll-margin-top:90px}
 .avatar{background:#B0590C}
 .msg .botones span.activo{background:#B0590C;border-color:#B0590C}
 .chip{color:#A9520C}
+.etiqueta-sup{color:#A9520C}
+.etiqueta-sup::before{background:var(--naranja)}
+.oscuro .etiqueta-sup,.hero-pagina .etiqueta-sup,.hero .etiqueta-sup,.cta-simple .etiqueta-sup{color:var(--ambar)}
+.oscuro .etiqueta-sup::before,.hero-pagina .etiqueta-sup::before,.hero .etiqueta-sup::before{background:var(--ambar)}
+.oscuro .post-min{color:#A3A09A}
