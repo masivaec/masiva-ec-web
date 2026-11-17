@@ -757,3 +757,11 @@ section[id]{scroll-margin-top:90px}
   .vitrina{margin-top:-140px}
   .vitrina .contenedor{width:100%}
 }
+
+/* Accesibilidad AA: botón principal con contraste de texto grande (>= 3:1) */
+.btn-primario{background:#D9751C;font-size:1.17rem;font-weight:700}
+.btn-primario:hover{background:#B9600F}
+.visual-pie .btn-primario{font-size:1.17rem}
+.cta-simple .btn-primario{color:var(--carbon)}
+@media (max-width:380px){.btn-primario{font-size:1.1rem;padding:0 1.2rem}}
+@media (max-width:480px){.btn{white-space:normal;text-align:center;justify-content:center;line-height:1.2;padding-top:.75rem;padding-bottom:.75rem}}
