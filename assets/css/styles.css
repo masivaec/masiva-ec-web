@@ -867,3 +867,14 @@ section[id]{scroll-margin-top:90px}
   .hero .telefono{box-shadow:0 40px 90px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.1),0 0 0 6px rgba(229,124,29,.10),0 0 70px -8px rgba(229,124,29,.45)}
 }
 .lead-aviso{margin-top:.6rem}
+
+/* Hosting: banner del centro de datos */
+.dc{position:relative;margin:0;border-radius:24px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(0,0,0,.7),0 0 0 1px rgba(229,124,29,.25)}
+.dc picture,.dc img{display:block;width:100%;height:auto}
+.dc::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(23,23,23,.75),transparent 45%);pointer-events:none}
+.dc-chips{position:absolute;left:0;right:0;bottom:clamp(14px,2.4vw,28px);z-index:1;list-style:none;margin:0;padding:0 16px;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem}
+.dc-chips li{background:rgba(23,23,23,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);color:#fff;font-family:var(--sora);font-weight:600;font-size:.86rem;padding:.5rem .9rem;border-radius:999px}
+.dc-chips b{color:var(--ambar)}
+@media (max-width:700px){.dc{border-radius:18px}.dc-chips li{font-size:.74rem;padding:.4rem .7rem}.vitrina-dc .contenedor{width:100%}}
+/* Plan recomendado: cinta en esquina */
+.tarjeta.plan .cinta{position:absolute;top:18px;right:-38px;z-index:2;transform:rotate(40deg);background:linear-gradient(90deg,#D9751C,#B9600F);color:#fff;font-family:var(--sora);font-weight:700;font-size:.72rem;letter-spacing:.02em;padding:.35rem 2.6rem;box-shadow:0 6px 14px -6px rgba(185,96,15,.7)}
