@@ -127,7 +127,7 @@ for ruta in sorted(glob.glob(os.path.join(SRC, "pages", "*.html"))):
         robots=robots, jsonld=jsonld_para(meta), body_class=meta.get("body_class", ""),
         cabecera=marcar_activo(cabecera, path), contenido=contenido.strip("\n"), pie=pie.strip("\n"),
         extra_js='<script src="/assets/js/red.js?v=%s" defer></script>' % V_RED if path == "/" else "",
-        og_image=DOMINIO + "/assets/img/og-masiva.png")
+        og_image=DOMINIO + meta.get("og_image", "/assets/img/og-masiva.png"))
     pagina = pagina.replace("{{anio}}", str(datetime.date.today().year)).replace("{v_css}", V_CSS).replace("{v_js}", V_JS)
     destino = os.path.join(RAIZ, "index.html") if path == "/" else os.path.join(RAIZ, path.strip("/"), "index.html")
     os.makedirs(os.path.dirname(destino), exist_ok=True)

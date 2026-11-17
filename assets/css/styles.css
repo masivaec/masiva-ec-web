@@ -746,3 +746,14 @@ section[id]{scroll-margin-top:90px}
 .grid-4 .plan .para{min-height:2.7em}
 .etiqueta-sup+h2{margin-top:0}
 .plan>.btn:last-child{margin-top:auto}
+
+/* Vitrina: imagen que flota entre el hero oscuro y la sección clara */
+.hero-pagina.con-vitrina{padding-bottom:clamp(170px,19vw,290px)}
+.vitrina{position:relative;z-index:2;margin-top:clamp(-250px,-16vw,-130px)}
+.vitrina picture,.vitrina img{display:block;width:100%;height:auto}
+.vitrina+.seccion{padding-top:clamp(40px,5vw,72px)}
+@media (max-width:700px){
+  .hero-pagina.con-vitrina{padding-bottom:170px}
+  .vitrina{margin-top:-140px}
+  .vitrina .contenedor{width:100%}
+}
