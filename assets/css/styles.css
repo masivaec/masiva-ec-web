@@ -792,13 +792,16 @@ section[id]{scroll-margin-top:90px}
 /* Ecosistema: banda que flota entre Servicios y La plataforma */
 .ecosistema{position:relative;z-index:2;margin-bottom:clamp(-130px,-11vw,-180px)}
 .eco{position:relative;background:#262525;border:1px solid rgba(229,124,29,.35);border-radius:24px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(0,0,0,.8),0 0 90px -30px rgba(229,124,29,.45);color:var(--texto-claro)}
-.eco-art{position:relative;padding:clamp(10px,1.5vw,22px) 0 0}
+.eco-art{position:relative}
 .eco-art img{display:block;width:100%;height:auto}
-.eco-etq{position:relative;list-style:none;margin:0;padding:0;height:64px}
-.eco-etq li{position:absolute;left:var(--x);top:0;transform:translateX(-50%);white-space:nowrap;font-family:var(--sora);font-weight:600;font-size:.86rem;color:var(--texto-claro);text-align:center}
-.eco-etq li::before{content:"";display:block;width:2px;height:14px;margin:0 auto 6px;background:linear-gradient(to bottom,var(--naranja),transparent)}
+.eco-etq{position:absolute;inset:0;list-style:none;margin:0;padding:0}
+.eco-etq li{position:absolute;left:var(--x);top:var(--y);transform:translateX(-50%);white-space:nowrap;font-family:var(--sora);font-weight:600;font-size:.86rem;line-height:1.15;color:var(--texto-claro);text-align:center}
+.eco-etq li::before,.eco-etq li::after{display:block;width:2px;height:12px;margin:0 auto;background:linear-gradient(to bottom,var(--naranja),transparent)}
+.eco-etq li.abajo::before{content:"";margin-bottom:5px}
+.eco-etq li.arriba::after{content:"";margin-top:5px;background:linear-gradient(to top,var(--naranja),transparent)}
 .eco-etq li.centro{font-size:1.05rem;color:#fff}
-.eco-etq li.centro small{display:block;font-family:var(--inter);font-weight:500;font-size:.78rem;color:var(--texto-claro-2);margin-top:.15rem}
+.eco-etq li.centro small{display:block;font-family:var(--inter);font-weight:500;font-size:.76rem;color:var(--texto-claro-2);margin-top:.1rem}
+@media (max-width:1100px){.eco-etq li{font-size:.78rem}.eco-etq li.centro{font-size:.95rem}.eco-etq li.centro small{font-size:.7rem}}
 .eco-pie{padding:clamp(14px,2vw,22px) clamp(22px,3.5vw,44px) clamp(18px,2.6vw,28px);border-top:1px solid var(--linea-oscura);display:flex;justify-content:center}
 .eco-tit{display:block;font-family:var(--sora);font-weight:600;font-size:.78rem;letter-spacing:.02em;color:var(--texto-claro-2)}
 .eco-caps{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem}
@@ -809,10 +812,11 @@ section[id]{scroll-margin-top:90px}
 @media (max-width:900px){
   .ecosistema{margin-bottom:-110px}
   .eco{border-radius:18px}
-  .eco-etq{height:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;padding:12px 14px 4px}
-  .eco-etq li{position:static;transform:none;font-size:.78rem;background:rgba(255,255,255,.05);border:1px solid var(--linea-oscura);border-radius:999px;padding:.32rem .65rem}
-  .eco-etq li::before{display:none}
-  .eco-etq li.centro{order:-1;width:100%;white-space:normal;background:rgba(229,124,29,.14);border-color:rgba(229,124,29,.4);font-size:.95rem;padding:.5rem .8rem}
+  .eco-etq{position:static;inset:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;padding:12px 14px 4px}
+  .eco-etq li{position:static;transform:none;font-size:.78rem;white-space:normal;background:rgba(255,255,255,.05);border:1px solid var(--linea-oscura);border-radius:999px;padding:.32rem .65rem}
+  .eco-etq li::before,.eco-etq li::after{display:none}
+  .eco-etq li{order:var(--o)}
+  .eco-etq li.centro{width:100%;white-space:normal;background:rgba(229,124,29,.14);border-color:rgba(229,124,29,.4);font-size:.95rem;padding:.5rem .8rem}
   .eco-etq li.centro small{display:block;margin:.1rem 0 0}
   .eco-pie{padding:14px 16px 16px}
 }
