@@ -866,3 +866,4 @@ section[id]{scroll-margin-top:90px}
   .hero .escena::before{content:"";position:absolute;inset:-6% -4%;background:radial-gradient(42% 46% at 55% 52%,rgba(229,124,29,.22),transparent 70%);pointer-events:none;z-index:0}
   .hero .telefono{box-shadow:0 40px 90px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.1),0 0 0 6px rgba(229,124,29,.10),0 0 70px -8px rgba(229,124,29,.45)}
 }
+.lead-aviso{margin-top:.6rem}
