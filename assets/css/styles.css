@@ -273,7 +273,7 @@ p:last-child{margin-bottom:0}
 /* Footer ------------------------------------------------------------------ */
 .pie{background:var(--negro);color:var(--texto-claro-2);padding:clamp(56px,7vw,88px) 0 2rem;font-size:.95rem}
 .pie-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:2.5rem}
-.pie h4{color:#fff;font-size:.95rem;font-weight:600;margin-bottom:1rem}
+.pie h4,.pie .pie-tit{color:#fff;font-size:.95rem;font-weight:600;margin-bottom:1rem;letter-spacing:0}
 .pie ul{margin:0;padding:0;list-style:none;display:grid;gap:.55rem}
 .pie a:hover{color:#fff}
 .pie .logo-pie{width:200px;margin-bottom:1.25rem}
