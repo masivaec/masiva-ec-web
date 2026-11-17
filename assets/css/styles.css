@@ -774,3 +774,17 @@ section[id]{scroll-margin-top:90px}
 .oscuro .etiqueta-sup,.hero-pagina .etiqueta-sup,.hero .etiqueta-sup,.cta-simple .etiqueta-sup{color:var(--ambar)}
 .oscuro .etiqueta-sup::before,.hero-pagina .etiqueta-sup::before,.hero .etiqueta-sup::before{background:var(--ambar)}
 .oscuro .post-min{color:#A3A09A}
+
+/* Por qué MASIVA: texto + foto */
+.porque-cab{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:clamp(32px,5vw,72px);align-items:center;margin-bottom:clamp(36px,5vw,56px)}
+.porque-cab .seccion-cab{margin-bottom:0}
+.porque-foto{position:relative;margin:0}
+.porque-foto picture,.porque-foto img{display:block;width:100%;height:auto;border-radius:22px}
+.porque-foto img{box-shadow:0 40px 70px -40px rgba(38,38,38,.55)}
+.porque-foto figcaption{position:absolute;left:18px;top:18px;display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);color:var(--carbon);font-family:var(--sora);font-weight:600;font-size:.85rem;padding:.55rem .9rem;border-radius:999px;box-shadow:0 10px 24px -12px rgba(0,0,0,.4)}
+.porque-foto .punto{width:9px;height:9px;border-radius:50%;background:#2BB673;box-shadow:0 0 0 3px rgba(43,182,115,.25)}
+@media (max-width:860px){
+  .porque-cab{grid-template-columns:1fr;gap:28px}
+  .porque-foto picture,.porque-foto img{border-radius:18px}
+  .porque-foto figcaption{top:auto;bottom:14px;left:14px;font-size:.8rem}
+}
