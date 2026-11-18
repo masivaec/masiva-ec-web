@@ -102,7 +102,7 @@ def jsonld_para(meta):
         bloques.append({
             "@context": "https://schema.org", "@type": "Service",
             "name": meta["servicio"], "provider": {"@type": "Organization", "name": "MASIVA-EC S.A."},
-            "areaServed": "EC", "url": DOMINIO + meta["path"], "description": meta["description"]})
+            "areaServed": (json.loads(meta["area_servida"]) if meta.get("area_servida") else "EC"), "url": DOMINIO + meta["path"], "description": meta["description"]})
     if meta.get("faq_json"):
         bloques.append(json.loads(meta["faq_json"]))
     return "".join('<script type="application/ld+json">\n' + json.dumps(b, ensure_ascii=False, indent=1) + "\n</script>\n" for b in bloques)
