@@ -896,7 +896,8 @@ section[id]{scroll-margin-top:90px}
 .mock-plataforma img{display:block;width:100%;height:auto}
 /* Mapa de contacto */
 .mapa-marco{position:relative;height:clamp(360px,36vw,460px);background:#1c1c1c}
-.mapa-marco iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.15)}
+.mapa-marco iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.05)}
+.mapa-ficha .btn-primario{color:#171717}
 .mapa-espera{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.55);font-size:.95rem}
 .mapa-ficha{position:absolute;left:clamp(14px,2.4vw,28px);bottom:clamp(14px,2.4vw,28px);z-index:1;max-width:380px;background:rgba(23,23,23,.86);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:1.1rem 1.2rem;color:rgba(255,255,255,.82);font-size:.92rem;line-height:1.5;display:flex;flex-direction:column;gap:.35rem}
 .mapa-ficha strong{color:#fff;font-family:var(--sora);font-size:1.05rem}
