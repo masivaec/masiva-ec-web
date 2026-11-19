@@ -888,3 +888,9 @@ section[id]{scroll-margin-top:90px}
   .dc-arriba::after{background:linear-gradient(to bottom,rgba(23,23,23,.75),transparent 40%)}
   .dc-arriba .dc-chips{bottom:auto;top:clamp(14px,2.4vw,28px)}
 }
+
+/* Chatbots: Cómo trabajamos con mockup de plataforma */
+.fila-mock{align-items:stretch}
+.col-mock{display:flex;flex-direction:column}
+.mock-plataforma{margin:auto 0 0;padding-top:clamp(20px,3vw,36px)}
+.mock-plataforma img{display:block;width:100%;height:auto}
