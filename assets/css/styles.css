@@ -878,3 +878,9 @@ section[id]{scroll-margin-top:90px}
 @media (max-width:700px){.dc{border-radius:18px}.dc-chips li{font-size:.74rem;padding:.4rem .7rem}.vitrina-dc .contenedor{width:100%}}
 /* Plan recomendado: cinta en esquina */
 .tarjeta.plan .cinta{position:absolute;top:18px;right:-38px;z-index:2;transform:rotate(40deg);background:linear-gradient(90deg,#D9751C,#B9600F);color:#fff;font-family:var(--sora);font-weight:700;font-size:.72rem;letter-spacing:.02em;padding:.35rem 2.6rem;box-shadow:0 6px 14px -6px rgba(185,96,15,.7)}
+@media (max-width:700px){
+  .dc{background:#1c1c1c}
+  .dc::after{display:none}
+  .dc-chips{position:static;padding:12px 12px 14px;gap:.4rem}
+  .dc-chips li{background:rgba(255,255,255,.06)}
+}
