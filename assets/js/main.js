@@ -222,3 +222,16 @@ document.querySelectorAll('.grid-2>.tarjeta,.grid-3>.tarjeta,.grid-4>.tarjeta,.p
     c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
   });
 });
+
+/* Mapa de contacto: se carga al interactuar o poco después de cargar la página, para no frenar la carga inicial */
+(function(){
+  var m=document.querySelector('[data-mapa]'); if(!m) return;
+  var hecho=false;
+  function cargar(){ if(hecho) return; hecho=true;
+    var f=document.createElement('iframe'); f.src=m.getAttribute('data-mapa'); f.title='Mapa de la oficina de ventas de MASIVA en Quito';
+    f.loading='lazy'; f.referrerPolicy='no-referrer-when-downgrade'; f.allowFullscreen=true; m.appendChild(f);
+    f.addEventListener('load',function(){var e=m.querySelector('.mapa-espera'); if(e) e.remove();});
+  }
+  ['scroll','pointerdown','touchstart','keydown','mousemove'].forEach(function(ev){window.addEventListener(ev,cargar,{once:true,passive:true});});
+  window.addEventListener('load',function(){setTimeout(cargar,3500);});
+})();
