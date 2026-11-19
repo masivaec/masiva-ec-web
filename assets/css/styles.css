@@ -884,3 +884,7 @@ section[id]{scroll-margin-top:90px}
   .dc-chips{position:static;padding:12px 12px 14px;gap:.4rem}
   .dc-chips li{background:rgba(255,255,255,.06)}
 }
+@media (min-width:701px){
+  .dc-arriba::after{background:linear-gradient(to bottom,rgba(23,23,23,.75),transparent 40%)}
+  .dc-arriba .dc-chips{bottom:auto;top:clamp(14px,2.4vw,28px)}
+}
