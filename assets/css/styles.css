@@ -960,8 +960,8 @@ section[id]{scroll-margin-top:90px}
 .envio-card{position:relative;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,56px);align-items:center;background:linear-gradient(135deg,var(--naranja),#CF6A14 75%);color:#fff;border-radius:28px;padding:clamp(28px,5vw,64px);box-shadow:0 40px 80px -40px rgba(207,106,20,.65)}
 .envio-card::before{content:"";position:absolute;right:-90px;top:-120px;width:420px;height:420px;background:url("../img/logo/masiva-icono-blanco.svg") center/contain no-repeat;opacity:.08;transform:rotate(-12deg)}
 .envio-card h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.8rem);max-width:18ch;margin-bottom:.8rem}
-.envio-card .etiqueta-sup{color:#fff}
-.envio-card .etiqueta-sup::before{background:#fff}
+.envio-card .etiqueta-sup{color:var(--carbon)}
+.envio-card .etiqueta-sup::before{background:var(--carbon)}
 .envio-card .lead{color:rgba(255,255,255,.92)}
 .envio-card .hero-botones{margin-top:1.6rem}
 .envio-card .btn-primario{background:#fff;color:var(--carbon);box-shadow:none}
