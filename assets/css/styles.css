@@ -183,7 +183,7 @@ p:last-child{margin-bottom:0}
 .servicio .icono{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--carbon);color:#fff;transition:background var(--t-fast),transform var(--t-fast) var(--ease)}
 .servicio .icono svg{width:26px;height:26px}
 .servicio:hover .icono{background:var(--naranja)}
-@media (hover:hover) and (prefers-reduced-motion:no-preference){.servicio:hover .icono{animation:volteo-icono .6s var(--ease)}}
+
 .servicio p{color:var(--gris);font-size:1rem}
 .servicio .grande-texto{font-size:1.05rem}
 .servicio .enlace{margin-top:auto}
@@ -617,7 +617,7 @@ table.tabla.compacta td,table.tabla.compacta th{white-space:nowrap}
   .grid-2>.tarjeta:not(.plan):hover::after,.grid-3>.tarjeta:not(.plan):hover::after,.grid-4>.tarjeta:not(.plan):hover::after,.porque:hover::after,.sector:hover::after{width:1400px;height:1400px}
   .grid-2>.tarjeta:not(.plan):hover,.grid-3>.tarjeta:not(.plan):hover,.grid-4>.tarjeta:not(.plan):hover,.porque:hover,.sector:hover,
   .grid-2>.tarjeta:not(.plan):hover *,.grid-3>.tarjeta:not(.plan):hover *,.grid-4>.tarjeta:not(.plan):hover *,.porque:hover *,.sector:hover *{color:#fff}
-  .grid-2>.tarjeta:not(.plan):hover .icono,.grid-3>.tarjeta:not(.plan):hover .icono,.grid-4>.tarjeta:not(.plan):hover .icono{background:rgba(255,255,255,.18);color:#fff;animation:volteo-icono .6s var(--ease)}
+  .grid-2>.tarjeta:not(.plan):hover .icono,.grid-3>.tarjeta:not(.plan):hover .icono,.grid-4>.tarjeta:not(.plan):hover .icono{background:rgba(255,255,255,.18);color:#fff}
   .porque:hover svg{color:#fff}
   .porque:hover::before{background:#fff}
   .sector:hover .caso{color:#fff;border-color:rgba(255,255,255,.35)}
@@ -934,5 +934,11 @@ section[id]{scroll-margin-top:90px}
 .rota-txt.sale{filter:blur(10px);opacity:0}
 @media (max-width:600px){.h1-fijo{font-size:clamp(1.45rem,6.4vw,1.75rem)}.rota{font-size:clamp(2.1rem,10.2vw,2.7rem)}}
 
-/* Volteo 3D del icono al pasar el mouse */
-@keyframes volteo-icono{from{transform:perspective(300px) rotateY(0)}to{transform:perspective(300px) rotateY(360deg)}}
+/* Ondas de señal en el icono al pasar el mouse */
+.servicio .icono,.tarjeta .icono{position:relative}
+.servicio .icono::after,.grid-2>.tarjeta:not(.plan) .icono::after,.grid-3>.tarjeta:not(.plan) .icono::after,.grid-4>.tarjeta:not(.plan) .icono::after{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid var(--naranja);opacity:0;pointer-events:none}
+.grid-2>.tarjeta:not(.plan) .icono::after,.grid-3>.tarjeta:not(.plan) .icono::after,.grid-4>.tarjeta:not(.plan) .icono::after{border-color:#fff}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  .servicio:hover .icono::after,.grid-2>.tarjeta:not(.plan):hover .icono::after,.grid-3>.tarjeta:not(.plan):hover .icono::after,.grid-4>.tarjeta:not(.plan):hover .icono::after{animation:onda-icono 1.2s ease-out infinite}
+}
+@keyframes onda-icono{0%{opacity:.85;transform:scale(1)}100%{opacity:0;transform:scale(1.65)}}
