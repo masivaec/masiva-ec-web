@@ -916,3 +916,12 @@ section[id]{scroll-margin-top:90px}
 .mock-sms{margin:clamp(36px,5vw,56px) 0 0;background:#F4F6F9;border:1px solid var(--linea);border-radius:22px;padding:clamp(6px,1vw,12px);box-shadow:0 40px 70px -40px rgba(38,38,38,.45)}
 .mock-sms img{display:block;width:100%;height:auto;border-radius:16px}
 @media (max-width:860px){.porque-cab.cab-ancha{grid-template-columns:1fr}}
+/* La tarjeta de la derecha se estira hasta el final del texto de la izquierda */
+@media (min-width:961px){
+  .fila-fotos{align-items:stretch}
+  .fila-fotos>div{display:flex;flex-direction:column}
+  .fila-fotos>div>.visual{flex:1}
+  .fila-fotos>div>:last-child{margin-bottom:0}
+}
+.visual-cta{margin-top:1.4rem;align-self:flex-start}
+@media (min-width:961px){.fila-fotos .visual{display:flex;flex-direction:column}.fila-fotos .visual-cta{margin-top:auto}.fila-fotos .visual .lista-check{margin-top:.4rem;margin-bottom:1.6rem}}
