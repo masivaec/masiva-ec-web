@@ -235,3 +235,17 @@ document.querySelectorAll('.grid-2>.tarjeta,.grid-3>.tarjeta,.grid-4>.tarjeta,.p
   ['scroll','pointerdown','touchstart','keydown','mousemove'].forEach(function(ev){window.addEventListener(ev,cargar,{once:true,passive:true});});
   window.addEventListener('load',function(){setTimeout(cargar,3500);});
 })();
+
+/* Título del home: palabra que cambia con desenfoque a nítido */
+(function(){
+  var r=document.querySelector('.rota[data-palabras]'); if(!r) return;
+  var t=r.querySelector('.rota-txt'), p=r.getAttribute('data-palabras').split('|'), i=0;
+  var h1=r.closest('h1');
+  function reservar(){ var a=t.textContent, m=0; h1.style.minHeight=''; p.forEach(function(x){ t.textContent=x; m=Math.max(m,h1.offsetHeight); }); t.textContent=a; h1.style.minHeight=m+'px'; }
+  reservar(); window.addEventListener('resize',reservar);
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  setInterval(function(){
+    t.classList.add('sale');
+    setTimeout(function(){ i=(i+1)%p.length; t.textContent=p[i]; t.classList.remove('sale'); },500);
+  },2600);
+})();
