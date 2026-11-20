@@ -911,3 +911,8 @@ section[id]{scroll-margin-top:90px}
 .fila-fotos{align-items:start}
 .foto-col{margin:0 0 clamp(22px,3vw,34px)}
 .foto-col img{aspect-ratio:3/2;object-fit:cover}
+/* SMS: cabecera con foto 16:9 y mockup de plataforma */
+.porque-cab.cab-ancha{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+.mock-sms{margin:clamp(28px,4vw,48px) 0 0;background:#F4F6F9;border-radius:22px;padding:clamp(6px,1vw,12px);box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.mock-sms img{display:block;width:100%;height:auto;border-radius:16px}
+@media (max-width:860px){.porque-cab.cab-ancha{grid-template-columns:1fr}}
