@@ -990,3 +990,4 @@ section[id]{scroll-margin-top:90px}
 @keyframes llega{0%,70%{fill:#fff;opacity:.25}82%{fill:#4ADE80;opacity:1}100%{fill:#4ADE80;opacity:.25}}
 @keyframes flota{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @media (max-width:860px){.envio-card{grid-template-columns:1fr}.envio-visual{max-width:360px;margin:0 auto}}
+.envio-nota{margin:1.2rem 0 0;font-size:.8rem;line-height:1.5;color:rgba(255,255,255,.85);max-width:56ch}
