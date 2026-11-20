@@ -954,3 +954,4 @@ section[id]{scroll-margin-top:90px}
 .cifra-ico{position:relative}
 .cifra-ico::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--naranja);opacity:0;pointer-events:none}
 @media (hover:hover) and (prefers-reduced-motion:no-preference){.cifra:hover .cifra-ico::after{animation:onda-icono 1.2s ease-out infinite}}
+.hero .hero-check{margin:1.1rem 0 1.6rem;color:rgba(255,255,255,.88)}
