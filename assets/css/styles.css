@@ -951,3 +951,6 @@ section[id]{scroll-margin-top:90px}
 .cifra>span:last-child{font-size:.95rem;color:var(--gris-2)}
 @media (hover:hover) and (prefers-reduced-motion:no-preference){.cifra:hover{transform:translateY(-4px);box-shadow:0 26px 44px -30px rgba(229,124,29,.6)}}
 @media (max-width:860px){.cifras{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cifra-ico{position:relative}
+.cifra-ico::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--naranja);opacity:0;pointer-events:none}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){.cifra:hover .cifra-ico::after{animation:onda-icono 1.2s ease-out infinite}}
