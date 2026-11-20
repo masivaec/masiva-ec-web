@@ -907,3 +907,7 @@ section[id]{scroll-margin-top:90px}
 @media (max-width:700px){.mapa-marco{height:300px}.mapa-ficha{position:static;max-width:none;border-radius:0;border:0;background:#1c1c1c;padding:1rem 1rem 1.2rem}}
 .buscador input{min-width:0}
 @media (max-width:480px){.buscador .btn{flex:0 0 auto;width:auto;padding-left:1.1rem;padding-right:1.1rem}}
+/* Fila con fotos sobre cada columna (WhatsApp, canal oficial) */
+.fila-fotos{align-items:start}
+.foto-col{margin:0 0 clamp(22px,3vw,34px)}
+.foto-col img{aspect-ratio:3/2;object-fit:cover}
