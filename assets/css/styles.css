@@ -1022,5 +1022,12 @@ section[id]{scroll-margin-top:90px}
 @keyframes ia-pulso{0%,30%{offset-distance:0%;opacity:0}32%{opacity:1}44%{offset-distance:100%;opacity:1}46%,100%{opacity:0;offset-distance:100%}}
 @keyframes ia-chip{0%,42%,62%,100%{transform:scale(1)}48%{transform:scale(1.15) rotate(10deg)}55%{transform:scale(1.05) rotate(-6deg)}}
 @keyframes ia-hero{0%,58%{opacity:0}66%,92%{opacity:1}100%{opacity:0}}
-@keyframes ia-pub{0%,70%{opacity:0;transform:translateY(6px)}76%,92%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes ia-pub{0%,73%{opacity:0;transform:translateY(6px)}79%,92%{opacity:1;transform:none}100%{opacity:0}}
 @keyframes ia-ok{0%,74%{opacity:0;transform:translateY(8px)}80%,92%{opacity:1;transform:none}100%{opacity:0}}
+.ia-nuevo rect:first-child{fill:#FDEEE3;stroke:#CF6A14;stroke-width:1.5}
+.ia-nl{fill:#E2A877}
+.ia-nuevo{opacity:0;transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion:reduce){.ia-nuevo{opacity:1}}
+@media (prefers-reduced-motion:no-preference){.ia-nuevo.n1{animation:ia-nuevo1 7s ease infinite}.ia-nuevo.n2{animation:ia-nuevo2 7s ease infinite}}
+@keyframes ia-nuevo1{0%,58%{opacity:0;transform:scale(.6)}63%{opacity:1;transform:scale(1.08)}66%,92%{opacity:1;transform:scale(1)}100%{opacity:0}}
+@keyframes ia-nuevo2{0%,62%{opacity:0;transform:scale(.6)}67%{opacity:1;transform:scale(1.08)}70%,92%{opacity:1;transform:scale(1)}100%{opacity:0}}
