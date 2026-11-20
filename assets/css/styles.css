@@ -991,3 +991,4 @@ section[id]{scroll-margin-top:90px}
 @keyframes flota{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @media (max-width:860px){.envio-card{grid-template-columns:1fr}.envio-visual{max-width:360px;margin:0 auto}}
 .envio-nota{margin:1.2rem 0 0;font-size:.8rem;line-height:1.5;color:rgba(255,255,255,.85);max-width:56ch}
+.tabla-pie{flex-wrap:wrap}.tabla-nota{flex-basis:100%;font-size:.78rem;line-height:1.45;color:var(--gris-2);margin-top:.35rem}
