@@ -955,3 +955,38 @@ section[id]{scroll-margin-top:90px}
 .cifra-ico::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--naranja);opacity:0;pointer-events:none}
 @media (hover:hover) and (prefers-reduced-motion:no-preference){.cifra:hover .cifra-ico::after{animation:onda-icono 1.2s ease-out infinite}}
 .hero .hero-check{margin:1.1rem 0 1.6rem;color:rgba(255,255,255,.88)}
+/* Tarjeta naranja: envíos puntuales por WhatsApp API */
+.envio-puntual{padding-top:0}
+.envio-card{position:relative;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,56px);align-items:center;background:linear-gradient(135deg,var(--naranja),#CF6A14 75%);color:#fff;border-radius:28px;padding:clamp(28px,5vw,64px);box-shadow:0 40px 80px -40px rgba(207,106,20,.65)}
+.envio-card::before{content:"";position:absolute;right:-90px;top:-120px;width:420px;height:420px;background:url("../img/logo/masiva-icono-blanco.svg") center/contain no-repeat;opacity:.08;transform:rotate(-12deg)}
+.envio-card h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.8rem);max-width:18ch;margin-bottom:.8rem}
+.envio-card .etiqueta-sup{color:#fff}
+.envio-card .etiqueta-sup::before{background:#fff}
+.envio-card .lead{color:rgba(255,255,255,.92)}
+.envio-card .hero-botones{margin-top:1.6rem}
+.envio-card .btn-primario{background:#fff;color:var(--carbon);box-shadow:none}
+.envio-card .btn-primario:hover{background:var(--carbon);color:#fff}
+.envio-card .btn-contorno{color:#fff;border-color:rgba(255,255,255,.55)}
+.envio-card .btn-contorno:hover{background:rgba(255,255,255,.12);border-color:#fff}
+.envio-visual{position:relative}
+.envio-anim{width:100%;height:auto;display:block}
+.envio-anim .ruta{fill:none;stroke:rgba(255,255,255,.35);stroke-width:1.5;stroke-dasharray:4 6}
+.envio-anim .nube>path:first-child{fill:#fff}
+.envio-anim .wa{fill:none;stroke:#CF6A14;stroke-width:4}
+.envio-anim .cel rect:first-child{fill:#262626}
+.envio-anim .pant{fill:#3a3a3a}
+.envio-anim .ok{fill:#fff;opacity:.25}
+.envio-anim .msj rect{fill:#fff}
+.envio-anim .msj path{stroke:#CF6A14;stroke-width:2;stroke-linecap:round}
+.envio-anim .msj{offset-rotate:0deg;offset-distance:0%;opacity:0}
+@media (prefers-reduced-motion:no-preference){
+  .envio-anim .msj{animation:viaja 2.6s cubic-bezier(.45,0,.3,1) infinite}
+  .envio-anim .m1{animation-delay:.35s}.envio-anim .m2{animation-delay:.7s}.envio-anim .m3{animation-delay:1.05s}.envio-anim .m4{animation-delay:1.4s}
+  .envio-anim .cel .ok{animation:llega 2.6s ease infinite}
+  .envio-anim .cel:nth-of-type(2) .ok{animation-delay:.35s}.envio-anim .cel:nth-of-type(3) .ok{animation-delay:.7s}.envio-anim .cel:nth-of-type(4) .ok{animation-delay:1.05s}.envio-anim .cel:nth-of-type(5) .ok{animation-delay:1.4s}
+  .envio-anim .nube{animation:flota 4s ease-in-out infinite;transform-origin:135px 195px}
+}
+@keyframes viaja{0%{offset-distance:0%;opacity:0}10%{opacity:1}80%{opacity:1}100%{offset-distance:100%;opacity:0}}
+@keyframes llega{0%,70%{fill:#fff;opacity:.25}82%{fill:#4ADE80;opacity:1}100%{fill:#4ADE80;opacity:.25}}
+@keyframes flota{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media (max-width:860px){.envio-card{grid-template-columns:1fr}.envio-visual{max-width:360px;margin:0 auto}}
