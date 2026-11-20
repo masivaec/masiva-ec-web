@@ -249,3 +249,16 @@ document.querySelectorAll('.grid-2>.tarjeta,.grid-3>.tarjeta,.grid-4>.tarjeta,.p
     setTimeout(function(){ i=(i+1)%p.length; t.textContent=p[i]; t.classList.remove('sale'); },500);
   },2600);
 })();
+
+/* Contadores: cuentan desde 0 al aparecer en pantalla */
+(function(){
+  var ns=document.querySelectorAll('.cifra-n[data-n]'); if(!ns.length||!('IntersectionObserver' in window)) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var fmt=function(v){return v.toLocaleString('es-EC').replace(/,/g,'.');};
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(!e.isIntersecting) return; io.unobserve(e.target);
+    var el=e.target, fin=+el.dataset.n, pre=el.dataset.pre||'', t0=null, d=1600;
+    function paso(t){ if(!t0) t0=t; var k=Math.min((t-t0)/d,1), v=Math.round(fin*(1-Math.pow(1-k,3))); el.textContent=pre+fmt(v); if(k<1) requestAnimationFrame(paso); }
+    el.textContent=pre+'0'; requestAnimationFrame(paso);
+  });},{threshold:.5});
+  ns.forEach(function(n){io.observe(n);});
+})();

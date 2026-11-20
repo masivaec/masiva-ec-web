@@ -942,3 +942,12 @@ section[id]{scroll-margin-top:90px}
   .servicio:hover .icono::after,.grid-2>.tarjeta:not(.plan):hover .icono::after,.grid-3>.tarjeta:not(.plan):hover .icono::after,.grid-4>.tarjeta:not(.plan):hover .icono::after{animation:onda-icono 1.2s ease-out infinite}
 }
 @keyframes onda-icono{0%{opacity:.85;transform:scale(1)}100%{opacity:0;transform:scale(1.65)}}
+/* Contadores de cifras (Home) */
+.cifras{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,24px);margin-top:clamp(36px,5vw,56px)}
+.cifra{position:relative;background:#fff;border-radius:20px;padding:clamp(22px,3vw,32px) 18px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.35rem;border:1px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(140deg,rgba(229,124,29,.75),rgba(229,124,29,.08) 45%,rgba(229,124,29,.08) 60%,rgba(229,124,29,.6)) border-box;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.cifra-ico{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--tinte);color:var(--naranja);margin-bottom:.4rem;box-shadow:0 0 0 6px rgba(229,124,29,.07)}
+.cifra-ico svg{width:28px;height:28px}
+.cifra strong{font-family:var(--sora);font-weight:700;font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.1;color:var(--carbon);font-variant-numeric:tabular-nums}
+.cifra>span:last-child{font-size:.95rem;color:var(--gris-2)}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){.cifra:hover{transform:translateY(-4px);box-shadow:0 26px 44px -30px rgba(229,124,29,.6)}}
+@media (max-width:860px){.cifras{grid-template-columns:repeat(2,minmax(0,1fr))}}
