@@ -1031,3 +1031,10 @@ section[id]{scroll-margin-top:90px}
 @media (prefers-reduced-motion:no-preference){.ia-nuevo.n1{animation:ia-nuevo1 7s ease infinite}.ia-nuevo.n2{animation:ia-nuevo2 7s ease infinite}}
 @keyframes ia-nuevo1{0%,58%{opacity:0;transform:scale(.6)}63%{opacity:1;transform:scale(1.08)}66%,92%{opacity:1;transform:scale(1)}100%{opacity:0}}
 @keyframes ia-nuevo2{0%,62%{opacity:0;transform:scale(.6)}67%{opacity:1;transform:scale(1.08)}70%,92%{opacity:1;transform:scale(1)}100%{opacity:0}}
+/* Franja de migración (WhatsApp) */
+.migra-wa{padding-top:0}
+.migra-card{display:flex;align-items:center;justify-content:space-between;gap:clamp(20px,4vw,48px);background:#fff;border:1px solid var(--linea);border-radius:24px;padding:clamp(24px,4vw,44px);box-shadow:0 30px 60px -40px rgba(38,38,38,.35)}
+.migra-card h3{margin-bottom:.5rem}
+.migra-card p{margin:0;color:var(--gris-2);max-width:68ch}
+.migra-card .btn{flex:0 0 auto}
+@media (max-width:860px){.migra-card{flex-direction:column;align-items:flex-start}}
