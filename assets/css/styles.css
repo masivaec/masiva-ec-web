@@ -1154,3 +1154,22 @@ section[id]{scroll-margin-top:90px}
   .tabla-legal td::before{content:attr(data-label);display:block;font-size:.78rem;font-weight:700;color:var(--naranja-prof);margin-bottom:.15rem}
 }
 .aviso-final{margin-top:2.5rem}
+/* Paneles animados (.maqueta) */
+.maqueta-barra{align-items:center}
+.maq-btn{margin-left:auto;font-size:.68rem;font-weight:700;color:#1C1C1C;background:#fff;border-radius:999px;padding:.28rem .7rem;line-height:1.2;transition:transform .15s,background .25s,color .25s;white-space:nowrap}
+.maq-btn.maq-clic{transform:scale(.92)}
+.maq-btn.maq-enviando{background:var(--naranja);color:#fff}
+.maq-btn.maq-enviando::after{content:'';display:inline-block;width:1.1em;text-align:left;animation:maq-puntos 1s steps(4) infinite}
+.maq-btn.maq-listo{background:rgba(46,204,113,.18);color:#6FDC9A}
+@keyframes maq-puntos{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}}
+.maq-cursor{position:absolute;left:0;top:0;width:22px;height:22px;pointer-events:none;z-index:3;opacity:0;filter:drop-shadow(0 3px 6px rgba(0,0,0,.5))}
+.maq-cursor svg{width:100%;height:100%}
+.maqueta-filas > div{transition:opacity .35s ease,transform .35s ease}
+.maqueta-filas > div.maq-espera{opacity:.35}
+.maqueta-filas > div.maq-espera span{color:transparent;background:#2A2A2A;border-radius:6px;max-width:70%}
+.maqueta-filas em.maq-pend{min-width:2.6rem;min-height:1.25rem;background:#2A2A2A;color:transparent}
+.maqueta-filas > div.maq-activa em.maq-pend{background:rgba(231,97,12,.18)}
+.maqueta-filas > div.maq-activa em.maq-pend::before{content:'•••';color:var(--ambar);letter-spacing:.1em;animation:maq-titila 1s infinite}
+@keyframes maq-titila{50%{opacity:.35}}
+.maqueta-stats div{transition:box-shadow .5s,border-color .5s}
+.maqueta-stats div.maq-brilla{border-color:rgba(46,204,113,.45);box-shadow:0 0 0 3px rgba(46,204,113,.12)}
