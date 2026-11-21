@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bulk and business SMS in Ecuador and to more than 200 countries | MASIVA</title>
+<meta name="description" content="Bulk and transactional SMS platform with delivery to every carrier in Ecuador and coverage in more than 200 countries. Passcodes, alerts, reminders and campaigns with online reports and a REST API.">
+<link rel="canonical" href="https://masiva.ec/en/sms/">
+<link rel="alternate" hreflang="es" href="https://masiva.ec/sms/">
+<link rel="alternate" hreflang="en" href="https://masiva.ec/en/sms/">
+<link rel="alternate" hreflang="x-default" href="https://masiva.ec/sms/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="MASIVA">
+<meta property="og:title" content="Bulk and business SMS in Ecuador and to more than 200 countries | MASIVA">
+<meta property="og:description" content="Bulk and transactional SMS platform with delivery to every carrier in Ecuador and coverage in more than 200 countries. Passcodes, alerts, reminders and campaigns with online reports and a REST API.">
+<meta property="og:url" content="https://masiva.ec/en/sms/">
+<meta property="og:image" content="https://masiva.ec/assets/img/og-masiva.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#262626">
+<link rel="icon" href="/assets/img/logo/masiva-icono-naranja.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/sora-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/styles.css?v=896a3087">
+<!-- Google Tag Manager: pegar aquí el contenedor cuando esté listo (carga diferida) -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "MASIVA-EC S.A.",
+ "alternateName": "MASIVA",
+ "url": "https://masiva.ec/",
+ "logo": "https://masiva.ec/assets/img/logo/masiva-vertical-naranja.svg",
+ "slogan": "¡conecta, comunica, triunfa!",
+ "contactPoint": [
+  {
+   "@type": "ContactPoint",
+   "telephone": "+593994488880",
+   "email": "soporte@masiva.ec",
+   "contactType": "sales",
+   "areaServed": "EC",
+   "availableLanguage": [
+    "es",
+    "en"
+   ]
+  }
+ ],
+ "sameAs": [
+  "https://www.facebook.com/MasivaEc",
+  "https://www.instagram.com/masivaec"
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://masiva.ec/en/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "SMS solutions",
+   "item": "https://masiva.ec/en/sms/"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Service",
+ "name": "Bulk and transactional SMS",
+ "provider": {
+  "@type": "Organization",
+  "name": "MASIVA-EC S.A."
+ },
+ "areaServed": [
+  "EC",
+  "CO",
+  "PE",
+  "US",
+  "ES",
+  "MX",
+  "CL",
+  "AR",
+  "VE",
+  "BR"
+ ],
+ "url": "https://masiva.ec/en/sms/",
+ "description": "Bulk and transactional SMS platform with delivery to every carrier in Ecuador and coverage in more than 200 countries. Passcodes, alerts, reminders and campaigns with online reports and a REST API."
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Do you send SMS to every carrier in Ecuador?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. SMS reach Claro, Tigo (formerly Movistar), CNT and Tuenti lines through a local short code, with your company as the sender and a delivery report for every message."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does MASIVA send SMS outside Ecuador?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. From the same platform you can send SMS to more than 200 countries, with rates per destination published on this page and no prior text approval."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much does it cost to send an SMS to another country?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It depends on the destination. The international coverage table on this page shows the price per country; for example, search for Colombia, Peru, the United States or Spain to see its rate."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I send SMS from my own system?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Besides the web platform, you have a documented REST API to connect your core system, CRM or ERP and send SMS within Ecuador or abroad from your own processes."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is the difference between transactional and advertising SMS?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Transactional SMS carries information the customer must receive (passcodes, alerts, reminders, confirmations). Advertising SMS promotes or builds loyalty with non-urgent messages, and has content and timing rules that we help you follow."
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body class="">
+
+<a class="visualmente-oculto" href="#contenido">Skip to content</a>
+
+<header class="cabecera">
+  <div class="contenedor cabecera-int">
+    <a href="/en/" class="logo-cab" aria-label="MASIVA, home">
+      <img src="/assets/img/logo/masiva-horizontal-blanco.svg" alt="masiva" width="1600" height="274">
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-principal">
+        <li><a href="/en/">Home</a></li>
+        <li class="fuerte"><a href="/en/chatbots-ai-agents/">Chatbots &amp; AI agents</a></li>
+        <li class="fuerte"><a href="/en/whatsapp/">WhatsApp API</a></li>
+        <li><a href="/en/sms/" aria-current="page">SMS</a></li>
+        <li><a href="/en/email/">Email</a></li>
+        <li class="desplegable">
+          <button type="button" aria-expanded="false" aria-haspopup="true">More
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul class="submenu">
+            <li><a href="/en/websites/">Websites</a></li>
+            <li><a href="/en/hosting/">Hosting</a></li>
+            <li><a href="/en/domains/">Domains</a></li>
+            <li class="separado"><a href="/en/clients/">Clients</a></li>
+            <li><a href="/blog/" hreflang="es">Blog (Spanish)</a></li>
+          </ul>
+        </li>
+        <li class="nav-cta-movil"><a class="btn btn-primario" href="/en/contact/">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="cab-cta">
+      <div class="idioma" role="group" aria-label="Language"><a href="/sms/" lang="es" hreflang="es"><img src="/assets/img/banderas/ec.svg" alt="" width="20" height="15"><b>ES</b></a><span aria-hidden="true">/</span><a href="/en/sms/" lang="en" hreflang="en" class="activo" aria-current="true"><img src="/assets/img/banderas/us.svg" alt="" width="20" height="15"><b>EN</b></a></div>
+      <a class="btn btn-primario" href="/en/contact/">Contact</a>
+      <button class="hamburguesa" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+<section class="hero-pagina con-vitrina">
+  <div class="contenedor hero-pagina-int">
+    <div>
+      <nav class="migas" aria-label="Breadcrumb"><a href="/en/">Home</a><span>SMS</span></nav>
+      <h1>SMS to every carrier in Ecuador and to more than 200 countries</h1>
+      <p class="lead">The channel that gets through even when the customer has no internet or WhatsApp. One-time passcodes, alerts, payment reminders and bulk campaigns, from our platform or from your own system via API, with guaranteed delivery to every carrier in Ecuador, coverage in more than 200 countries with published rates per destination, and a report for every message.</p>
+      <div class="hero-botones">
+        <a class="btn btn-primario" href="/en/contact/">Request your account</a>
+        <a class="btn btn-contorno" href="https://wa.me/593994488880?text=Hello%20MASIVA%2C%20I%20would%20like%20information%20about%20bulk%20SMS" target="_blank" rel="noopener">Chat with us on WhatsApp</a>
+      </div>
+      <div class="hero-confianza">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Connected to every carrier</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/><path d="M14 4l-4 16"/></svg>REST API for your integrations</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5M4 19h16M8 15v-4M12 15V8M16 15v-6"/></svg>Delivery report for every message</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20A15 15 0 0 1 12 2z"/></svg>Coverage in more than 200 countries</span>
+      </div>
+    </div>
+    <div class="visual panel reveal" aria-hidden="true">
+      <div class="maqueta">
+        <div class="maqueta-barra"><i></i><i></i><i></i></div>
+        <div class="maqueta-main">
+          <div class="maqueta-stats">
+            <div><b>12,480</b><small>SMS sent</small></div>
+            <div><b>98.6%</b><small>delivered</small></div>
+            <div><b>0.9 s</b><small>average delivery</small></div>
+          </div>
+          <div class="maqueta-filas">
+            <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 5h16v11H8l-4 4z"/></svg></i><span>COOPANDES: Your temporary code is 482913. It expires in 5 min.</span><em class="ok">Delivered</em></div>
+            <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 5h16v11H8l-4 4z"/></svg></i><span>FARMAVIDA: Your order 7731 is ready for pickup.</span><em class="ok">Delivered</em></div>
+            <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 5h16v11H8l-4 4z"/></svg></i><span>CITY HALL: Ticket 118, window 4, please come forward.</span><em class="ok">Delivered</em></div>
+            <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 5h16v11H8l-4 4z"/></svg></i><span>Mother's Day campaign · 8,200 contacts</span><em>Scheduled</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="vitrina vitrina-dc" aria-label="Bulk SMS sending">
+  <div class="contenedor">
+    <figure class="dc">
+      <picture>
+        <source media="(max-width:700px)" srcset="/assets/img/sms/sms-masivos-ecuador-masiva-movil-640.webp 640w, /assets/img/sms/sms-masivos-ecuador-masiva-movil-960.webp 960w" sizes="100vw" width="960" height="720">
+        <img src="/assets/img/sms/sms-masivos-ecuador-masiva-1600.webp" srcset="/assets/img/sms/sms-masivos-ecuador-masiva-1200.webp 1200w, /assets/img/sms/sms-masivos-ecuador-masiva-1600.webp 1600w, /assets/img/sms/sms-masivos-ecuador-masiva-1912.webp 1912w" sizes="(max-width:1240px) 100vw, 1200px" width="1912" height="823" alt="An SMS campaign sent from the platform or via API travels through the carriers' networks and reaches thousands of phones, with a delivery report for every message" fetchpriority="high" decoding="async">
+      </picture>
+      <ul class="dc-chips">
+        <li>Every carrier in Ecuador</li>
+        <li>Reliable delivery</li>
+        <li>Delivery report per message</li>
+        <li>Web platform and REST API</li>
+      </ul>
+    </figure>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="contenedor">
+    <div class="seccion-cab reveal">
+      <span class="etiqueta-sup">Use cases</span>
+      <h2>How companies serving thousands of people use SMS</h2>
+      <p class="lead">It is the backup channel that never fails: it reaches any phone, gets read within minutes and does not depend on mobile data.</p>
+    </div>
+    <div class="grid-4">
+      <article class="tarjeta reveal"><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Passcodes and authentication</h3><p>One-time codes for banking, portals and apps. Critical priority and delivery in seconds.</p></article>
+      <article class="tarjeta reveal reveal-retraso-1"><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div><h3>Alerts and notices</h3><p>Due dates, service outages, queue numbers, results ready. Information that has to arrive, no matter what.</p></article>
+      <article class="tarjeta reveal reveal-retraso-2"><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h3>Payment reminders</h3><p>Early collections with your company name as the sender and variables per contact.</p></article>
+      <article class="tarjeta reveal reveal-retraso-3"><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></div><h3>Advertising campaigns</h3><p>Promotions with text approved by the carriers. <a class="enlace" href="/sms-publicitarios/">See approval conditions (Spanish)</a></p></article>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="formas-de-uso">
+  <div class="contenedor">
+    <div class="porque-cab cab-ancha">
+    <div class="seccion-cab reveal">
+      <span class="etiqueta-sup">Options</span>
+      <h2>Three ways to send SMS, depending on how your company works</h2>
+      <p class="lead">From our platform, from your own system via API, or both at once. You choose; the account and the packages are the same.</p>
+    </div>
+      <figure class="porque-foto reveal reveal-retraso-1">
+        <img src="/assets/img/sms/sms-llega-sin-internet-ecuador-1100.webp" srcset="/assets/img/sms/sms-llega-sin-internet-ecuador-700.webp 700w, /assets/img/sms/sms-llega-sin-internet-ecuador-1100.webp 1100w, /assets/img/sms/sms-llega-sin-internet-ecuador-1672.webp 1672w" sizes="(max-width:860px) 100vw, 600px" width="1672" height="941" alt="A woman in a Guayaquil office receives an SMS from her bank on her phone while her laptop has no internet connection: SMS arrives with cell signal alone" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <div class="grid-3">
+      <article class="tarjeta reveal"><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div><h3>Web platform</h3><p>Upload your contacts, write, schedule and measure from your browser. Nothing to install; ideal for campaigns and reminders run by your sales or collections team.</p></article>
+      <article class="tarjeta destacada reveal reveal-retraso-1"><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div><h3>REST API from your system</h3><p>Your core system, CRM, ERP or app sends the SMS directly: passcodes, confirmations, transaction alerts. Clear documentation and ready-made examples for your development team.</p></article>
+      <article class="tarjeta reveal reveal-retraso-2"><div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div><h3>Both at once</h3><p>Your system triggers the automated messages (passcodes, notices) via API, and your team launches campaigns from the platform. One account, one package, one report.</p></article>
+    </div>
+    <figure class="mock-sms reveal">
+      <img src="/assets/img/sms/plataforma-sms-masivo-ecuador-reportes-1600.webp" srcset="/assets/img/sms/plataforma-sms-masivo-ecuador-reportes-1200.webp 1200w, /assets/img/sms/plataforma-sms-masivo-ecuador-reportes-1600.webp 1600w, /assets/img/sms/plataforma-sms-masivo-ecuador-reportes-2160.webp 2160w" sizes="(max-width:1240px) 100vw, 1200px" width="2160" height="1215" alt="Bulk SMS platform: contact list with variables, personalized sending with name and appointment date, scheduled sending, a report of 1,240 SMS delivered, an opt-out list and the message received on a phone with no data" loading="lazy" decoding="async">
+    </figure>
+  </div>
+</section>
+
+<section class="seccion oscuro">
+  <div class="contenedor">
+    <div class="fila reveal">
+      <div>
+        <span class="etiqueta-sup">The platform</span>
+        <h2>Everything you need to send, schedule and measure</h2>
+        <ul class="lista-check">
+          <li>Messages of up to 160 characters, individual or bulk, from your browser</li>
+          <li>Contact upload from CSV and personalization with variables (name, amount, date)</li>
+          <li>Immediate or scheduled sends, with standard, high or critical priority</li>
+          <li>Online reports per message: delivered, failed, invalid number; exportable to Excel</li>
+          <li>Automatic opt-out list and unlimited contacts</li>
+          <li>Documented REST API to trigger SMS from your own system</li>
+          <li>Support from Ecuador, during our business hours</li>
+        </ul>
+      </div>
+      <div class="visual-pila">
+        <div class="visual">
+          <h3>Coverage in Ecuador</h3>
+          <p>Connected to every carrier in the country through a local short code. Your company appears as the sender and every message returns its delivery report.</p>
+          <ul class="operadoras" aria-label="Carriers">
+            <li>Claro</li><li>Tigo</li><li>CNT</li><li>Tuenti</li>
+          </ul>
+        </div>
+        <div class="visual">
+          <h3>Outside Ecuador</h3>
+          <p>More than 200 destinations with a fixed price per country and no prior text approval.</p>
+          <a class="enlace" href="#internacional">See coverage and rates by country <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="precios">
+  <div class="contenedor">
+    <div class="seccion-cab reveal">
+      <span class="etiqueta-sup">Rates in Ecuador</span>
+      <h2><img class="bandera-titulo" src="/assets/img/banderas/ec.svg" alt="Flag of Ecuador" width="44" height="33">SMS to every carrier in Ecuador</h2>
+      <p class="lead">Choose the package that fits your volume; the more you send, the less you pay per message. SMS credits do not expire for one year.</p>
+    </div>
+    <div class="fila fila-precios reveal">
+      <div class="tabla-env tabla-precios">
+        <div class="tabla-titulo">Transactional and informational SMS <small>Corporate short code</small></div>
+        <table class="tabla">
+          <thead><tr><th>Number of SMS</th><th>Price per SMS (USD)</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1,000 to 3,000</td><td class="precio">$0.065</td></tr>
+            <tr><td class="num">3,001 to 10,000</td><td class="precio">$0.058</td></tr>
+            <tr><td class="num">10,001 to 20,000</td><td class="precio">$0.054</td></tr>
+            <tr><td class="num">20,001 to 40,000</td><td class="precio">$0.049</td></tr>
+            <tr><td class="num">40,001 to 100,000</td><td class="precio">$0.045</td></tr>
+            <tr><td class="num">100,001 to 200,000</td><td class="precio">$0.042</td></tr>
+            <tr><td class="num">200,001 to 500,000</td><td class="precio">$0.039</td></tr>
+            <tr><td class="num">500,001 to 1,000,000</td><td class="precio">$0.037</td></tr>
+            <tr><td class="num">More than 1,000,000</td><td class="precio">$0.035</td></tr>
+          </tbody>
+        </table>
+        <div class="tabla-pie"><span>Prices in US dollars, plus VAT.</span><span>Package valid for 1 year from activation.</span><small class="tabla-nota">You pay a one-time activation fee and then top up only what you need, whenever you want. No subscriptions or monthly minimums.</small></div>
+      </div>
+      <div class="visual">
+        <h3>All packages include</h3>
+        <ul class="lista-check">
+          <li>Unlimited contacts and campaigns</li>
+          <li>Cloud platform, available 24/7</li>
+          <li>Custom fields and message editor</li>
+          <li>Package validity: 1 year</li>
+          <li>Delivery report (DLR) from the GSM network</li>
+          <li>Standard, high and critical priority</li>
+          <li>Scheduled sends and automatic opt-out list</li>
+          <li>Integration REST API</li>
+          <li>Online reports and human support in Ecuador</li>
+        </ul>
+        <p class="nota"><strong>Commercial or advertising SMS:</strong> $0.005 per SMS is added to the rate card price. It requires text approved by the carriers and a number whitelist (<a href="/sms-publicitarios/" style="text-decoration:underline">see conditions, in Spanish</a>).<br><strong>Need to send without prior text approval?</strong> <a href="/en/contact/" style="text-decoration:underline">Contact us</a> and we will build a tailored solution.</p>
+        <div class="visual-pie">
+          <div>
+            <strong>More than one million SMS a year?</strong>
+            <span>We will put together a plan tailored to your volume.</span>
+          </div>
+          <a class="btn btn-primario" href="https://wa.me/593994488880?text=Hello%20MASIVA%2C%20I%20would%20like%20a%20volume%20quote%20for%20SMS." target="_blank" rel="noopener">Request a quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion oscuro" id="internacional">
+  <div class="contenedor">
+    <div class="seccion-cab reveal">
+      <span class="etiqueta-sup">International coverage</span>
+      <h2>International SMS to more than 200 countries</h2>
+      <p class="lead">Have customers outside Ecuador? Send from the same platform to more than 200 countries, with published rates per destination for every carrier, delivery reports by country and no prior text approval. Something you will not find with other local providers.</p>
+    </div>
+    <div class="pais-panel reveal">
+      <div class="pais-selector">
+        <label for="pais-buscar">Send SMS to</label>
+        <div class="pais-combo" data-combo>
+          <img class="pais-combo-bandera" alt="" width="28" height="21" hidden>
+          <input id="pais-buscar" class="pais-input" type="text" placeholder="Type or choose a country..." autocomplete="off" role="combobox" aria-expanded="false" aria-controls="pais-opciones" aria-autocomplete="list">
+          <button type="button" class="pais-flecha" aria-label="Show country list" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul id="pais-opciones" class="pais-lista" role="listbox" aria-label="Countries" hidden></ul>
+        </div>
+        <div class="pais-chips" aria-label="Popular destinations"><button type="button" class="pais-chip" data-pais="co"><img src="/assets/img/banderas/co.svg" alt="" width="20" height="15" loading="lazy">Colombia</button><button type="button" class="pais-chip" data-pais="pe"><img src="/assets/img/banderas/pe.svg" alt="" width="20" height="15" loading="lazy">Peru</button><button type="button" class="pais-chip" data-pais="us"><img src="/assets/img/banderas/us.svg" alt="" width="20" height="15" loading="lazy">United States</button><button type="button" class="pais-chip" data-pais="es"><img src="/assets/img/banderas/es.svg" alt="" width="20" height="15" loading="lazy">Spain</button><button type="button" class="pais-chip" data-pais="mx"><img src="/assets/img/banderas/mx.svg" alt="" width="20" height="15" loading="lazy">Mexico</button><button type="button" class="pais-chip" data-pais="ve"><img src="/assets/img/banderas/ve.svg" alt="" width="20" height="15" loading="lazy">Venezuela</button></div>
+      </div>
+      <div class="pais-resultado" aria-live="polite">
+        <div class="pais-vacio">
+          <strong>Choose a destination</strong>
+          <p>You will see the price per message instantly. Same price for every carrier in the country.</p>
+        </div>
+        <div class="pais-dato" hidden>
+          <div class="pais-cab"><img class="pais-bandera" src="" alt="" width="64" height="48"><div><h3 class="pais-nombre"></h3><span class="pais-prefijo"></span></div></div>
+          <div class="pais-precio"><b></b><small>per SMS, plus VAT</small></div>
+          <ul class="lista-check">
+            <li>Fixed price for every carrier in the country</li>
+            <li>No prior text approval</li>
+            <li>Delivery report per message, web platform and REST API</li>
+          </ul>
+          <a class="btn btn-primario pais-cta" href="/en/contact/" target="_blank" rel="noopener">I want to send SMS to this country</a>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="tarifas-titulo reveal">SMS rates by country</h3>
+    <div class="buscador reveal">
+      <label class="visualmente-oculto" for="buscar-pais">Filter the table</label>
+      <input id="buscar-pais" type="search" placeholder="Filter by country or prefix..." data-filtra="#tabla-paises" autocomplete="off">
+    </div>
+    <div class="tabla-env tabla-scroll reveal" data-scroll>
+      <table class="tabla" id="tabla-paises">
+        <thead><tr><th>Destination</th><th>Prefix</th><th>Price per SMS (USD)</th></tr></thead>
+        <tbody>            <tr data-iso="af"><td><img class="bandera" src="/assets/img/banderas/af.svg" alt="" width="24" height="18" loading="lazy">SMS to Afghanistan</td><td class="num">+93</td><td class="precio">$0.082</td></tr>
+            <tr data-iso="al"><td><img class="bandera" src="/assets/img/banderas/al.svg" alt="" width="24" height="18" loading="lazy">SMS to Albania</td><td class="num">+355</td><td class="precio">$0.069</td></tr>
+            <tr data-iso="dz"><td><img class="bandera" src="/assets/img/banderas/dz.svg" alt="" width="24" height="18" loading="lazy">SMS to Algeria</td><td class="num">+213</td><td class="precio">$0.088</td></tr>
+            <tr data-iso="as"><td><img class="bandera" src="/assets/img/banderas/as.svg" alt="" width="24" height="18" loading="lazy">SMS to American Samoa</td><td class="num">+1684</td><td class="precio">$0.081</td></tr>
+            <tr data-iso="ad"><td><img class="bandera" src="/assets/img/banderas/ad.svg" alt="" width="24" height="18" loading="lazy">SMS to Andorra</td><td class="num">+376</td><td class="precio">$0.047</td></tr>
+            <tr data-iso="ao"><td><img class="bandera" src="/assets/img/banderas/ao.svg" alt="" width="24" height="18" loading="lazy">SMS to Angola</td><td class="num">+244</td><td class="precio">$0.045</td></tr>
+            <tr data-iso="ai"><td><img class="bandera" src="/assets/img/banderas/ai.svg" alt="" width="24" height="18" loading="lazy">SMS to Anguilla</td><td class="num">+1264</td><td class="precio">$0.032</td></tr>
+            <tr data-iso="ag"><td><img class="bandera" src="/assets/img/banderas/ag.svg" alt="" width="24" height="18" loading="lazy">SMS to Antigua &amp; Barbuda</td><td class="num">+1268</td><td class="precio">$0.029</td></tr>
+            <tr data-iso="ar"><td><img class="bandera" src="/assets/img/banderas/ar.svg" alt="" width="24" height="18" loading="lazy">SMS to Argentina</td><td class="num">+54</td><td class="precio">$0.080</td></tr>
+            <tr data-iso="am"><td><img class="bandera" src="/assets/img/banderas/am.svg" alt="" width="24" height="18" loading="lazy">SMS to Armenia</td><td class="num">+374</td><td class="precio">$0.073</td></tr>
+            <tr data-iso="aw"><td><img class="bandera" src="/assets/img/banderas/aw.svg" alt="" width="24" height="18" loading="lazy">SMS to Aruba</td><td class="num">+297</td><td class="precio">$0.057</td></tr>
+            <tr data-iso="au"><td><img class="bandera" src="/assets/img/banderas/au.svg" alt="" width="24" height="18" loading="lazy">SMS to Australia</td><td class="num">+61</td><td class="precio">$0.072</td></tr>
+            <tr data-iso="at"><td><img class="bandera" src="/assets/img/banderas/at.svg" alt="" width="24" height="18" loading="lazy">SMS to Austria</td><td class="num">+43</td><td class="precio">$0.099</td></tr>
+            <tr data-iso="az"><td><img class="bandera" src="/assets/img/banderas/az.svg" alt="" width="24" height="18" loading="lazy">SMS to Azerbaijan</td><td class="num">+994</td><td class="precio">$0.097</td></tr>
+            <tr data-iso="bs"><td><img class="bandera" src="/assets/img/banderas/bs.svg" alt="" width="24" height="18" loading="lazy">SMS to Bahamas</td><td class="num">+1242</td><td class="precio">$0.055</td></tr>
+            <tr data-iso="bh"><td><img class="bandera" src="/assets/img/banderas/bh.svg" alt="" width="24" height="18" loading="lazy">SMS to Bahrain</td><td class="num">+973</td><td class="precio">$0.036</td></tr>
+            <tr data-iso="bd"><td><img class="bandera" src="/assets/img/banderas/bd.svg" alt="" width="24" height="18" loading="lazy">SMS to Bangladesh</td><td class="num">+880</td><td class="precio">$0.061</td></tr>
+            <tr data-iso="bb"><td><img class="bandera" src="/assets/img/banderas/bb.svg" alt="" width="24" height="18" loading="lazy">SMS to Barbados</td><td class="num">+1246</td><td class="precio">$0.054</td></tr>
+            <tr data-iso="by"><td><img class="bandera" src="/assets/img/banderas/by.svg" alt="" width="24" height="18" loading="lazy">SMS to Belarus</td><td class="num">+375</td><td class="precio">$0.103</td></tr>
+            <tr data-iso="be"><td><img class="bandera" src="/assets/img/banderas/be.svg" alt="" width="24" height="18" loading="lazy">SMS to Belgium</td><td class="num">+32</td><td class="precio">$0.086</td></tr>
+            <tr data-iso="bz"><td><img class="bandera" src="/assets/img/banderas/bz.svg" alt="" width="24" height="18" loading="lazy">SMS to Belize</td><td class="num">+501</td><td class="precio">$0.032</td></tr>
+            <tr data-iso="bj"><td><img class="bandera" src="/assets/img/banderas/bj.svg" alt="" width="24" height="18" loading="lazy">SMS to Benin</td><td class="num">+229</td><td class="precio">$0.049</td></tr>
+            <tr data-iso="bm"><td><img class="bandera" src="/assets/img/banderas/bm.svg" alt="" width="24" height="18" loading="lazy">SMS to Bermuda</td><td class="num">+1441</td><td class="precio">$0.051</td></tr>
+            <tr data-iso="bt"><td><img class="bandera" src="/assets/img/banderas/bt.svg" alt="" width="24" height="18" loading="lazy">SMS to Bhutan</td><td class="num">+975</td><td class="precio">$0.031</td></tr>
+            <tr data-iso="bo"><td><img class="bandera" src="/assets/img/banderas/bo.svg" alt="" width="24" height="18" loading="lazy">SMS to Bolivia</td><td class="num">+591</td><td class="precio">$0.058</td></tr>
+            <tr data-iso="ba"><td><img class="bandera" src="/assets/img/banderas/ba.svg" alt="" width="24" height="18" loading="lazy">SMS to Bosnia &amp; Herzegovina</td><td class="num">+387</td><td class="precio">$0.049</td></tr>
+            <tr data-iso="bw"><td><img class="bandera" src="/assets/img/banderas/bw.svg" alt="" width="24" height="18" loading="lazy">SMS to Botswana</td><td class="num">+267</td><td class="precio">$0.039</td></tr>
+            <tr data-iso="br"><td><img class="bandera" src="/assets/img/banderas/br.svg" alt="" width="24" height="18" loading="lazy">SMS to Brazil</td><td class="num">+55</td><td class="precio">$0.081</td></tr>
+            <tr data-iso="io"><td><img class="bandera" src="/assets/img/banderas/io.svg" alt="" width="24" height="18" loading="lazy">SMS to British Indian Ocean Territory</td><td class="num">+1284</td><td class="precio">$0.033</td></tr>
+            <tr data-iso="bn"><td><img class="bandera" src="/assets/img/banderas/bn.svg" alt="" width="24" height="18" loading="lazy">SMS to Brunei</td><td class="num">+673</td><td class="precio">$0.031</td></tr>
+            <tr data-iso="bg"><td><img class="bandera" src="/assets/img/banderas/bg.svg" alt="" width="24" height="18" loading="lazy">SMS to Bulgaria</td><td class="num">+359</td><td class="precio">$0.072</td></tr>
+            <tr data-iso="bf"><td><img class="bandera" src="/assets/img/banderas/bf.svg" alt="" width="24" height="18" loading="lazy">SMS to Burkina Faso</td><td class="num">+226</td><td class="precio">$0.051</td></tr>
+            <tr data-iso="bi"><td><img class="bandera" src="/assets/img/banderas/bi.svg" alt="" width="24" height="18" loading="lazy">SMS to Burundi</td><td class="num">+257</td><td class="precio">$0.045</td></tr>
+            <tr data-iso="kh"><td><img class="bandera" src="/assets/img/banderas/kh.svg" alt="" width="24" height="18" loading="lazy">SMS to Cambodia</td><td class="num">+855</td><td class="precio">$0.089</td></tr>
+            <tr data-iso="cm"><td><img class="bandera" src="/assets/img/banderas/cm.svg" alt="" width="24" height="18" loading="lazy">SMS to Cameroon</td><td class="num">+237</td><td class="precio">$0.068</td></tr>
+            <tr data-iso="ca"><td><img class="bandera" src="/assets/img/banderas/ca.svg" alt="" width="24" height="18" loading="lazy">SMS to Canada</td><td class="num">+1</td><td class="precio">$0.077</td></tr>
+            <tr data-iso="cv"><td><img class="bandera" src="/assets/img/banderas/cv.svg" alt="" width="24" height="18" loading="lazy">SMS to Cape Verde</td><td class="num">+238</td><td class="precio">$0.075</td></tr>
+            <tr data-iso="ky"><td><img class="bandera" src="/assets/img/banderas/ky.svg" alt="" width="24" height="18" loading="lazy">SMS to Cayman Islands</td><td class="num">+1345</td><td class="precio">$0.058</td></tr>
+            <tr data-iso="cf"><td><img class="bandera" src="/assets/img/banderas/cf.svg" alt="" width="24" height="18" loading="lazy">SMS to Central African Republic</td><td class="num">+236</td><td class="precio">$0.027</td></tr>
+            <tr data-iso="td"><td><img class="bandera" src="/assets/img/banderas/td.svg" alt="" width="24" height="18" loading="lazy">SMS to Chad</td><td class="num">+235</td><td class="precio">$0.067</td></tr>
+            <tr data-iso="cl"><td><img class="bandera" src="/assets/img/banderas/cl.svg" alt="" width="24" height="18" loading="lazy">SMS to Chile</td><td class="num">+56</td><td class="precio">$0.079</td></tr>
+            <tr data-iso="cn"><td><img class="bandera" src="/assets/img/banderas/cn.svg" alt="" width="24" height="18" loading="lazy">SMS to China</td><td class="num">+86</td><td class="precio">$0.073</td></tr>
+            <tr data-iso="co"><td><img class="bandera" src="/assets/img/banderas/co.svg" alt="" width="24" height="18" loading="lazy">SMS to Colombia</td><td class="num">+57</td><td class="precio">$0.024</td></tr>
+            <tr data-iso="km"><td><img class="bandera" src="/assets/img/banderas/km.svg" alt="" width="24" height="18" loading="lazy">SMS to Comoros</td><td class="num">+269</td><td class="precio">$0.028</td></tr>
+            <tr data-iso="cg"><td><img class="bandera" src="/assets/img/banderas/cg.svg" alt="" width="24" height="18" loading="lazy">SMS to Congo - Brazzaville</td><td class="num">+242</td><td class="precio">$0.046</td></tr>
+            <tr data-iso="cd"><td><img class="bandera" src="/assets/img/banderas/cd.svg" alt="" width="24" height="18" loading="lazy">SMS to Congo - Kinshasa</td><td class="num">+243</td><td class="precio">$0.063</td></tr>
+            <tr data-iso="ck"><td><img class="bandera" src="/assets/img/banderas/ck.svg" alt="" width="24" height="18" loading="lazy">SMS to Cook Islands</td><td class="num">+682</td><td class="precio">$0.031</td></tr>
+            <tr data-iso="cr"><td><img class="bandera" src="/assets/img/banderas/cr.svg" alt="" width="24" height="18" loading="lazy">SMS to Costa Rica</td><td class="num">+506</td><td class="precio">$0.035</td></tr>
+            <tr data-iso="hr"><td><img class="bandera" src="/assets/img/banderas/hr.svg" alt="" width="24" height="18" loading="lazy">SMS to Croatia</td><td class="num">+385</td><td class="precio">$0.051</td></tr>
+            <tr data-iso="cu"><td><img class="bandera" src="/assets/img/banderas/cu.svg" alt="" width="24" height="18" loading="lazy">SMS to Cuba</td><td class="num">+53</td><td class="precio">$0.091</td></tr>
+            <tr data-iso="cy"><td><img class="bandera" src="/assets/img/banderas/cy.svg" alt="" width="24" height="18" loading="lazy">SMS to Cyprus</td><td class="num">+357</td><td class="precio">$0.026</td></tr>
+            <tr data-iso="cz"><td><img class="bandera" src="/assets/img/banderas/cz.svg" alt="" width="24" height="18" loading="lazy">SMS to Czechia</td><td class="num">+420</td><td class="precio">$0.072</td></tr>
+            <tr data-iso="ci"><td><img class="bandera" src="/assets/img/banderas/ci.svg" alt="" width="24" height="18" loading="lazy">SMS to Côte d’Ivoire</td><td class="num">+225</td><td class="precio">$0.087</td></tr>
+            <tr data-iso="dk"><td><img class="bandera" src="/assets/img/banderas/dk.svg" alt="" width="24" height="18" loading="lazy">SMS to Denmark</td><td class="num">+45</td><td class="precio">$0.081</td></tr>
+            <tr data-iso="dj"><td><img class="bandera" src="/assets/img/banderas/dj.svg" alt="" width="24" height="18" loading="lazy">SMS to Djibouti</td><td class="num">+253</td><td class="precio">$0.096</td></tr>
+            <tr data-iso="dm"><td><img class="bandera" src="/assets/img/banderas/dm.svg" alt="" width="24" height="18" loading="lazy">SMS to Dominica</td><td class="num">+1767</td><td class="precio">$0.052</td></tr>
+            <tr data-iso="do"><td><img class="bandera" src="/assets/img/banderas/do.svg" alt="" width="24" height="18" loading="lazy">SMS to Dominican Republic</td><td class="num">+1809</td><td class="precio">$0.056</td></tr>
+            <tr data-iso="eg"><td><img class="bandera" src="/assets/img/banderas/eg.svg" alt="" width="24" height="18" loading="lazy">SMS to Egypt</td><td class="num">+20</td><td class="precio">$0.086</td></tr>
+            <tr data-iso="gq"><td><img class="bandera" src="/assets/img/banderas/gq.svg" alt="" width="24" height="18" loading="lazy">SMS to Equatorial Guinea</td><td class="num">+240</td><td class="precio">$0.032</td></tr>
+            <tr data-iso="er"><td><img class="bandera" src="/assets/img/banderas/er.svg" alt="" width="24" height="18" loading="lazy">SMS to Eritrea</td><td class="num">+291</td><td class="precio">$0.058</td></tr>
+            <tr data-iso="ee"><td><img class="bandera" src="/assets/img/banderas/ee.svg" alt="" width="24" height="18" loading="lazy">SMS to Estonia</td><td class="num">+372</td><td class="precio">$0.051</td></tr>
+            <tr data-iso="sz"><td><img class="bandera" src="/assets/img/banderas/sz.svg" alt="" width="24" height="18" loading="lazy">SMS to Eswatini</td><td class="num">+268</td><td class="precio">$0.069</td></tr>
+            <tr data-iso="et"><td><img class="bandera" src="/assets/img/banderas/et.svg" alt="" width="24" height="18" loading="lazy">SMS to Ethiopia</td><td class="num">+251</td><td class="precio">$0.031</td></tr>
+            <tr data-iso="fk"><td><img class="bandera" src="/assets/img/banderas/fk.svg" alt="" width="24" height="18" loading="lazy">SMS to Falkland Islands</td><td class="num">+500</td><td class="precio">$0.071</td></tr>
+            <tr data-iso="fo"><td><img class="bandera" src="/assets/img/banderas/fo.svg" alt="" width="24" height="18" loading="lazy">SMS to Faroe Islands</td><td class="num">+298</td><td class="precio">$0.038</td></tr>
+            <tr data-iso="fj"><td><img class="bandera" src="/assets/img/banderas/fj.svg" alt="" width="24" height="18" loading="lazy">SMS to Fiji</td><td class="num">+679</td><td class="precio">$0.039</td></tr>
+            <tr data-iso="fi"><td><img class="bandera" src="/assets/img/banderas/fi.svg" alt="" width="24" height="18" loading="lazy">SMS to Finland</td><td class="num">+358</td><td class="precio">$0.094</td></tr>
+            <tr data-iso="fr"><td><img class="bandera" src="/assets/img/banderas/fr.svg" alt="" width="24" height="18" loading="lazy">SMS to France</td><td class="num">+33</td><td class="precio">$0.075</td></tr>
+            <tr data-iso="pf"><td><img class="bandera" src="/assets/img/banderas/pf.svg" alt="" width="24" height="18" loading="lazy">SMS to French Polynesia</td><td class="num">+689</td><td class="precio">$0.066</td></tr>
+            <tr data-iso="ga"><td><img class="bandera" src="/assets/img/banderas/ga.svg" alt="" width="24" height="18" loading="lazy">SMS to Gabon</td><td class="num">+241</td><td class="precio">$0.074</td></tr>
+            <tr data-iso="gm"><td><img class="bandera" src="/assets/img/banderas/gm.svg" alt="" width="24" height="18" loading="lazy">SMS to Gambia</td><td class="num">+220</td><td class="precio">$0.025</td></tr>
+            <tr data-iso="ge"><td><img class="bandera" src="/assets/img/banderas/ge.svg" alt="" width="24" height="18" loading="lazy">SMS to Georgia</td><td class="num">+995</td><td class="precio">$0.090</td></tr>
+            <tr data-iso="de"><td><img class="bandera" src="/assets/img/banderas/de.svg" alt="" width="24" height="18" loading="lazy">SMS to Germany</td><td class="num">+49</td><td class="precio">$0.099</td></tr>
+            <tr data-iso="gh"><td><img class="bandera" src="/assets/img/banderas/gh.svg" alt="" width="24" height="18" loading="lazy">SMS to Ghana</td><td class="num">+233</td><td class="precio">$0.068</td></tr>
+            <tr data-iso="gi"><td><img class="bandera" src="/assets/img/banderas/gi.svg" alt="" width="24" height="18" loading="lazy">SMS to Gibraltar</td><td class="num">+350</td><td class="precio">$0.031</td></tr>
+            <tr data-iso="gr"><td><img class="bandera" src="/assets/img/banderas/gr.svg" alt="" width="24" height="18" loading="lazy">SMS to Greece</td><td class="num">+30</td><td class="precio">$0.049</td></tr>
+            <tr data-iso="gl"><td><img class="bandera" src="/assets/img/banderas/gl.svg" alt="" width="24" height="18" loading="lazy">SMS to Greenland</td><td class="num">+299</td><td class="precio">$0.057</td></tr>
+            <tr data-iso="gd"><td><img class="bandera" src="/assets/img/banderas/gd.svg" alt="" width="24" height="18" loading="lazy">SMS to Grenada</td><td class="num">+1473</td><td class="precio">$0.025</td></tr>
+            <tr data-iso="gp"><td><img class="bandera" src="/assets/img/banderas/gp.svg" alt="" width="24" height="18" loading="lazy">SMS to Guadeloupe</td><td class="num">+590</td><td class="precio">$0.137</td></tr>
+            <tr data-iso="gu"><td><img class="bandera" src="/assets/img/banderas/gu.svg" alt="" width="24" height="18" loading="lazy">SMS to Guam</td><td class="num">+1671</td><td class="precio">$0.079</td></tr>
+            <tr data-iso="gt"><td><img class="bandera" src="/assets/img/banderas/gt.svg" alt="" width="24" height="18" loading="lazy">SMS to Guatemala</td><td class="num">+502</td><td class="precio">$0.044</td></tr>
+            <tr data-iso="gn"><td><img class="bandera" src="/assets/img/banderas/gn.svg" alt="" width="24" height="18" loading="lazy">SMS to Guinea</td><td class="num">+224</td><td class="precio">$0.042</td></tr>
+            <tr data-iso="gw"><td><img class="bandera" src="/assets/img/banderas/gw.svg" alt="" width="24" height="18" loading="lazy">SMS to Guinea-Bissau</td><td class="num">+245</td><td class="precio">$0.062</td></tr>
+            <tr data-iso="gy"><td><img class="bandera" src="/assets/img/banderas/gy.svg" alt="" width="24" height="18" loading="lazy">SMS to Guyana</td><td class="num">+592</td><td class="precio">$0.063</td></tr>
+            <tr data-iso="ht"><td><img class="bandera" src="/assets/img/banderas/ht.svg" alt="" width="24" height="18" loading="lazy">SMS to Haiti</td><td class="num">+509</td><td class="precio">$0.056</td></tr>
+            <tr data-iso="hn"><td><img class="bandera" src="/assets/img/banderas/hn.svg" alt="" width="24" height="18" loading="lazy">SMS to Honduras</td><td class="num">+504</td><td class="precio">$0.051</td></tr>
+            <tr data-iso="hk"><td><img class="bandera" src="/assets/img/banderas/hk.svg" alt="" width="24" height="18" loading="lazy">SMS to Hong Kong SAR China</td><td class="num">+852</td><td class="precio">$0.081</td></tr>
+            <tr data-iso="hu"><td><img class="bandera" src="/assets/img/banderas/hu.svg" alt="" width="24" height="18" loading="lazy">SMS to Hungary</td><td class="num">+36</td><td class="precio">$0.092</td></tr>
+            <tr data-iso="is"><td><img class="bandera" src="/assets/img/banderas/is.svg" alt="" width="24" height="18" loading="lazy">SMS to Iceland</td><td class="num">+354</td><td class="precio">$0.061</td></tr>
+            <tr data-iso="in"><td><img class="bandera" src="/assets/img/banderas/in.svg" alt="" width="24" height="18" loading="lazy">SMS to India</td><td class="num">+91</td><td class="precio">$0.071</td></tr>
+            <tr data-iso="id"><td><img class="bandera" src="/assets/img/banderas/id.svg" alt="" width="24" height="18" loading="lazy">SMS to Indonesia</td><td class="num">+62</td><td class="precio">$0.082</td></tr>
+            <tr data-iso="ir"><td><img class="bandera" src="/assets/img/banderas/ir.svg" alt="" width="24" height="18" loading="lazy">SMS to Iran</td><td class="num">+98</td><td class="precio">$0.078</td></tr>
+            <tr data-iso="iq"><td><img class="bandera" src="/assets/img/banderas/iq.svg" alt="" width="24" height="18" loading="lazy">SMS to Iraq</td><td class="num">+964</td><td class="precio">$0.085</td></tr>
+            <tr data-iso="ie"><td><img class="bandera" src="/assets/img/banderas/ie.svg" alt="" width="24" height="18" loading="lazy">SMS to Ireland</td><td class="num">+353</td><td class="precio">$0.062</td></tr>
+            <tr data-iso="il"><td><img class="bandera" src="/assets/img/banderas/il.svg" alt="" width="24" height="18" loading="lazy">SMS to Israel</td><td class="num">+972</td><td class="precio">$0.062</td></tr>
+            <tr data-iso="it"><td><img class="bandera" src="/assets/img/banderas/it.svg" alt="" width="24" height="18" loading="lazy">SMS to Italy</td><td class="num">+39</td><td class="precio">$0.080</td></tr>
+            <tr data-iso="jm"><td><img class="bandera" src="/assets/img/banderas/jm.svg" alt="" width="24" height="18" loading="lazy">SMS to Jamaica</td><td class="num">+1876</td><td class="precio">$0.055</td></tr>
+            <tr data-iso="jp"><td><img class="bandera" src="/assets/img/banderas/jp.svg" alt="" width="24" height="18" loading="lazy">SMS to Japan</td><td class="num">+81</td><td class="precio">$0.097</td></tr>
+            <tr data-iso="jo"><td><img class="bandera" src="/assets/img/banderas/jo.svg" alt="" width="24" height="18" loading="lazy">SMS to Jordan</td><td class="num">+962</td><td class="precio">$0.083</td></tr>
+            <tr data-iso="kz"><td><img class="bandera" src="/assets/img/banderas/kz.svg" alt="" width="24" height="18" loading="lazy">SMS to Kazakhstan</td><td class="num">+7</td><td class="precio">$0.078</td></tr>
+            <tr data-iso="ke"><td><img class="bandera" src="/assets/img/banderas/ke.svg" alt="" width="24" height="18" loading="lazy">SMS to Kenya</td><td class="num">+254</td><td class="precio">$0.086</td></tr>
+            <tr data-iso="ki"><td><img class="bandera" src="/assets/img/banderas/ki.svg" alt="" width="24" height="18" loading="lazy">SMS to Kiribati</td><td class="num">+686</td><td class="precio">$0.043</td></tr>
+            <tr data-iso="xk"><td><img class="bandera" src="/assets/img/banderas/xk.svg" alt="" width="24" height="18" loading="lazy">SMS to Kosovo</td><td class="num">+383</td><td class="precio">$0.084</td></tr>
+            <tr data-iso="kw"><td><img class="bandera" src="/assets/img/banderas/kw.svg" alt="" width="24" height="18" loading="lazy">SMS to Kuwait</td><td class="num">+965</td><td class="precio">$0.056</td></tr>
+            <tr data-iso="kg"><td><img class="bandera" src="/assets/img/banderas/kg.svg" alt="" width="24" height="18" loading="lazy">SMS to Kyrgyzstan</td><td class="num">+996</td><td class="precio">$0.038</td></tr>
+            <tr data-iso="la"><td><img class="bandera" src="/assets/img/banderas/la.svg" alt="" width="24" height="18" loading="lazy">SMS to Laos</td><td class="num">+856</td><td class="precio">$0.050</td></tr>
+            <tr data-iso="lv"><td><img class="bandera" src="/assets/img/banderas/lv.svg" alt="" width="24" height="18" loading="lazy">SMS to Latvia</td><td class="num">+371</td><td class="precio">$0.047</td></tr>
+            <tr data-iso="lb"><td><img class="bandera" src="/assets/img/banderas/lb.svg" alt="" width="24" height="18" loading="lazy">SMS to Lebanon</td><td class="num">+961</td><td class="precio">$0.059</td></tr>
+            <tr data-iso="ls"><td><img class="bandera" src="/assets/img/banderas/ls.svg" alt="" width="24" height="18" loading="lazy">SMS to Lesotho</td><td class="num">+266</td><td class="precio">$0.028</td></tr>
+            <tr data-iso="lr"><td><img class="bandera" src="/assets/img/banderas/lr.svg" alt="" width="24" height="18" loading="lazy">SMS to Liberia</td><td class="num">+231</td><td class="precio">$0.072</td></tr>
+            <tr data-iso="ly"><td><img class="bandera" src="/assets/img/banderas/ly.svg" alt="" width="24" height="18" loading="lazy">SMS to Libya</td><td class="num">+218</td><td class="precio">$0.056</td></tr>
+            <tr data-iso="li"><td><img class="bandera" src="/assets/img/banderas/li.svg" alt="" width="24" height="18" loading="lazy">SMS to Liechtenstein</td><td class="num">+423</td><td class="precio">$0.046</td></tr>
+            <tr data-iso="lt"><td><img class="bandera" src="/assets/img/banderas/lt.svg" alt="" width="24" height="18" loading="lazy">SMS to Lithuania</td><td class="num">+370</td><td class="precio">$0.036</td></tr>
+            <tr data-iso="lu"><td><img class="bandera" src="/assets/img/banderas/lu.svg" alt="" width="24" height="18" loading="lazy">SMS to Luxembourg</td><td class="num">+352</td><td class="precio">$0.073</td></tr>
+            <tr data-iso="mo"><td><img class="bandera" src="/assets/img/banderas/mo.svg" alt="" width="24" height="18" loading="lazy">SMS to Macao SAR China</td><td class="num">+853</td><td class="precio">$0.046</td></tr>
+            <tr data-iso="mg"><td><img class="bandera" src="/assets/img/banderas/mg.svg" alt="" width="24" height="18" loading="lazy">SMS to Madagascar</td><td class="num">+261</td><td class="precio">$0.031</td></tr>
+            <tr data-iso="mw"><td><img class="bandera" src="/assets/img/banderas/mw.svg" alt="" width="24" height="18" loading="lazy">SMS to Malawi</td><td class="num">+265</td><td class="precio">$0.087</td></tr>
+            <tr data-iso="my"><td><img class="bandera" src="/assets/img/banderas/my.svg" alt="" width="24" height="18" loading="lazy">SMS to Malaysia</td><td class="num">+60</td><td class="precio">$0.057</td></tr>
+            <tr data-iso="mv"><td><img class="bandera" src="/assets/img/banderas/mv.svg" alt="" width="24" height="18" loading="lazy">SMS to Maldives</td><td class="num">+960</td><td class="precio">$0.028</td></tr>
+            <tr data-iso="ml"><td><img class="bandera" src="/assets/img/banderas/ml.svg" alt="" width="24" height="18" loading="lazy">SMS to Mali</td><td class="num">+223</td><td class="precio">$0.067</td></tr>
+            <tr data-iso="mt"><td><img class="bandera" src="/assets/img/banderas/mt.svg" alt="" width="24" height="18" loading="lazy">SMS to Malta</td><td class="num">+356</td><td class="precio">$0.047</td></tr>
+            <tr data-iso="mh"><td><img class="bandera" src="/assets/img/banderas/mh.svg" alt="" width="24" height="18" loading="lazy">SMS to Marshall Islands</td><td class="num">+692</td><td class="precio">$0.056</td></tr>
+            <tr data-iso="mq"><td><img class="bandera" src="/assets/img/banderas/mq.svg" alt="" width="24" height="18" loading="lazy">SMS to Martinique</td><td class="num">+596</td><td class="precio">$0.094</td></tr>
+            <tr data-iso="mr"><td><img class="bandera" src="/assets/img/banderas/mr.svg" alt="" width="24" height="18" loading="lazy">SMS to Mauritania</td><td class="num">+222</td><td class="precio">$0.075</td></tr>
+            <tr data-iso="mu"><td><img class="bandera" src="/assets/img/banderas/mu.svg" alt="" width="24" height="18" loading="lazy">SMS to Mauritius</td><td class="num">+230</td><td class="precio">$0.049</td></tr>
+            <tr data-iso="yt"><td><img class="bandera" src="/assets/img/banderas/yt.svg" alt="" width="24" height="18" loading="lazy">SMS to Mayotte</td><td class="num">+269</td><td class="precio">$0.153</td></tr>
+            <tr data-iso="mx"><td><img class="bandera" src="/assets/img/banderas/mx.svg" alt="" width="24" height="18" loading="lazy">SMS to Mexico</td><td class="num">+52</td><td class="precio">$0.013</td></tr>
+            <tr data-iso="fm"><td><img class="bandera" src="/assets/img/banderas/fm.svg" alt="" width="24" height="18" loading="lazy">SMS to Micronesia</td><td class="num">+691</td><td class="precio">$0.050</td></tr>
+            <tr data-iso="md"><td><img class="bandera" src="/assets/img/banderas/md.svg" alt="" width="24" height="18" loading="lazy">SMS to Moldova</td><td class="num">+373</td><td class="precio">$0.054</td></tr>
+            <tr data-iso="mc"><td><img class="bandera" src="/assets/img/banderas/mc.svg" alt="" width="24" height="18" loading="lazy">SMS to Monaco</td><td class="num">+377</td><td class="precio">$0.144</td></tr>
+            <tr data-iso="mn"><td><img class="bandera" src="/assets/img/banderas/mn.svg" alt="" width="24" height="18" loading="lazy">SMS to Mongolia</td><td class="num">+976</td><td class="precio">$0.065</td></tr>
+            <tr data-iso="me"><td><img class="bandera" src="/assets/img/banderas/me.svg" alt="" width="24" height="18" loading="lazy">SMS to Montenegro</td><td class="num">+382</td><td class="precio">$0.077</td></tr>
+            <tr data-iso="ms"><td><img class="bandera" src="/assets/img/banderas/ms.svg" alt="" width="24" height="18" loading="lazy">SMS to Montserrat</td><td class="num">+1164</td><td class="precio">$0.078</td></tr>
+            <tr data-iso="ma"><td><img class="bandera" src="/assets/img/banderas/ma.svg" alt="" width="24" height="18" loading="lazy">SMS to Morocco</td><td class="num">+212</td><td class="precio">$0.082</td></tr>
+            <tr data-iso="mz"><td><img class="bandera" src="/assets/img/banderas/mz.svg" alt="" width="24" height="18" loading="lazy">SMS to Mozambique</td><td class="num">+258</td><td class="precio">$0.032</td></tr>
+            <tr data-iso="mm"><td><img class="bandera" src="/assets/img/banderas/mm.svg" alt="" width="24" height="18" loading="lazy">SMS to Myanmar (Burma)</td><td class="num">+95</td><td class="precio">$0.099</td></tr>
+            <tr data-iso="na"><td><img class="bandera" src="/assets/img/banderas/na.svg" alt="" width="24" height="18" loading="lazy">SMS to Namibia</td><td class="num">+264</td><td class="precio">$0.039</td></tr>
+            <tr data-iso="nr"><td><img class="bandera" src="/assets/img/banderas/nr.svg" alt="" width="24" height="18" loading="lazy">SMS to Nauru</td><td class="num">+536</td><td class="precio">$0.056</td></tr>
+            <tr data-iso="np"><td><img class="bandera" src="/assets/img/banderas/np.svg" alt="" width="24" height="18" loading="lazy">SMS to Nepal</td><td class="num">+977</td><td class="precio">$0.103</td></tr>
+            <tr data-iso="nl"><td><img class="bandera" src="/assets/img/banderas/nl.svg" alt="" width="24" height="18" loading="lazy">SMS to Netherlands</td><td class="num">+31</td><td class="precio">$0.089</td></tr>
+            <tr data-iso="nc"><td><img class="bandera" src="/assets/img/banderas/nc.svg" alt="" width="24" height="18" loading="lazy">SMS to New Caledonia</td><td class="num">+687</td><td class="precio">$0.101</td></tr>
+            <tr data-iso="nz"><td><img class="bandera" src="/assets/img/banderas/nz.svg" alt="" width="24" height="18" loading="lazy">SMS to New Zealand</td><td class="num">+64</td><td class="precio">$0.074</td></tr>
+            <tr data-iso="ni"><td><img class="bandera" src="/assets/img/banderas/ni.svg" alt="" width="24" height="18" loading="lazy">SMS to Nicaragua</td><td class="num">+505</td><td class="precio">$0.056</td></tr>
+            <tr data-iso="ne"><td><img class="bandera" src="/assets/img/banderas/ne.svg" alt="" width="24" height="18" loading="lazy">SMS to Niger</td><td class="num">+227</td><td class="precio">$0.077</td></tr>
+            <tr data-iso="ng"><td><img class="bandera" src="/assets/img/banderas/ng.svg" alt="" width="24" height="18" loading="lazy">SMS to Nigeria</td><td class="num">+234</td><td class="precio">$0.084</td></tr>
+            <tr data-iso="kp"><td><img class="bandera" src="/assets/img/banderas/kp.svg" alt="" width="24" height="18" loading="lazy">SMS to North Korea</td><td class="num">+850</td><td class="precio">$0.034</td></tr>
+            <tr data-iso="mk"><td><img class="bandera" src="/assets/img/banderas/mk.svg" alt="" width="24" height="18" loading="lazy">SMS to North Macedonia</td><td class="num">+389</td><td class="precio">$0.038</td></tr>
+            <tr data-iso="no"><td><img class="bandera" src="/assets/img/banderas/no.svg" alt="" width="24" height="18" loading="lazy">SMS to Norway</td><td class="num">+47</td><td class="precio">$0.088</td></tr>
+            <tr data-iso="om"><td><img class="bandera" src="/assets/img/banderas/om.svg" alt="" width="24" height="18" loading="lazy">SMS to Oman</td><td class="num">+968</td><td class="precio">$0.072</td></tr>
+            <tr data-iso="pk"><td><img class="bandera" src="/assets/img/banderas/pk.svg" alt="" width="24" height="18" loading="lazy">SMS to Pakistan</td><td class="num">+92</td><td class="precio">$0.049</td></tr>
+            <tr data-iso="pw"><td><img class="bandera" src="/assets/img/banderas/pw.svg" alt="" width="24" height="18" loading="lazy">SMS to Palau</td><td class="num">+680</td><td class="precio">$0.081</td></tr>
+            <tr data-iso="ps"><td><img class="bandera" src="/assets/img/banderas/ps.svg" alt="" width="24" height="18" loading="lazy">SMS to Palestinian Territories</td><td class="num">+970</td><td class="precio">$0.113</td></tr>
+            <tr data-iso="pa"><td><img class="bandera" src="/assets/img/banderas/pa.svg" alt="" width="24" height="18" loading="lazy">SMS to Panama</td><td class="num">+507</td><td class="precio">$0.053</td></tr>
+            <tr data-iso="pg"><td><img class="bandera" src="/assets/img/banderas/pg.svg" alt="" width="24" height="18" loading="lazy">SMS to Papua New Guinea</td><td class="num">+675</td><td class="precio">$0.045</td></tr>
+            <tr data-iso="py"><td><img class="bandera" src="/assets/img/banderas/py.svg" alt="" width="24" height="18" loading="lazy">SMS to Paraguay</td><td class="num">+595</td><td class="precio">$0.034</td></tr>
+            <tr data-iso="pe"><td><img class="bandera" src="/assets/img/banderas/pe.svg" alt="" width="24" height="18" loading="lazy">SMS to Peru</td><td class="num">+51</td><td class="precio">$0.043</td></tr>
+            <tr data-iso="ph"><td><img class="bandera" src="/assets/img/banderas/ph.svg" alt="" width="24" height="18" loading="lazy">SMS to Philippines</td><td class="num">+63</td><td class="precio">$0.047</td></tr>
+            <tr data-iso="pl"><td><img class="bandera" src="/assets/img/banderas/pl.svg" alt="" width="24" height="18" loading="lazy">SMS to Poland</td><td class="num">+48</td><td class="precio">$0.039</td></tr>
+            <tr data-iso="pt"><td><img class="bandera" src="/assets/img/banderas/pt.svg" alt="" width="24" height="18" loading="lazy">SMS to Portugal</td><td class="num">+351</td><td class="precio">$0.079</td></tr>
+            <tr data-iso="pr"><td><img class="bandera" src="/assets/img/banderas/pr.svg" alt="" width="24" height="18" loading="lazy">SMS to Puerto Rico</td><td class="num">+1</td><td class="precio">$0.048</td></tr>
+            <tr data-iso="qa"><td><img class="bandera" src="/assets/img/banderas/qa.svg" alt="" width="24" height="18" loading="lazy">SMS to Qatar</td><td class="num">+974</td><td class="precio">$0.036</td></tr>
+            <tr data-iso="ro"><td><img class="bandera" src="/assets/img/banderas/ro.svg" alt="" width="24" height="18" loading="lazy">SMS to Romania</td><td class="num">+40</td><td class="precio">$0.081</td></tr>
+            <tr data-iso="ru"><td><img class="bandera" src="/assets/img/banderas/ru.svg" alt="" width="24" height="18" loading="lazy">SMS to Russia</td><td class="num">+7</td><td class="precio">$0.079</td></tr>
+            <tr data-iso="rw"><td><img class="bandera" src="/assets/img/banderas/rw.svg" alt="" width="24" height="18" loading="lazy">SMS to Rwanda</td><td class="num">+250</td><td class="precio">$0.079</td></tr>
+            <tr data-iso="ws"><td><img class="bandera" src="/assets/img/banderas/ws.svg" alt="" width="24" height="18" loading="lazy">SMS to Samoa</td><td class="num">+685</td><td class="precio">$0.036</td></tr>
+            <tr data-iso="sm"><td><img class="bandera" src="/assets/img/banderas/sm.svg" alt="" width="24" height="18" loading="lazy">SMS to San Marino</td><td class="num">+378</td><td class="precio">$0.051</td></tr>
+            <tr data-iso="sa"><td><img class="bandera" src="/assets/img/banderas/sa.svg" alt="" width="24" height="18" loading="lazy">SMS to Saudi Arabia</td><td class="num">+966</td><td class="precio">$0.045</td></tr>
+            <tr data-iso="sn"><td><img class="bandera" src="/assets/img/banderas/sn.svg" alt="" width="24" height="18" loading="lazy">SMS to Senegal</td><td class="num">+221</td><td class="precio">$0.058</td></tr>
+            <tr data-iso="rs"><td><img class="bandera" src="/assets/img/banderas/rs.svg" alt="" width="24" height="18" loading="lazy">SMS to Serbia</td><td class="num">+381</td><td class="precio">$0.070</td></tr>
+            <tr data-iso="sc"><td><img class="bandera" src="/assets/img/banderas/sc.svg" alt="" width="24" height="18" loading="lazy">SMS to Seychelles</td><td class="num">+248</td><td class="precio">$0.022</td></tr>
+            <tr data-iso="sl"><td><img class="bandera" src="/assets/img/banderas/sl.svg" alt="" width="24" height="18" loading="lazy">SMS to Sierra Leone</td><td class="num">+232</td><td class="precio">$0.053</td></tr>
+            <tr data-iso="sg"><td><img class="bandera" src="/assets/img/banderas/sg.svg" alt="" width="24" height="18" loading="lazy">SMS to Singapore</td><td class="num">+65</td><td class="precio">$0.055</td></tr>
+            <tr data-iso="sk"><td><img class="bandera" src="/assets/img/banderas/sk.svg" alt="" width="24" height="18" loading="lazy">SMS to Slovakia</td><td class="num">+421</td><td class="precio">$0.086</td></tr>
+            <tr data-iso="si"><td><img class="bandera" src="/assets/img/banderas/si.svg" alt="" width="24" height="18" loading="lazy">SMS to Slovenia</td><td class="num">+386</td><td class="precio">$0.042</td></tr>
+            <tr data-iso="sb"><td><img class="bandera" src="/assets/img/banderas/sb.svg" alt="" width="24" height="18" loading="lazy">SMS to Solomon Islands</td><td class="num">+667</td><td class="precio">$0.058</td></tr>
+            <tr data-iso="so"><td><img class="bandera" src="/assets/img/banderas/so.svg" alt="" width="24" height="18" loading="lazy">SMS to Somalia</td><td class="num">+252</td><td class="precio">$0.095</td></tr>
+            <tr data-iso="za"><td><img class="bandera" src="/assets/img/banderas/za.svg" alt="" width="24" height="18" loading="lazy">SMS to South Africa</td><td class="num">+27</td><td class="precio">$0.033</td></tr>
+            <tr data-iso="kr"><td><img class="bandera" src="/assets/img/banderas/kr.svg" alt="" width="24" height="18" loading="lazy">SMS to South Korea</td><td class="num">+82</td><td class="precio">$0.032</td></tr>
+            <tr data-iso="ss"><td><img class="bandera" src="/assets/img/banderas/ss.svg" alt="" width="24" height="18" loading="lazy">SMS to South Sudan</td><td class="num">+211</td><td class="precio">$0.033</td></tr>
+            <tr data-iso="es"><td><img class="bandera" src="/assets/img/banderas/es.svg" alt="" width="24" height="18" loading="lazy">SMS to Spain</td><td class="num">+34</td><td class="precio">$0.064</td></tr>
+            <tr data-iso="lk"><td><img class="bandera" src="/assets/img/banderas/lk.svg" alt="" width="24" height="18" loading="lazy">SMS to Sri Lanka</td><td class="num">+94</td><td class="precio">$0.057</td></tr>
+            <tr data-iso="kn"><td><img class="bandera" src="/assets/img/banderas/kn.svg" alt="" width="24" height="18" loading="lazy">SMS to St. Kitts &amp; Nevis</td><td class="num">+1869</td><td class="precio">$0.067</td></tr>
+            <tr data-iso="lc"><td><img class="bandera" src="/assets/img/banderas/lc.svg" alt="" width="24" height="18" loading="lazy">SMS to St. Lucia</td><td class="num">+1758</td><td class="precio">$0.076</td></tr>
+            <tr data-iso="pm"><td><img class="bandera" src="/assets/img/banderas/pm.svg" alt="" width="24" height="18" loading="lazy">SMS to St. Pierre &amp; Miquelon</td><td class="num">+508</td><td class="precio">$0.068</td></tr>
+            <tr data-iso="vc"><td><img class="bandera" src="/assets/img/banderas/vc.svg" alt="" width="24" height="18" loading="lazy">SMS to St. Vincent &amp; Grenadines</td><td class="num">+1784</td><td class="precio">$0.058</td></tr>
+            <tr data-iso="sd"><td><img class="bandera" src="/assets/img/banderas/sd.svg" alt="" width="24" height="18" loading="lazy">SMS to Sudan</td><td class="num">+249</td><td class="precio">$0.067</td></tr>
+            <tr data-iso="sr"><td><img class="bandera" src="/assets/img/banderas/sr.svg" alt="" width="24" height="18" loading="lazy">SMS to Suriname</td><td class="num">+597</td><td class="precio">$0.047</td></tr>
+            <tr data-iso="se"><td><img class="bandera" src="/assets/img/banderas/se.svg" alt="" width="24" height="18" loading="lazy">SMS to Sweden</td><td class="num">+46</td><td class="precio">$0.083</td></tr>
+            <tr data-iso="ch"><td><img class="bandera" src="/assets/img/banderas/ch.svg" alt="" width="24" height="18" loading="lazy">SMS to Switzerland</td><td class="num">+41</td><td class="precio">$0.070</td></tr>
+            <tr data-iso="sy"><td><img class="bandera" src="/assets/img/banderas/sy.svg" alt="" width="24" height="18" loading="lazy">SMS to Syria</td><td class="num">+963</td><td class="precio">$0.063</td></tr>
+            <tr data-iso="st"><td><img class="bandera" src="/assets/img/banderas/st.svg" alt="" width="24" height="18" loading="lazy">SMS to São Tomé &amp; Príncipe</td><td class="num">+239</td><td class="precio">$0.040</td></tr>
+            <tr data-iso="tw"><td><img class="bandera" src="/assets/img/banderas/tw.svg" alt="" width="24" height="18" loading="lazy">SMS to Taiwan</td><td class="num">+886</td><td class="precio">$0.051</td></tr>
+            <tr data-iso="tj"><td><img class="bandera" src="/assets/img/banderas/tj.svg" alt="" width="24" height="18" loading="lazy">SMS to Tajikistan</td><td class="num">+992</td><td class="precio">$0.084</td></tr>
+            <tr data-iso="tz"><td><img class="bandera" src="/assets/img/banderas/tz.svg" alt="" width="24" height="18" loading="lazy">SMS to Tanzania</td><td class="num">+255</td><td class="precio">$0.044</td></tr>
+            <tr data-iso="th"><td><img class="bandera" src="/assets/img/banderas/th.svg" alt="" width="24" height="18" loading="lazy">SMS to Thailand</td><td class="num">+66</td><td class="precio">$0.037</td></tr>
+            <tr data-iso="tl"><td><img class="bandera" src="/assets/img/banderas/tl.svg" alt="" width="24" height="18" loading="lazy">SMS to Timor-Leste</td><td class="num">+670</td><td class="precio">$0.054</td></tr>
+            <tr data-iso="tg"><td><img class="bandera" src="/assets/img/banderas/tg.svg" alt="" width="24" height="18" loading="lazy">SMS to Togo</td><td class="num">+228</td><td class="precio">$0.043</td></tr>
+            <tr data-iso="to"><td><img class="bandera" src="/assets/img/banderas/to.svg" alt="" width="24" height="18" loading="lazy">SMS to Tonga</td><td class="num">+676</td><td class="precio">$0.040</td></tr>
+            <tr data-iso="tt"><td><img class="bandera" src="/assets/img/banderas/tt.svg" alt="" width="24" height="18" loading="lazy">SMS to Trinidad &amp; Tobago</td><td class="num">+1868</td><td class="precio">$0.053</td></tr>
+            <tr data-iso="tn"><td><img class="bandera" src="/assets/img/banderas/tn.svg" alt="" width="24" height="18" loading="lazy">SMS to Tunisia</td><td class="num">+216</td><td class="precio">$0.066</td></tr>
+            <tr data-iso="tm"><td><img class="bandera" src="/assets/img/banderas/tm.svg" alt="" width="24" height="18" loading="lazy">SMS to Turkmenistan</td><td class="num">+993</td><td class="precio">$0.042</td></tr>
+            <tr data-iso="tc"><td><img class="bandera" src="/assets/img/banderas/tc.svg" alt="" width="24" height="18" loading="lazy">SMS to Turks &amp; Caicos Islands</td><td class="num">+1649</td><td class="precio">$0.052</td></tr>
+            <tr data-iso="tr"><td><img class="bandera" src="/assets/img/banderas/tr.svg" alt="" width="24" height="18" loading="lazy">SMS to Türkiye</td><td class="num">+90</td><td class="precio">$0.073</td></tr>
+            <tr data-iso="vi"><td><img class="bandera" src="/assets/img/banderas/vi.svg" alt="" width="24" height="18" loading="lazy">SMS to U.S. Virgin Islands</td><td class="num">+1340</td><td class="precio">$0.046</td></tr>
+            <tr data-iso="ug"><td><img class="bandera" src="/assets/img/banderas/ug.svg" alt="" width="24" height="18" loading="lazy">SMS to Uganda</td><td class="num">+256</td><td class="precio">$0.086</td></tr>
+            <tr data-iso="ua"><td><img class="bandera" src="/assets/img/banderas/ua.svg" alt="" width="24" height="18" loading="lazy">SMS to Ukraine</td><td class="num">+380</td><td class="precio">$0.086</td></tr>
+            <tr data-iso="ae"><td><img class="bandera" src="/assets/img/banderas/ae.svg" alt="" width="24" height="18" loading="lazy">SMS to United Arab Emirates</td><td class="num">+971</td><td class="precio">$0.039</td></tr>
+            <tr data-iso="gb"><td><img class="bandera" src="/assets/img/banderas/gb.svg" alt="" width="24" height="18" loading="lazy">SMS to United Kingdom</td><td class="num">+44</td><td class="precio">$0.086</td></tr>
+            <tr data-iso="us"><td><img class="bandera" src="/assets/img/banderas/us.svg" alt="" width="24" height="18" loading="lazy">SMS to United States</td><td class="num">+1</td><td class="precio">$0.089</td></tr>
+            <tr data-iso="uy"><td><img class="bandera" src="/assets/img/banderas/uy.svg" alt="" width="24" height="18" loading="lazy">SMS to Uruguay</td><td class="num">+598</td><td class="precio">$0.082</td></tr>
+            <tr data-iso="uz"><td><img class="bandera" src="/assets/img/banderas/uz.svg" alt="" width="24" height="18" loading="lazy">SMS to Uzbekistan</td><td class="num">+998</td><td class="precio">$0.086</td></tr>
+            <tr data-iso="vu"><td><img class="bandera" src="/assets/img/banderas/vu.svg" alt="" width="24" height="18" loading="lazy">SMS to Vanuatu</td><td class="num">+678</td><td class="precio">$0.075</td></tr>
+            <tr data-iso="ve"><td><img class="bandera" src="/assets/img/banderas/ve.svg" alt="" width="24" height="18" loading="lazy">SMS to Venezuela</td><td class="num">+58</td><td class="precio">$0.037</td></tr>
+            <tr data-iso="vn"><td><img class="bandera" src="/assets/img/banderas/vn.svg" alt="" width="24" height="18" loading="lazy">SMS to Vietnam</td><td class="num">+84</td><td class="precio">$0.064</td></tr>
+            <tr data-iso="wf"><td><img class="bandera" src="/assets/img/banderas/wf.svg" alt="" width="24" height="18" loading="lazy">SMS to Wallis &amp; Futuna</td><td class="num">+681</td><td class="precio">$0.091</td></tr>
+            <tr data-iso="ye"><td><img class="bandera" src="/assets/img/banderas/ye.svg" alt="" width="24" height="18" loading="lazy">SMS to Yemen</td><td class="num">+967</td><td class="precio">$0.043</td></tr>
+            <tr data-iso="zm"><td><img class="bandera" src="/assets/img/banderas/zm.svg" alt="" width="24" height="18" loading="lazy">SMS to Zambia</td><td class="num">+260</td><td class="precio">$0.032</td></tr>
+            <tr data-iso="zw"><td><img class="bandera" src="/assets/img/banderas/zw.svg" alt="" width="24" height="18" loading="lazy">SMS to Zimbabwe</td><td class="num">+263</td><td class="precio">$0.029</td></tr>
+</tbody>
+      </table>
+    </div>
+    <p class="nota" id="sin-resultados" hidden>We could not find that destination. Message us and we will confirm it with you.</p>
+    <p class="nota">218 destinations; scroll inside the table or filter by name. Prices in US dollars plus VAT, subject to change according to agreements with each carrier. For high volumes to a single country, ask us for a quote.</p>
+  </div>
+</section>
+
+<section class="seccion" id="preguntas">
+  <div class="contenedor">
+    <div class="seccion-cab reveal"><span class="etiqueta-sup">Common questions</span><h2>Frequently asked questions about SMS</h2></div>
+    <div class="faq reveal">
+      <details><summary>Do you send SMS to every carrier in Ecuador?</summary><div>Yes. SMS reach Claro, Tigo (formerly Movistar), CNT and Tuenti lines through a local short code, with your company as the sender and a delivery report for every message.</div></details>
+      <details><summary>Does MASIVA send SMS outside Ecuador?</summary><div>Yes. From the same platform you can send SMS to more than 200 countries, with rates per destination published on this page and no prior text approval.</div></details>
+      <details><summary>How much does it cost to send an SMS to another country?</summary><div>It depends on the destination. The international coverage table on this page shows the price per country; for example, search for Colombia, Peru, the United States or Spain to see its rate.</div></details>
+      <details><summary>Can I send SMS from my own system?</summary><div>Yes. Besides the web platform, you have a documented REST API to connect your core system, CRM or ERP and send SMS within Ecuador or abroad from your own processes.</div></details>
+      <details><summary>What is the difference between transactional and advertising SMS?</summary><div>Transactional SMS carries information the customer must receive (passcodes, alerts, reminders, confirmations). Advertising SMS promotes or builds loyalty with non-urgent messages, and has content and timing rules that we help you follow.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-simple">
+  <div class="contenedor">
+    <h2>Open your SMS account and start sending today</h2>
+    <p>We create your account, load your first package and guide you step by step through your first send.</p>
+    <div class="hero-botones">
+      <a class="btn btn-primario" href="/en/contact/">Request an account</a>
+      <a class="btn btn-contorno" href="https://wa.me/593994488880?text=Hello%20MASIVA%2C%20I%20want%20to%20open%20an%20SMS%20account" target="_blank" rel="noopener">Message us on WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie-grid">
+      <div>
+        <img class="logo-pie" src="/assets/img/logo/masiva-vertical-lema-blanco.svg" alt="masiva: connect, communicate, succeed!" width="1200" height="594">
+        <p>Omnichannel business messaging and automation for companies in Ecuador.</p>
+        <div class="redes">
+          <a href="https://www.facebook.com/MasivaEc" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.3H7.4V14h2.8v8z"/></svg></a>
+          <a href="https://www.instagram.com/masivaec" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/company/masivaec" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 8.5h-3V21h3zM5 3.5a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6M21 13.3c0-3.4-1.8-5-4.3-5-2 0-2.9 1.1-3.4 1.9V8.5h-3V21h3v-6.7c0-1.8.9-2.9 2.4-2.9s2.3 1 2.3 2.9V21h3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h2 class="pie-tit">Services</h2>
+        <ul>
+          <li><a href="/en/whatsapp/">WhatsApp API</a></li>
+          <li><a href="/en/chatbots-ai-agents/">Chatbots &amp; AI agents</a></li>
+          <li><a href="/en/sms/">SMS solutions</a></li>
+          <li><a href="/en/email/">Email solutions</a></li>
+          <li><a href="/en/websites/">Websites</a></li>
+          <li><a href="/en/hosting/">Hosting</a></li>
+          <li><a href="/en/domains/">Domains</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="pie-tit">Company</h2>
+        <ul>
+          <li><a href="/en/#nosotros">About us</a></li>
+          <li><a href="/en/clients/">Clients</a></li>
+          <li><a href="/blog/" hreflang="es">Blog (Spanish)</a></li>
+          <li><a href="/en/contact/">Contact</a></li>
+          <li><a href="/area-de-clientes/">Client area</a></li>
+          <li><a href="/formas-de-pago/">Payment methods</a></li>
+          <li><a href="/gestion-de-fraudes/">Fraud management</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="pie-tit">Contact</h2>
+        <address>
+          <a href="https://wa.me/593994488880" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>+593 99 448 8880</a>
+          <a href="mailto:soporte@masiva.ec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>soporte@masiva.ec</a>
+          <span>Quito, Ecuador</span>
+        </address>
+      </div>
+    </div>
+    <div class="pie-legal">
+      <span>© <span data-anio>2026</span> MASIVA-EC S.A. All rights reserved.</span>
+      <ul>
+        <li><a href="/politica-de-privacidad/">Privacy policy</a></li>
+        <li><a href="/terminos-y-condiciones/">Terms and conditions</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-flotante" href="https://wa.me/593994488880?text=Hello%20MASIVA%2C%20I%20would%20like%20more%20information" target="_blank" rel="noopener" aria-label="Message us on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 1.67c4.54 0 8.24 3.7 8.24 8.24s-3.7 8.24-8.24 8.24c-1.5 0-2.97-.41-4.26-1.18l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.35c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01"/></svg>
+</a>
+<script src="/assets/js/main.js?v=f918030b" defer></script>
+
+</body>
+</html>

@@ -152,9 +152,10 @@ document.querySelectorAll('form[data-whatsapp]').forEach(function (f) {
   var vacio = document.querySelector('.pais-vacio'), dato = document.querySelector('.pais-dato');
   var chips = document.querySelectorAll('.pais-chip');
   var norm = function (s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); };
+  var EN = document.documentElement.lang === 'en';
   var paises = [], creado = false, elegido = null, idx = -1;
   Array.prototype.forEach.call(tabla.tBodies[0].rows, function (tr) {
-    paises.push({ iso: tr.getAttribute('data-iso'), nombre: tr.cells[0].textContent.replace(/^\s*SMS a\s*/, '').trim(),
+    paises.push({ iso: tr.getAttribute('data-iso'), nombre: tr.cells[0].textContent.replace(/^\s*SMS (a|to)\s*/, '').trim(),
       prefijo: tr.cells[1].textContent.trim(), precio: tr.cells[2].textContent.trim(), tr: tr });
   });
   function bandera(iso) { return '<img class="bandera" src="/assets/img/banderas/' + iso + '.svg" alt="" width="24" height="18" loading="lazy">'; }
@@ -182,12 +183,12 @@ document.querySelectorAll('form[data-whatsapp]').forEach(function (f) {
     elegido = p; input.value = p.nombre; bandComb.src = '/assets/img/banderas/' + p.iso + '.svg'; bandComb.hidden = false;
     vacio.hidden = true; dato.hidden = false;
     dato.style.animation = 'none'; dato.offsetHeight; dato.style.animation = '';
-    var img = dato.querySelector('.pais-bandera'); img.src = '/assets/img/banderas/' + p.iso + '.svg'; img.alt = 'Bandera de ' + p.nombre;
-    dato.querySelector('.pais-nombre').textContent = 'SMS a ' + p.nombre;
-    dato.querySelector('.pais-prefijo').textContent = 'Prefijo ' + p.prefijo + ' · todas las operadoras';
+    var img = dato.querySelector('.pais-bandera'); img.src = '/assets/img/banderas/' + p.iso + '.svg'; img.alt = (EN ? 'Flag of ' : 'Bandera de ') + p.nombre;
+    dato.querySelector('.pais-nombre').textContent = (EN ? 'SMS to ' : 'SMS a ') + p.nombre;
+    dato.querySelector('.pais-prefijo').textContent = EN ? 'Prefix ' + p.prefijo + ' · all carriers' : 'Prefijo ' + p.prefijo + ' · todas las operadoras';
     dato.querySelector('.pais-precio b').textContent = p.precio;
     var cta = dato.querySelector('.pais-cta');
-    cta.textContent = 'Quiero enviar SMS a ' + p.nombre;
+    cta.textContent = (EN ? 'I want to send SMS to ' : 'Quiero enviar SMS a ') + p.nombre;
     cta.href = 'https://wa.me/593994488880?text=' + encodeURIComponent((document.documentElement.lang === 'en' ? 'Hello MASIVA, I want to send SMS to ' : 'Hola MASIVA, quiero enviar SMS a ') + p.nombre + '.');
     chips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-pais') === p.iso ? 'true' : 'false'); });
     cerrar();
