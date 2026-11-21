@@ -1173,3 +1173,6 @@ section[id]{scroll-margin-top:90px}
 @keyframes maq-titila{50%{opacity:.35}}
 .maqueta-stats div{transition:box-shadow .5s,border-color .5s}
 .maqueta-stats div.maq-brilla{border-color:rgba(46,204,113,.45);box-shadow:0 0 0 3px rgba(46,204,113,.12)}
+/* Chips que vienen hacia la pantalla + barrido de luz en los banners */
+.chips-volar .dc-chips li,.chips-volar .eco-etq li,.chips-volar .eco-caps li{opacity:0;will-change:transform,opacity,filter}
+.dc-luz{position:absolute;top:0;bottom:0;left:0;width:35%;pointer-events:none;z-index:1;opacity:0;background:linear-gradient(90deg,transparent,rgba(255,190,120,.22),transparent);mix-blend-mode:screen}

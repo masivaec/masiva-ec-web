@@ -384,3 +384,32 @@ document.querySelectorAll('.grid-2>.tarjeta,.grid-3>.tarjeta,.grid-4>.tarjeta,.p
     }, { threshold: 0.45 }).observe(maq);
   });
 })();
+
+/* Chips que "vienen hacia la pantalla": entran grandes y desenfocados y se asientan en su sitio */
+(function () {
+  if (!('IntersectionObserver' in window) || !Element.prototype.animate) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var grupos = [].slice.call(document.querySelectorAll('.dc, .eco'));
+  grupos.forEach(function (g) {
+    var chips = [].slice.call(g.querySelectorAll('.dc-chips li, .eco-etq li, .eco-caps li'));
+    if (!chips.length) return;
+    g.classList.add('chips-volar');
+    var luz = document.createElement('span'); luz.className = 'dc-luz'; luz.setAttribute('aria-hidden', 'true');
+    (g.querySelector('.eco-art') || g).appendChild(luz);
+    var io = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      io.disconnect();
+      luz.animate([{ transform: 'translateX(-120%) skewX(-18deg)', opacity: 0 }, { opacity: 1, offset: .3 }, { transform: 'translateX(260%) skewX(-18deg)', opacity: 0 }],
+        { duration: 1400, easing: 'ease-in-out' });
+      chips.forEach(function (c, i) {
+        c.animate([
+          { opacity: 0, scale: 2.6, filter: 'blur(10px)' },
+          { opacity: 1, scale: 0.94, filter: 'blur(0px)', offset: 0.78 },
+          { opacity: 1, scale: 1, filter: 'blur(0px)' }
+        ], { duration: 820, delay: 250 + i * 130, easing: 'cubic-bezier(.2,.75,.25,1)', fill: 'both' })
+          .finished.then(function () { c.style.opacity = 1; });
+      });
+    }, { threshold: 0.35 });
+    io.observe(g);
+  });
+})();
