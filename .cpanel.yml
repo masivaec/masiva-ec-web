@@ -39,6 +39,7 @@ deployment:
     - /bin/cp -R el-papel-de-las-redes-sociales $DEPLOYPATH
     - /bin/cp -R elementos-clave-y-beneficios-del-blockchain $DEPLOYPATH
     - /bin/cp -R email $DEPLOYPATH
+    - /bin/cp -R en $DEPLOYPATH
     - /bin/cp -R errores-basicos-en-el-ecommerce $DEPLOYPATH
     - /bin/cp -R explora-los-distintos-tipos-de-blockchain $DEPLOYPATH
     - /bin/cp -R formas-de-pago $DEPLOYPATH

@@ -132,7 +132,7 @@ document.querySelectorAll('form[data-whatsapp]').forEach(function (f) {
   f.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!f.reportValidity()) return;
-    var lineas = ['Hola MASIVA, quiero información.'];
+    var lineas = [document.documentElement.lang === 'en' ? 'Hello MASIVA, I would like more information.' : 'Hola MASIVA, quiero información.'];
     f.querySelectorAll('input[name], select[name], textarea[name]').forEach(function (c) {
       var v = (c.value || '').trim(); if (!v) return;
       var et = f.querySelector('label[for="' + c.id + '"]');
@@ -164,7 +164,7 @@ document.querySelectorAll('form[data-whatsapp]').forEach(function (f) {
     paises.forEach(function (p, i) {
       html += '<li role="option" data-i="' + i + '" data-b="' + norm(p.nombre + ' ' + p.prefijo + ' ' + p.iso) + '"><span>' + bandera(p.iso) + p.nombre + '</span><small>' + p.prefijo + '</small></li>';
     });
-    ul.innerHTML = html + '<li class="sin" hidden>No encontramos ese país. Escríbenos y lo confirmamos.</li>';
+    ul.innerHTML = html + '<li class="sin" hidden>' + (document.documentElement.lang === 'en' ? 'We could not find that country. Message us and we will confirm.' : 'No encontramos ese país. Escríbenos y lo confirmamos.') + '</li>';
   }
   function visibles() { return Array.prototype.filter.call(ul.querySelectorAll('li[data-i]'), function (li) { return !li.hidden; }); }
   function marcar(n) {
@@ -188,7 +188,7 @@ document.querySelectorAll('form[data-whatsapp]').forEach(function (f) {
     dato.querySelector('.pais-precio b').textContent = p.precio;
     var cta = dato.querySelector('.pais-cta');
     cta.textContent = 'Quiero enviar SMS a ' + p.nombre;
-    cta.href = 'https://wa.me/593994488880?text=' + encodeURIComponent('Hola MASIVA, quiero enviar SMS a ' + p.nombre + '.');
+    cta.href = 'https://wa.me/593994488880?text=' + encodeURIComponent((document.documentElement.lang === 'en' ? 'Hello MASIVA, I want to send SMS to ' : 'Hola MASIVA, quiero enviar SMS a ') + p.nombre + '.');
     chips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-pais') === p.iso ? 'true' : 'false'); });
     cerrar();
   }
@@ -254,7 +254,7 @@ document.querySelectorAll('.grid-2>.tarjeta,.grid-3>.tarjeta,.grid-4>.tarjeta,.p
 (function(){
   var ns=document.querySelectorAll('.cifra-n[data-n]'); if(!ns.length||!('IntersectionObserver' in window)) return;
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var fmt=function(v){return v.toLocaleString('es-EC').replace(/,/g,'.');};
+  var fmt=function(v){return document.documentElement.lang==='en'?v.toLocaleString('en-US'):v.toLocaleString('es-EC').replace(/,/g,'.');};
   var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(!e.isIntersecting) return; io.unobserve(e.target);
     var el=e.target, fin=+el.dataset.n, pre=el.dataset.pre||'', t0=null, d=1600;
     function paso(t){ if(!t0) t0=t; var k=Math.min((t-t0)/d,1), v=Math.round(fin*(1-Math.pow(1-k,3))); el.textContent=pre+fmt(v); if(k<1) requestAnimationFrame(paso); }

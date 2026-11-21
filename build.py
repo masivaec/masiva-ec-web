@@ -20,19 +20,38 @@ DEPLOYPATH = "/home/mamascloud/nuevo.masiva.ec/" if STAGING else "/home/mamasclo
 def _v(p):
     return hashlib.md5(open(os.path.join(RAIZ, p), "rb").read()).hexdigest()[:8]
 V_CSS, V_JS, V_RED = _v("assets/css/styles.css"), _v("assets/js/main.js"), _v("assets/js/red.js")
-cabecera = open(os.path.join(SRC, "partials", "cabecera.html"), encoding="utf-8").read()
-pie = open(os.path.join(SRC, "partials", "pie.html"), encoding="utf-8").read()
+def _leer(*p):
+    return open(os.path.join(SRC, *p), encoding="utf-8").read()
+PARCIALES = {
+    "es": (_leer("partials", "cabecera.html"), _leer("partials", "pie.html")),
+    "en": (_leer("partials", "en", "cabecera.html"), _leer("partials", "en", "pie.html")),
+}
+cabecera, pie = PARCIALES["es"]
+IDIOMA_UI = {
+    "es": {"lang": "es", "og_locale": "es_EC", "saltar": "Ir al contenido", "inicio": "Inicio", "home": "/"},
+    "en": {"lang": "en", "og_locale": "en_US", "saltar": "Skip to content", "inicio": "Home", "home": "/en/"},
+}
+# URL en inglés -> URL en español (para enlazar mientras una página no esté traducida)
+RUTAS_EN_ES = {
+    "/en/": "/", "/en/chatbots-ai-agents/": "/chatbots-agentes-ia/", "/en/whatsapp/": "/whatsapp/", "/en/sms/": "/sms/",
+    "/en/email/": "/email/", "/en/websites/": "/web/", "/en/hosting/": "/hosting/", "/en/domains/": "/dominios/",
+    "/en/clients/": "/clientes/", "/en/contact/": "/contacto/", "/en/privacy-policy/": "/politica-de-privacidad/",
+    "/en/terms-and-conditions/": "/terminos-y-condiciones/", "/en/payment-methods/": "/formas-de-pago/",
+    "/en/fraud-management/": "/gestion-de-fraudes/", "/en/client-area/": "/area-de-clientes/",
+}
+ES_DEF = dict(lang="es", og_locale="es_EC", saltar="Ir al contenido", alternos="")
 
 PLANTILLA = """<!DOCTYPE html>
-<html lang="es">
+<html lang="{lang}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{description}">
 {robots}<link rel="canonical" href="{canonical}">
+{alternos}
 <meta property="og:type" content="website">
-<meta property="og:locale" content="es_EC">
+<meta property="og:locale" content="{og_locale}">
 <meta property="og:site_name" content="MASIVA">
 <meta property="og:title" content="{og_title}">
 <meta property="og:description" content="{description}">
@@ -48,7 +67,7 @@ PLANTILLA = """<!DOCTYPE html>
 {jsonld}</head>
 <body class="{body_class}">
 
-<a class="visualmente-oculto" href="#contenido">Ir al contenido</a>
+<a class="visualmente-oculto" href="#contenido">{saltar}</a>
 
 {cabecera}
 <main id="contenido">
@@ -72,7 +91,7 @@ ORG = {
     "slogan": "¡conecta, comunica, triunfa!",
     "contactPoint": [{
         "@type": "ContactPoint", "telephone": "+593994488880", "email": "soporte@masiva.ec",
-        "contactType": "sales", "areaServed": "EC", "availableLanguage": "es"}],
+        "contactType": "sales", "areaServed": "EC", "availableLanguage": ["es", "en"]}],
     "sameAs": ["https://www.facebook.com/MasivaEc", "https://www.instagram.com/masivaec"],
 }
 
@@ -89,13 +108,14 @@ def front_matter(texto):
     return meta, texto
 
 
-def jsonld_para(meta):
+def jsonld_para(meta, lang="es"):
+    ui = IDIOMA_UI[lang]
     bloques = [ORG]
-    if meta.get("path", "/") != "/":
+    if meta.get("path", "/") not in ("/", "/en/"):
         bloques.append({
             "@context": "https://schema.org", "@type": "BreadcrumbList",
             "itemListElement": [
-                {"@type": "ListItem", "position": 1, "name": "Inicio", "item": DOMINIO + "/"},
+                {"@type": "ListItem", "position": 1, "name": ui["inicio"], "item": DOMINIO + ui["home"]},
                 {"@type": "ListItem", "position": 2, "name": meta.get("h1", meta["title"].split("|")[0].strip()),
                  "item": DOMINIO + meta["path"]}]})
     if meta.get("servicio"):
@@ -112,27 +132,73 @@ def marcar_activo(cab, path):
     # resalta el ítem de menú de la página actual
     if path == "/":
         return cab.replace('<li><a href="/">Inicio</a>', '<li><a href="/" aria-current="page">Inicio</a>')
+    if path == "/en/":
+        return cab.replace('<li><a href="/en/">Home</a>', '<li><a href="/en/" aria-current="page">Home</a>')
     return re.sub(r'<a href="%s">' % re.escape(path), '<a href="%s" aria-current="page">' % path, cab, count=1)
 
 
+def selector_idioma(lang, ruta_es, ruta_en):
+    """Selector ES / EN con banderas. Lleva a la misma página en el otro idioma."""
+    def item(cod, href, bandera, activo):
+        extra = ' class="activo" aria-current="true"' if activo else ""
+        return ('<a href="%s" lang="%s" hreflang="%s"%s><img src="/assets/img/banderas/%s.svg" alt="" width="20" height="15"><b>%s</b></a>'
+                % (href, cod, cod, extra, bandera, cod.upper()))
+    etiqueta = "Idioma" if lang == "es" else "Language"
+    return ('<div class="idioma" role="group" aria-label="%s">%s<span aria-hidden="true">/</span>%s</div>'
+            % (etiqueta, item("es", ruta_es, "ec", lang == "es"), item("en", ruta_en, "us", lang == "en")))
+
+
+# Páginas en inglés: src/pages/en/<slug>.html con "alt:" apuntando a su par en español
+paginas = [(r, "es") for r in sorted(glob.glob(os.path.join(SRC, "pages", "*.html")))]
+paginas += [(r, "en") for r in sorted(glob.glob(os.path.join(SRC, "pages", "en", "*.html")))]
+pares_en = {}  # ruta española -> ruta inglesa
+for r, lg in paginas:
+    if lg == "en":
+        m, _ = front_matter(open(r, encoding="utf-8").read())
+        pares_en[m.get("alt", "/")] = m["path"]
+
 salidas = []
-for ruta in sorted(glob.glob(os.path.join(SRC, "pages", "*.html"))):
+for ruta, lang in paginas:
     meta, contenido = front_matter(open(ruta, encoding="utf-8").read())
-    path = meta.get("path", "/" + os.path.basename(ruta)[:-5] + "/")
+    ui = IDIOMA_UI[lang]
+    if lang == "es":
+        path = meta.get("path", "/" + os.path.basename(ruta)[:-5] + "/")
+        ruta_es, ruta_en = path, pares_en.get(path)
+    else:
+        path = meta["path"]
+        ruta_es, ruta_en = meta.get("alt", "/"), path
     canonical = DOMINIO + path
+    alternos = ""
+    if ruta_en and not STAGING:
+        alternos = ('<link rel="alternate" hreflang="es" href="%s%s">\n<link rel="alternate" hreflang="en" href="%s%s">\n'
+                    '<link rel="alternate" hreflang="x-default" href="%s%s">\n' % (DOMINIO, ruta_es, DOMINIO, ruta_en, DOMINIO, ruta_es))
+    cab, pie_l = PARCIALES[lang]
+    cab = cab.replace("{{idioma}}", selector_idioma(lang, ruta_es, ruta_en or "/en/"))
     robots = '<meta name="robots" content="noindex, nofollow">\n' if STAGING or meta.get("noindex") == "true" else ""
     pagina = PLANTILLA.format(
         title=html.escape(meta["title"]), description=html.escape(meta["description"]),
         og_title=html.escape(meta.get("og_title", meta["title"])), canonical=canonical, dominio=DOMINIO,
-        robots=robots, jsonld=jsonld_para(meta), body_class=meta.get("body_class", ""),
-        cabecera=marcar_activo(cabecera, path), contenido=contenido.strip("\n"), pie=pie.strip("\n"),
-        extra_js='<script src="/assets/js/red.js?v=%s" defer></script>' % V_RED if path == "/" else "",
-        og_image=DOMINIO + meta.get("og_image", "/assets/img/og-masiva.png"))
+        robots=robots, jsonld=jsonld_para(meta, lang), body_class=meta.get("body_class", ""),
+        cabecera=marcar_activo(cab, path), contenido=contenido.strip("\n"), pie=pie_l.strip("\n"),
+        extra_js='<script src="/assets/js/red.js?v=%s" defer></script>' % V_RED if path in ("/", "/en/") else "",
+        og_image=DOMINIO + meta.get("og_image", "/assets/img/og-masiva.png"),
+        lang=ui["lang"], og_locale=ui["og_locale"], saltar=ui["saltar"], alternos=alternos)
     pagina = pagina.replace("{{anio}}", str(datetime.date.today().year)).replace("{v_css}", V_CSS).replace("{v_js}", V_JS)
+    if lang == "en":
+        # Enlaces a páginas aún no traducidas: apuntan a la versión en español
+        rutas_en = set(pares_en.values())
+        def _enlace(mt):
+            sub, ancla = mt.group(1) or "", mt.group(2) or ""
+            destino_en = "/en/" + sub
+            return 'href="%s%s"' % (destino_en if destino_en in rutas_en else RUTAS_EN_ES.get(destino_en, "/" + sub), ancla)
+        pagina = re.sub(r'href="/en/([^"#?]*/)?(#[^"]*)?"', _enlace, pagina)
     destino = os.path.join(RAIZ, "index.html") if path == "/" else os.path.join(RAIZ, path.strip("/"), "index.html")
     os.makedirs(os.path.dirname(destino), exist_ok=True)
     open(destino, "w", encoding="utf-8").write(pagina)
     salidas.append(path)
+
+# Blog y 404 (solo en español): selector apunta al inicio en inglés
+cabecera = cabecera.replace("{{idioma}}", selector_idioma("es", "/blog/", "/en/"))
 
 
 # ============================================================== BLOG
@@ -211,7 +277,7 @@ if blog_cfg:
             {"@type": "ListItem", "position": 3, "name": m["titulo"], "item": DOMINIO + path}]}
         jsonld = "".join('<script type="application/ld+json">\n' + json.dumps(b, ensure_ascii=False) + "\n</script>\n" for b in (art_ld, migas_ld))
         robots = '<meta name="robots" content="noindex, nofollow">\n' if STAGING else ""
-        pagina = PLANTILLA.format(title=html.escape(m["title"]), description=html.escape(m["description"]),
+        pagina = PLANTILLA.format(**ES_DEF, title=html.escape(m["title"]), description=html.escape(m["description"]),
                                   og_title=html.escape(m["titulo"]), canonical=DOMINIO + path, dominio=DOMINIO, robots=robots,
                                   jsonld=jsonld, body_class="pagina-post", cabecera=marcar_activo(cabecera, "/blog/"),
                                   contenido=contenido, pie=pie.strip("\n"), extra_js="", og_image=DOMINIO + m["portada"])
@@ -242,7 +308,7 @@ if blog_cfg:
     robots = '<meta name="robots" content="noindex, nofollow">\n' if STAGING else ""
     lista_ld = {"@context": "https://schema.org", "@type": "Blog", "name": "Blog de MASIVA", "url": DOMINIO + "/blog/",
                 "blogPost": [{"@type": "BlogPosting", "headline": a["titulo"], "url": DOMINIO + a["path"]} for a in articulos[:20]]}
-    pagina = PLANTILLA.format(title="Blog de comunicación, tecnología y marketing | MASIVA",
+    pagina = PLANTILLA.format(**ES_DEF, title="Blog de comunicación, tecnología y marketing | MASIVA",
                               description="Noticias y guías sobre WhatsApp Business API, SMS, email, chatbots, inteligencia artificial y marketing para empresas en Ecuador.",
                               og_title="Blog de MASIVA", canonical=DOMINIO + "/blog/", dominio=DOMINIO, robots=robots,
                               jsonld='<script type="application/ld+json">\n' + json.dumps(lista_ld, ensure_ascii=False) + "\n</script>\n",
@@ -256,7 +322,7 @@ if blog_cfg:
 # 404 (sin canonical ni índice)
 if os.path.exists(os.path.join(SRC, "pages_extra", "404.html")):
     meta, contenido = front_matter(open(os.path.join(SRC, "pages_extra", "404.html"), encoding="utf-8").read())
-    pagina = PLANTILLA.format(
+    pagina = PLANTILLA.format(**ES_DEF,
         title="Página no encontrada | MASIVA", description="La página que buscas no existe o cambió de lugar.",
         og_title="Página no encontrada", canonical=DOMINIO + "/", dominio=DOMINIO,
         robots='<meta name="robots" content="noindex">\n', jsonld="", body_class="",
