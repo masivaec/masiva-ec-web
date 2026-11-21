@@ -1127,3 +1127,29 @@ section[id]{scroll-margin-top:90px}
 .mig-saludo{transform-box:view-box;transform-origin:-17.6px 320.5px}
 @media (prefers-reduced-motion:no-preference){.mig-saludo{animation:mig-saludo 1.6s ease-in-out infinite}}
 @keyframes mig-saludo{0%,100%{transform:rotate(0)}50%{transform:rotate(-9deg)}}
+/* Páginas legales */
+.legal{max-width:78ch}
+.legal h2{scroll-margin-top:96px}
+.legal strong{color:var(--carbon)}
+.resumen-legal{background:#fff;border:1px solid var(--linea,#E8E2DC);border-left:4px solid var(--naranja);border-radius:var(--r);padding:1.2rem 1.4rem;margin:0 0 2rem}
+.resumen-legal h2{margin-top:0}
+.aviso-legal{background:var(--tinte);border-radius:var(--r);padding:.9rem 1.1rem;margin:0 0 1.4rem}
+.indice-legal{background:#fff;border:1px solid var(--linea,#E8E2DC);border-radius:var(--r);padding:.2rem 1.1rem;margin:0 0 2rem}
+.indice-legal summary{cursor:pointer;font-weight:700;color:var(--carbon);padding:.8rem 0;min-height:44px}
+.indice-legal ol{columns:2 280px;column-gap:2rem;margin:0 0 1rem;padding-left:1.4rem}
+.indice-legal li{break-inside:avoid;margin:.25rem 0}
+.indice-legal a{text-decoration:none}.indice-legal a:hover{text-decoration:underline}
+.tabla-legal{overflow-x:auto;margin:1rem 0 1.4rem;border:1px solid var(--linea,#E8E2DC);border-radius:var(--r);background:#fff}
+.tabla-legal table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:520px}
+.tabla-legal th{background:var(--tinte);color:var(--carbon);text-align:left;padding:.7rem .9rem;font-weight:700}
+.tabla-legal td{padding:.7rem .9rem;border-top:1px solid var(--linea,#E8E2DC);vertical-align:top;color:var(--gris)}
+.legal ol[type="a"]{list-style-type:lower-alpha}
+@media (max-width:640px){
+  .tabla-legal{border:0;background:none;overflow:visible}
+  .tabla-legal table{min-width:0}
+  .tabla-legal thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .tabla-legal tr{display:block;background:#fff;border:1px solid var(--linea);border-radius:var(--r);padding:.4rem .9rem;margin:0 0 .7rem}
+  .tabla-legal td{display:block;border:0;padding:.45rem 0}
+  .tabla-legal td+td{border-top:1px dashed var(--linea)}
+  .tabla-legal td::before{content:attr(data-label);display:block;font-size:.78rem;font-weight:700;color:var(--naranja-prof);margin-bottom:.15rem}
+}

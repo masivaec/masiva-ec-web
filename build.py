@@ -37,6 +37,7 @@ RUTAS_EN_ES = {
     "/en/email/": "/email/", "/en/websites/": "/web/", "/en/hosting/": "/hosting/", "/en/domains/": "/dominios/",
     "/en/clients/": "/clientes/", "/en/contact/": "/contacto/", "/en/privacy-policy/": "/politica-de-privacidad/",
     "/en/terms-and-conditions/": "/terminos-y-condiciones/", "/en/payment-methods/": "/formas-de-pago/",
+    "/en/acceptable-use-policy/": "/politica-de-uso-aceptable/",
     "/en/fraud-management/": "/gestion-de-fraudes/", "/en/client-area/": "/area-de-clientes/",
 }
 ES_DEF = dict(lang="es", og_locale="es_EC", saltar="Ir al contenido", alternos="")

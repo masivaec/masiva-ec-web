@@ -83,6 +83,7 @@ deployment:
     - /bin/cp -R peligro-de-nuestras-contrasenas $DEPLOYPATH
     - /bin/cp -R plan-de-marketing-en-5-pasos-faciles $DEPLOYPATH
     - /bin/cp -R politica-de-privacidad $DEPLOYPATH
+    - /bin/cp -R politica-de-uso-aceptable $DEPLOYPATH
     - /bin/cp -R psicologia-del-consumidor-en-el-marketing-digital $DEPLOYPATH
     - /bin/cp -R publicidad-creativa $DEPLOYPATH
     - /bin/cp -R publicidad-indirecta-la-estrategia-de-publicidad-perfecta $DEPLOYPATH
