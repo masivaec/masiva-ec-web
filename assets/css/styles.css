@@ -1185,3 +1185,16 @@ section[id]{scroll-margin-top:90px}
 .img-volar .paso-chips li,.img-volar > figcaption{opacity:0;z-index:2}
 .destello{position:absolute;width:34px;height:34px;pointer-events:none;z-index:3;opacity:0;filter:drop-shadow(0 0 6px rgba(255,255,255,.9)) drop-shadow(0 0 14px rgba(255,170,80,.8))}
 .destello svg{display:block;width:100%;height:100%}
+/* Móvil: al bajar, la cabecera se reduce a una cápsula flotante con el menú.
+   La cabecera conserva su alto (sin saltos de contenido) pero se vuelve invisible y no bloquea toques; solo la cápsula es tocable. */
+@media (max-width:960px){
+  .cabecera.compacta:not(.menu-abierto){padding:0;background:transparent;box-shadow:none;border-color:transparent;pointer-events:none}
+  .cabecera.compacta:not(.menu-abierto) .cabecera-int{background:none;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;min-height:76px;padding:0;border-radius:0}
+  .cabecera.compacta:not(.menu-abierto) .logo-cab,.cabecera.compacta:not(.menu-abierto) .cab-cta .btn{opacity:0;visibility:hidden}
+  .cabecera.compacta:not(.menu-abierto) .hamburguesa{pointer-events:auto;position:absolute;right:max(14px,env(safe-area-inset-right));top:max(12px,env(safe-area-inset-top));width:60px;height:44px;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border-radius:999px;background:rgba(30,30,30,.9);border:2px solid var(--naranja);box-shadow:0 0 14px rgba(229,124,29,.5),0 10px 20px -8px rgba(0,0,0,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:capsula-entra .35s var(--ease);transition:transform .15s var(--ease)}
+  .cabecera.compacta:not(.menu-abierto) .hamburguesa:active{transform:scale(.92)}
+  .cabecera.compacta:not(.menu-abierto) .hamburguesa:focus-visible{outline:3px solid #fff;outline-offset:3px}
+  .cabecera.compacta:not(.menu-abierto) .hamburguesa span{width:22px;margin:0}
+}
+@keyframes capsula-entra{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.cabecera .hamburguesa{animation:none!important}}
