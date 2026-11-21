@@ -441,6 +441,32 @@ document.querySelectorAll('.grid-2>.tarjeta,.grid-3>.tarjeta,.grid-4>.tarjeta,.p
         { opacity: 1, offset: 0.25 },
         { transform: 'translateX(320%) skewX(-20deg)', opacity: 0 }
       ], { duration: 1300, delay: 1150, easing: 'ease-in-out' });
+      /* Chips sobre la foto: aparecen después, cada uno desde un destello */
+      [].slice.call(fig.querySelectorAll('.paso-chips li, figcaption')).forEach(function (c, i) {
+        var t = 1500 + i * 500;
+        setTimeout(function () {
+          var cr = c.getBoundingClientRect(), fr = fig.getBoundingClientRect();
+          if (!cr.width) { c.style.opacity = 1; return; }
+          var ico = c.querySelector('i, .punto');
+          var ir = ico ? ico.getBoundingClientRect() : { left: cr.left + 14, top: cr.top + cr.height / 2 - 8, width: 16, height: 16 };
+          var st = document.createElement('span'); st.className = 'destello'; st.setAttribute('aria-hidden', 'true');
+          st.innerHTML = '<svg viewBox="0 0 40 40"><path d="M20 0C21.5 12 28 18.5 40 20 28 21.5 21.5 28 20 40 18.5 28 12 21.5 0 20 12 18.5 18.5 12 20 0Z" fill="#fff"/></svg>';
+          st.style.left = (ir.left - fr.left + ir.width / 2) + 'px';
+          st.style.top = (ir.top - fr.top + ir.height / 2) + 'px';
+          fig.appendChild(st);
+          st.animate([
+            { opacity: 0, transform: 'translate(-50%,-50%) scale(0) rotate(0deg)' },
+            { opacity: 1, transform: 'translate(-50%,-50%) scale(1.5) rotate(45deg)', offset: 0.45 },
+            { opacity: 0, transform: 'translate(-50%,-50%) scale(0.2) rotate(110deg)' }
+          ], { duration: 700, easing: 'ease-out' }).finished.then(function () { st.remove(); });
+          c.style.transformOrigin = (ir.left - cr.left + ir.width / 2) + 'px 50%';
+          c.animate([
+            { opacity: 0, scale: 0.3, filter: 'blur(6px) brightness(2.2)' },
+            { opacity: 1, scale: 1.07, filter: 'blur(0px) brightness(1.35)', offset: 0.6 },
+            { opacity: 1, scale: 1, filter: 'blur(0px) brightness(1)' }
+          ], { duration: 650, delay: 170, easing: 'cubic-bezier(.2,.75,.25,1)', fill: 'both' });
+        }, t);
+      });
     }, { threshold: 0.25 });
     io.observe(fig);
   });

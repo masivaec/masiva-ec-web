@@ -1182,3 +1182,7 @@ section[id]{scroll-margin-top:90px}
 .img-espejo{position:absolute;pointer-events:none;overflow:hidden;border-radius:18px;z-index:1}
 .img-espejo i{position:absolute;top:-10%;bottom:-10%;left:0;width:28%;opacity:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent)}
 html{overflow-x:clip}
+/* Chips sobre fotos: aparecen después de la foto, desde un destello */
+.img-volar .paso-chips li,.img-volar > figcaption{opacity:0;z-index:2}
+.destello{position:absolute;width:34px;height:34px;pointer-events:none;z-index:3;opacity:0;filter:drop-shadow(0 0 6px rgba(255,255,255,.9)) drop-shadow(0 0 14px rgba(255,170,80,.8))}
+.destello svg{display:block;width:100%;height:100%}
