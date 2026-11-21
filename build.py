@@ -157,6 +157,33 @@ for r, lg in paginas:
         m, _ = front_matter(open(r, encoding="utf-8").read())
         pares_en[m.get("alt", "/")] = m["path"]
 
+# Aviso: página en español cambiada después que su versión en inglés (hay que actualizar el inglés)
+import subprocess
+def _cambio(ruta):
+    try:
+        if subprocess.run(["git", "status", "--porcelain", "--", ruta], capture_output=True, text=True).stdout.strip():
+            return 9e18  # cambio sin commit: lo más reciente
+        t = subprocess.run(["git", "log", "-1", "--format=%ct", "--", ruta], capture_output=True, text=True).stdout.strip()
+        return float(t or 0)
+    except Exception:
+        return 0
+_es_por_ruta = {}
+for r, lg in paginas:
+    if lg == "es":
+        _m, _ = front_matter(open(r, encoding="utf-8").read())
+        _es_por_ruta[_m.get("path")] = r
+_desfase = []
+for r, lg in paginas:
+    if lg == "en":
+        _m, _ = front_matter(open(r, encoding="utf-8").read())
+        es = _es_por_ruta.get(_m.get("alt"))
+        if es and _cambio(es) > _cambio(r):
+            _desfase.append("%s -> %s" % (os.path.relpath(es, SRC), os.path.relpath(r, SRC)))
+if _desfase:
+    print("AVISO: estas páginas cambiaron en español y su versión en inglés no se actualizó:")
+    for d in _desfase:
+        print("   ", d)
+
 salidas = []
 for ruta, lang in paginas:
     meta, contenido = front_matter(open(ruta, encoding="utf-8").read())
