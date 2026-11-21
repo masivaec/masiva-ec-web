@@ -1176,3 +1176,9 @@ section[id]{scroll-margin-top:90px}
 /* Chips que vienen hacia la pantalla + barrido de luz en los banners */
 .chips-volar .dc-chips li,.chips-volar .eco-etq li,.chips-volar .eco-caps li{opacity:0;will-change:transform,opacity,filter}
 .dc-luz{position:absolute;top:0;bottom:0;left:0;width:35%;pointer-events:none;z-index:1;opacity:0;background:linear-gradient(90deg,transparent,rgba(255,190,120,.22),transparent);mix-blend-mode:screen}
+/* Imágenes que llegan + reflejo tipo espejo */
+.img-volar{position:relative}
+.img-volar picture,.img-volar > img{opacity:0;will-change:transform,opacity,filter}
+.img-espejo{position:absolute;pointer-events:none;overflow:hidden;border-radius:18px;z-index:1}
+.img-espejo i{position:absolute;top:-10%;bottom:-10%;left:0;width:28%;opacity:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent)}
+html{overflow-x:clip}

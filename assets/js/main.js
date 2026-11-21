@@ -413,3 +413,35 @@ document.querySelectorAll('.grid-2>.tarjeta,.grid-3>.tarjeta,.grid-4>.tarjeta,.p
     io.observe(g);
   });
 })();
+
+/* Imágenes que "llegan" hacia la pantalla: entran grandes y desenfocadas, se asientan y pasa un reflejo tipo espejo */
+(function () {
+  if (!('IntersectionObserver' in window) || !Element.prototype.animate) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  [].slice.call(document.querySelectorAll('.mock-sms, .mock-plataforma, .porque-foto, .paso-fig')).forEach(function (fig) {
+    var img = fig.querySelector('picture') || fig.querySelector('img');
+    if (!img) return;
+    fig.classList.remove('reveal', 'reveal-retraso-1', 'reveal-retraso-2', 'reveal-retraso-3');
+    fig.classList.add('img-volar');
+    var espejo = document.createElement('span'); espejo.className = 'img-espejo'; espejo.setAttribute('aria-hidden', 'true');
+    espejo.innerHTML = '<i></i>';
+    fig.appendChild(espejo);
+    var io = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      io.disconnect();
+      img.animate([
+        { opacity: 0, scale: 1.28, filter: 'blur(16px)' },
+        { opacity: 1, scale: 0.985, filter: 'blur(0px)', offset: 0.8 },
+        { opacity: 1, scale: 1, filter: 'blur(0px)' }
+      ], { duration: 1400, easing: 'cubic-bezier(.2,.75,.25,1)', fill: 'both' });
+      var r = (img.querySelector ? (img.querySelector('img') || img) : img).getBoundingClientRect(), f = fig.getBoundingClientRect();
+      espejo.style.cssText = 'left:' + (r.left - f.left) + 'px;top:' + (r.top - f.top) + 'px;width:' + r.width + 'px;height:' + r.height + 'px';
+      espejo.firstChild.animate([
+        { transform: 'translateX(-140%) skewX(-20deg)', opacity: 0 },
+        { opacity: 1, offset: 0.25 },
+        { transform: 'translateX(320%) skewX(-20deg)', opacity: 0 }
+      ], { duration: 1300, delay: 1150, easing: 'ease-in-out' });
+    }, { threshold: 0.25 });
+    io.observe(fig);
+  });
+})();
