@@ -1153,3 +1153,4 @@ section[id]{scroll-margin-top:90px}
   .tabla-legal td+td{border-top:1px dashed var(--linea)}
   .tabla-legal td::before{content:attr(data-label);display:block;font-size:.78rem;font-weight:700;color:var(--naranja-prof);margin-bottom:.15rem}
 }
+.aviso-final{margin-top:2.5rem}
