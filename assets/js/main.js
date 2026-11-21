@@ -406,7 +406,7 @@ document.querySelectorAll('.grid-2>.tarjeta,.grid-3>.tarjeta,.grid-4>.tarjeta,.p
           { opacity: 0, scale: 2.6, filter: 'blur(10px)' },
           { opacity: 1, scale: 0.94, filter: 'blur(0px)', offset: 0.78 },
           { opacity: 1, scale: 1, filter: 'blur(0px)' }
-        ], { duration: 820, delay: 250 + i * 130, easing: 'cubic-bezier(.2,.75,.25,1)', fill: 'both' })
+        ], { duration: 1200, delay: 300 + i * 420, easing: 'cubic-bezier(.2,.75,.25,1)', fill: 'both' })
           .finished.then(function () { c.style.opacity = 1; });
       });
     }, { threshold: 0.35 });
