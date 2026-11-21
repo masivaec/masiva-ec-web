@@ -1115,3 +1115,15 @@ section[id]{scroll-margin-top:90px}
   .cabecera.menu-abierto .nav-principal .nav-idioma-movil .idioma a:not(.activo):hover{background:rgba(255,255,255,.14)}
   .cabecera.menu-abierto .nav-principal .nav-idioma-movil .idioma span{display:inline}
 }
+
+/* Robot de migración v2 (forma del robot de referencia de Fernando) */
+.mig-cla{fill:#3C3C3C}.mig-osc{fill:#2A2A2A}.mig-naranja{fill:#F39322}
+.mig-arm{fill:none;stroke:#2A2A2A;stroke-width:4.4;stroke-linecap:round;stroke-linejoin:round}
+.mig-garra{fill:none;stroke:#3C3C3C;stroke-width:3.4}
+.mig-junta{fill:#3C3C3C}
+.mig-sonrisa{fill:none;stroke:#F39322;stroke-width:1.6;stroke-linecap:round}
+.mig-ant{stroke:#2A2A2A;stroke-width:1.6}
+.mig-rueda{fill:#2A2A2A;stroke:#fff;stroke-width:1.6}
+.mig-saludo{transform-box:view-box;transform-origin:-17.6px 320.5px}
+@media (prefers-reduced-motion:no-preference){.mig-saludo{animation:mig-saludo 1.6s ease-in-out infinite}}
+@keyframes mig-saludo{0%,100%{transform:rotate(0)}50%{transform:rotate(-9deg)}}
