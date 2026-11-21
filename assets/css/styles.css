@@ -1102,3 +1102,16 @@ section[id]{scroll-margin-top:90px}
 .idioma a:focus-visible{outline:2px solid #fff;outline-offset:2px}
 @media (max-width:420px){.idioma{font-size:.75rem;padding:.2rem .25rem}.idioma a{padding:.38rem .4rem;gap:.25rem}.idioma span{display:none}}
 @media (min-width:961px) and (max-width:1279px){.idioma{gap:0;padding:.2rem}.idioma span{display:none}.idioma a{padding:.42rem .45rem}.idioma b{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+
+/* Móvil: el selector de idioma vive dentro del menú desplegable, antes de Contacto */
+.nav-idioma-movil{display:none}
+@media (max-width:960px){
+  .cab-cta .idioma{display:none}
+  .cabecera.menu-abierto .nav-principal>li.nav-idioma-movil{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem .5rem}
+  .nav-idioma-txt{font-size:1.05rem;font-weight:600;color:#fff}
+  .cabecera.menu-abierto .nav-principal .nav-idioma-movil .idioma{display:inline-flex;font-size:.9rem}
+  .cabecera.menu-abierto .nav-principal .nav-idioma-movil .idioma a{display:inline-flex;width:auto;padding:.5rem .8rem;font-size:.9rem;border-radius:999px;background:transparent}
+  .cabecera.menu-abierto .nav-principal .nav-idioma-movil .idioma a.activo{background:#fff;color:var(--carbon)}
+  .cabecera.menu-abierto .nav-principal .nav-idioma-movil .idioma a:not(.activo):hover{background:rgba(255,255,255,.14)}
+  .cabecera.menu-abierto .nav-principal .nav-idioma-movil .idioma span{display:inline}
+}
