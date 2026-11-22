@@ -383,6 +383,9 @@ sm += "</urlset>\n"
 open(os.path.join(RAIZ, "sitemap.xml"), "w").write(sm)
 
 REDIRECCIONES = {  # URLs del sitio anterior -> nuevas
+    "uso-y-tratamiento-de-datos-personales": "/politica-de-privacidad/", "tratamiento-de-datos-personales": "/politica-de-privacidad/",
+    "politica-de-tratamiento-de-datos": "/politica-de-privacidad/", "proteccion-de-datos-personales": "/politica-de-privacidad/",
+    "politica-de-cookies": "/politica-de-privacidad/",
     "contactenos": "/contacto/", "home": "/", "chat-bot": "/chatbots-agentes-ia/", "omnicanalidad": "/chatbots-agentes-ia/",
     "whatsapp-marketing-whatsapp-masivo-bulk": "/whatsapp/", "sms-mensajes-de-texto-masivos": "/sms/",
     "informacion-sms": "/sms/", "sms-internacional": "/sms/#internacional", "pagina-calculadora": "/sms/", "correos-electronicos-emails-masivos-mailing": "/email/",
