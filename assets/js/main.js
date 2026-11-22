@@ -138,9 +138,25 @@ document.querySelectorAll('form[data-whatsapp]').forEach(function (f) {
       var et = f.querySelector('label[for="' + c.id + '"]');
       lineas.push((et ? et.textContent.trim() : c.name) + ': ' + v);
     });
+    avisarContacto('formulario');
     window.open('https://wa.me/593994488880?text=' + encodeURIComponent(lineas.join('\n')), '_blank', 'noopener');
   });
 });
+
+/* Medición de contactos: deja el evento "contacto" en el dataLayer (GTM lo lee aunque cargue después).
+   Canales: whatsapp, telefono, email (solo info@ y soporte@; los correos legales no cuentan) y formulario. */
+function avisarContacto(canal) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'contacto', canal: canal, pagina: location.pathname });
+}
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href]');
+  if (!a) return;
+  var h = a.getAttribute('href') || '';
+  if (/^https:\/\/(wa\.me|api\.whatsapp\.com)\//i.test(h)) avisarContacto('whatsapp');
+  else if (/^tel:/i.test(h)) avisarContacto('telefono');
+  else if (/^mailto:(info|soporte)@masiva\.ec/i.test(h)) avisarContacto('email');
+}, true);
 
 /* Selector de países (SMS internacional): una sola caja que busca y despliega */
 (function () {
