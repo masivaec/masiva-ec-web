@@ -20,7 +20,17 @@
 <link rel="preload" href="/assets/fonts/sora-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/styles.css?v=ef3852f9">
-<!-- Google Tag Manager: pegar aquí el contenedor cuando esté listo (carga diferida) -->
+<!-- Google Tag Manager (GTM-TZKLN56T) con carga diferida: se activa con la primera interacción
+     (scroll, toque, clic o tecla) o 4 s después de cargar la página, para no afectar la velocidad. -->
+<script>
+window.dataLayer=window.dataLayer||[];
+(function(w,d){var hecho=0,ev=["scroll","pointerdown","keydown","touchstart"];
+function cargar(){if(hecho)return;hecho=1;ev.forEach(function(e){w.removeEventListener(e,cargar)});
+w.dataLayer.push({"gtm.start":Date.now(),event:"gtm.js"});
+var s=d.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtm.js?id=GTM-TZKLN56T";d.head.appendChild(s);}
+ev.forEach(function(e){w.addEventListener(e,cargar,{passive:true})});
+w.addEventListener("load",function(){setTimeout(cargar,4000)});})(window,document);
+</script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BlogPosting", "headline": "La estrategia customer centric", "description": "Una estrategia customer centric es aquella estrategia empresarial que toma al cliente como punto de referencia a la hora de llevar a cabo cualquier.", "image": "https://masiva.ec/assets/img/blog/la-estrategia-customer-centric-portada.webp", "datePublished": "2021-03-18", "dateModified": "2021-03-25", "mainEntityOfPage": "https://masiva.ec/la-estrategia-customer-centric/", "inLanguage": "es-EC", "author": {"@type": "Organization", "name": "MASIVA", "url": "https://masiva.ec/"}, "publisher": {"@type": "Organization", "name": "MASIVA-EC S.A.", "logo": {"@type": "ImageObject", "url": "https://masiva.ec/assets/img/logo/masiva-vertical-naranja.svg"}}}
 </script>
@@ -29,6 +39,7 @@
 </script>
 </head>
 <body class="pagina-post">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZKLN56T" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
 
 <a class="visualmente-oculto" href="#contenido">Ir al contenido</a>
 
