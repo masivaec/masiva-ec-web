@@ -90,9 +90,15 @@ ORG = {
     "url": DOMINIO + "/",
     "logo": DOMINIO + "/assets/img/logo/masiva-vertical-naranja.svg",
     "slogan": "¡conecta, comunica, triunfa!",
+    "taxID": "1793057519001",
+    "address": {"@type": "PostalAddress",
+        "streetAddress": "Av. República de El Salvador N34-140 entre Moscú y Suiza, Edificio Diamond Business, piso 5",
+        "addressLocality": "Quito", "addressCountry": "EC"},
     "contactPoint": [{
+        "@type": "ContactPoint", "telephone": "+593987777007", "email": "info@masiva.ec",
+        "contactType": "customer service", "areaServed": "EC", "availableLanguage": ["es", "en"]}, {
         "@type": "ContactPoint", "telephone": "+593994488880", "email": "soporte@masiva.ec",
-        "contactType": "sales", "areaServed": "EC", "availableLanguage": ["es", "en"]}],
+        "contactType": "technical support", "areaServed": "EC", "availableLanguage": ["es", "en"]}],
     "sameAs": ["https://www.facebook.com/MasivaEc", "https://www.instagram.com/masivaec"],
 }
 

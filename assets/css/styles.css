@@ -1201,3 +1201,8 @@ section[id]{scroll-margin-top:90px}
 
 /* Evita desplazamiento lateral (animaciones que crecen); clip no crea contenedor de scroll, así que no rompe lo fijo */
 main,.pie{overflow-x:clip}
+/* Pie: dirección completa y etiquetas de línea */
+.pie address small{opacity:.7;font-size:.85em}
+.pie-dir{display:flex;align-items:flex-start;gap:.5rem;line-height:1.45}
+.pie-dir svg{flex:none;margin-top:2px}
+.nw{white-space:nowrap}
