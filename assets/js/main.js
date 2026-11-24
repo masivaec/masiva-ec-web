@@ -487,3 +487,14 @@ document.querySelectorAll('.grid-2>.tarjeta,.grid-3>.tarjeta,.grid-4>.tarjeta,.p
     io.observe(fig);
   });
 })();
+
+/* Preselecciona el interés del formulario con ?interes=clave (p. ej. /contacto/?interes=automatizacion) */
+(function () {
+  var clave = new URLSearchParams(location.search).get('interes');
+  if (!clave) return;
+  document.querySelectorAll('select').forEach(function (s) {
+    for (var i = 0; i < s.options.length; i++) {
+      if (s.options[i].getAttribute('data-clave') === clave) { s.selectedIndex = i; break; }
+    }
+  });
+})();

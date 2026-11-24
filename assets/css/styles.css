@@ -1284,3 +1284,14 @@ main,.pie{overflow-x:clip}
 @media (max-width:1024px){.auto-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:860px){.auto-card{grid-template-columns:1fr}.auto-visual{max-width:400px;margin:0 auto;width:100%}}
 @media (max-width:600px){.auto-grid{grid-template-columns:1fr}.auto-grid .auto-abierta{grid-column:auto;flex-direction:column;align-items:flex-start}}
+
+.auto-anim .halo,.auto-anim .auto-estrella,.auto-anim .chispa{transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion:no-preference){
+  .auto-anim .auto-estrella{animation:auto-destello 1.5s ease-in-out 1.77s infinite}
+  .auto-anim .halo{animation:auto-halo 1.5s ease-in-out 1.77s infinite}
+  .auto-anim .chispa{animation:auto-chispa 2.4s ease-in-out infinite}
+  .auto-anim .c2{animation-delay:1.2s}
+}
+@keyframes auto-destello{0%,100%{transform:scale(1) rotate(0deg)}12%{transform:scale(1.14) rotate(10deg)}40%{transform:scale(1) rotate(0deg)}}
+@keyframes auto-halo{0%,100%{opacity:.7;transform:scale(1)}12%{opacity:1;transform:scale(1.12)}40%{opacity:.7;transform:scale(1)}}
+@keyframes auto-chispa{0%,100%{opacity:.25;transform:scale(.6)}50%{opacity:1;transform:scale(1)}}
