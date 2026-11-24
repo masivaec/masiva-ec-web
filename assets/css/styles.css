@@ -1206,3 +1206,14 @@ main,.pie{overflow-x:clip}
 .pie-dir{display:flex;align-items:flex-start;gap:.5rem;line-height:1.45}
 .pie-dir svg{flex:none;margin-top:2px}
 .nw{white-space:nowrap}
+
+/* Cobertura WhatsApp API (ES/EN) */
+.cobertura{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(24px,5vw,64px);align-items:center}
+.cobertura .lead{margin-bottom:0}
+.cobertura-lista{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.cobertura-lista li{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--linea);border-radius:18px;padding:16px 18px;box-shadow:0 20px 40px -34px rgba(38,38,38,.35)}
+.cobertura-lista svg{flex:0 0 42px;width:42px;height:42px;padding:10px;border-radius:12px;background:var(--tinte);color:var(--naranja-prof)}
+.cobertura-lista strong{display:block;font-family:var(--sora);font-size:1rem;margin-bottom:.15rem}
+.cobertura-lista span{display:block;color:var(--gris-2);font-size:.94rem;line-height:1.5}
+@media (max-width:860px){.cobertura{grid-template-columns:1fr}}
+.cobertura h2{margin-bottom:.9rem}
