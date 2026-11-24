@@ -320,7 +320,7 @@ if blog_cfg:
             {"@type": "ListItem", "position": 1, "name": "Inicio", "item": DOMINIO + "/"},
             {"@type": "ListItem", "position": 2, "name": "Blog", "item": DOMINIO + "/blog/"},
             {"@type": "ListItem", "position": 3, "name": m["titulo"], "item": DOMINIO + path}]}
-        jsonld = "".join('<script type="application/ld+json">\n' + json.dumps(b, ensure_ascii=False) + "\n</script>\n" for b in (art_ld, migas_ld))
+        jsonld = "".join('<script type="application/ld+json">\n' + json.dumps(b, ensure_ascii=False) + "\n</script>\n" for b in (art_ld, migas_ld) + ((json.loads(m["faq_json"]),) if m.get("faq_json") else ()))
         robots = '<meta name="robots" content="noindex, nofollow">\n' if STAGING else ""
         pagina = PLANTILLA.format(**ES_DEF, title=html.escape(m["title"]), description=html.escape(m["description"]),
                                   og_title=html.escape(m["titulo"]), canonical=DOMINIO + path, dominio=DOMINIO, robots=robots,

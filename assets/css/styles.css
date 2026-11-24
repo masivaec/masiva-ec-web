@@ -1295,3 +1295,14 @@ main,.pie{overflow-x:clip}
 @keyframes auto-destello{0%,100%{transform:scale(1) rotate(0deg)}12%{transform:scale(1.14) rotate(10deg)}40%{transform:scale(1) rotate(0deg)}}
 @keyframes auto-halo{0%,100%{opacity:.7;transform:scale(1)}12%{opacity:1;transform:scale(1.12)}40%{opacity:.7;transform:scale(1)}}
 @keyframes auto-chispa{0%,100%{opacity:.25;transform:scale(.6)}50%{opacity:1;transform:scale(1)}}
+
+/* Tablas dentro de artículos del blog */
+.prosa .tabla-scroll{overflow-x:auto;margin:1.2rem 0;border:1px solid var(--linea);border-radius:16px;background:#fff}
+.prosa table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:560px}
+.prosa th,.prosa td{padding:.75rem 1rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--linea);color:var(--gris)}
+.prosa thead th{font-family:var(--sora);font-weight:600;color:var(--carbon);background:var(--crema)}
+.prosa tbody tr:last-child td{border-bottom:0}
+.prosa tbody td:first-child{font-weight:600;color:var(--carbon)}
+.prosa ol{margin:1rem 0}
+.post-grid>*{min-width:0}
+@media (max-width:600px){.prosa table{min-width:0;font-size:.84rem}.prosa th,.prosa td{padding:.6rem .55rem}}

@@ -110,6 +110,7 @@ deployment:
     - /bin/cp -R twitch-una-red-social-cada-vez-mas-atractiva $DEPLOYPATH
     - /bin/cp -R web $DEPLOYPATH
     - /bin/cp -R whatsapp $DEPLOYPATH
+    - /bin/cp -R whatsapp-api-en-ecuador $DEPLOYPATH
     - /bin/cp -R whatsapp-business-como-canal-de-comunicacion-en-los-negocios $DEPLOYPATH
     - /bin/cp -R whatsapp-comercial-o-whatsapp-marketing $DEPLOYPATH
     - /bin/cp -R whois $DEPLOYPATH
