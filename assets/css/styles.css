@@ -1306,3 +1306,9 @@ main,.pie{overflow-x:clip}
 .prosa ol{margin:1rem 0}
 .post-grid>*{min-width:0}
 @media (max-width:600px){.prosa table{min-width:0;font-size:.84rem}.prosa th,.prosa td{padding:.6rem .55rem}}
+
+/* Fecha de publicación en las tarjetas del blog */
+.post-pie{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.post-pie .post-min{margin-top:0}
+.post-fecha{font-size:.8rem;font-style:italic;color:var(--gris-2);white-space:nowrap}
+.oscuro .post-fecha{color:#A3A09A}

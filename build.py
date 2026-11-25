@@ -268,9 +268,9 @@ if blog_cfg:
         img = m["portada"].replace(".webp", "-600.webp")
         return ('<article class="post-tarjeta" data-cat="%s"><a href="%s">'
                 '<div class="post-img"><img src="%s" alt="" width="600" height="315" loading="lazy" decoding="async"></div>'
-                '<div class="post-info"><span class="chip">%s</span><%s>%s</%s><p>%s</p><span class="post-min">%s min de lectura</span></div>'
+                '<div class="post-info"><span class="chip">%s</span><%s>%s</%s><p>%s</p><span class="post-pie"><span class="post-min">%s min de lectura</span><time class="post-fecha" datetime="%s">%s</time></span></div>'
                 '</a></article>') % (m["categoria"], m["path"], img, CATS[m["categoria"]], h, html.escape(m["titulo"]), h,
-                                     html.escape(m["description"]), m["minutos"])
+                                     html.escape(m["description"]), m["minutos"], m["fecha"], fecha_larga(m["fecha"]))
 
     for m in articulos:
         path = m["path"]; cat = m["categoria"]
