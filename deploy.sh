@@ -129,3 +129,4 @@ cd "$(dirname "$0")" || exit 1
 /bin/cp -R sitemap.xml $DEPLOYPATH
 /bin/cp -R .htaccess $DEPLOYPATH
 /bin/cp -R LEEME-ESTRUCTURA.txt $DEPLOYPATH
+/bin/cp -R favicon.ico $DEPLOYPATH

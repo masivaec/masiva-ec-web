@@ -60,7 +60,10 @@ PLANTILLA = """<!DOCTYPE html>
 <meta property="og:image" content="{og_image}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#262626">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/img/logo/favicon-96.png" sizes="96x96" type="image/png">
 <link rel="icon" href="/assets/img/logo/masiva-icono-naranja.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/logo/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/sora-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/styles.css?v={{v_css}}">
@@ -469,7 +472,7 @@ open(os.path.join(RAIZ, ".htaccess"), "w").write(ht)
 # .cpanel.yml con todo lo publicable
 dirs = sorted({p.strip("/").split("/")[0] for p in salidas if p != "/"})
 items = ["index.html", "404.html", "assets"] + dirs
-for extra in ("robots.txt", "sitemap.xml", ".htaccess", "LEEME-ESTRUCTURA.txt"):
+for extra in ("robots.txt", "sitemap.xml", ".htaccess", "LEEME-ESTRUCTURA.txt", "favicon.ico"):
     if os.path.exists(os.path.join(RAIZ, extra)):
         items.append(extra)
 yml = "---\ndeployment:\n  tasks:\n    - export DEPLOYPATH=%s\n" % DEPLOYPATH
